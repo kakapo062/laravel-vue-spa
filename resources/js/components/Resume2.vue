@@ -1,0 +1,157 @@
+<template>
+<div class="wrap">
+    <div class="resume_wrap">
+        <div class="step_nav_wrap">
+            <ul class="step_nav_list">
+                <li>
+                <span>1</span>
+                </li>
+                <li class="active">
+                <span>2</span>
+                </li>
+                <li>
+                <span>3</span>
+                </li>
+                <li>
+                <span>4</span>
+                </li>
+                <li>
+                <span>5</span>
+                </li>
+                <li>
+                <span>6</span>
+                </li>
+                <li>
+                <span>7</span>
+                </li>
+                <li>
+                <span>8</span>
+                </li>
+                <li>
+                <span>9</span>
+                </li>
+                <li>
+                <span>10</span>
+                </li>
+            </ul>
+        </div>
+        <h3 class="resume_step_title">住所</h3>
+        <div class="resume_step_note_wrap">
+            <p class="resume_step_note">※不明な点がありましたら未記入のまま次の項目へお進みください。</p>
+        </div>
+        <div class="resume_form_wrap">
+            <div class="form_inner">
+                <div class="item_wrap">
+                    <p class="item_name">郵便番号（ハイフン不要）</p>
+                    <div class="item_body flex">
+                        <div class="input_wrap">
+                            <input type="text" autocomplete="off" placeholder="例) 000-1234" title="郵便番号" class="input_inner">
+                        </div>
+                        <div class="auto_btn_wrap">
+                            <div class="auto_btn">自動入力</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item_wrap">
+                    <p class="item_name">都道府県・市区町村・番地</p>
+                    <div class="item_body">
+                        <div class="input_wrap">
+                            <input type="text" autocomplete="off" placeholder="例）〇〇県〇〇市○丁目" title="都道府県・市区町村・番地" class="input_inner">
+                        </div>
+                    </div>
+                </div>
+                <div class="item_wrap">
+                    <p class="item_name">マンション・建物名</p>
+                    <div class="item_body">
+                        <div class="input_wrap">
+                            <input type="text" autocomplete="off" placeholder="例）〇〇マンション" title="マンション・建物名" class="input_inner">
+                        </div>
+                    </div>
+                </div>
+                <div class="item_wrap">
+                    <p class="item_name">住所ふりがな</p>
+                    <p class="item_name_sub">都道府県と市区町村までを記入してください</p>
+                    <div class="item_body">
+                        <div class="input_wrap">
+                            <input type="text" autocomplete="off" placeholder="例）とうきょうとしながわくにしごたんだ" title="住所ふりがな" class="input_inner">
+                        </div>
+                    </div>
+                </div>
+                <div @click="active" v-if="isDisplay" class="add_address_wrap">
+                    <div class="add_address">上記以外に希望する住所を追加</div>
+                </div>
+                        <div v-if="isActive" class="">
+                    <p class="address_note">※現住所以外に連絡を希望する場合のみ入力してください</p>
+                    <div class="item_wrap">
+                    <p class="item_name">郵便番号（ハイフン不要）</p>
+                    <div class="item_body flex">
+                        <div class="input_wrap">
+                            <input type="text" autocomplete="off" placeholder="例) 000-1234" title="郵便番号" class="input_inner">
+                        </div>
+                        <div class="auto_btn_wrap">
+                            <div class="auto_btn">自動入力</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item_wrap">
+                    <p class="item_name">都道府県・市区町村・番地</p>
+                    <div class="item_body">
+                        <div class="input_wrap">
+                            <input type="text" autocomplete="off" placeholder="例）〇〇県〇〇市○丁目" title="都道府県・市区町村・番地" class="input_inner">
+                        </div>
+                    </div>
+                </div>
+                <div class="item_wrap">
+                    <p class="item_name">マンション・建物名</p>
+                    <div class="item_body">
+                        <div class="input_wrap">
+                            <input type="text" autocomplete="off" placeholder="例）〇〇マンション" title="マンション・建物名" class="input_inner">
+                        </div>
+                    </div>
+                </div>
+                <div class="item_wrap">
+                    <p class="item_name">住所ふりがな</p>
+                    <p class="item_name_sub">都道府県と市区町村までを記入してください</p>
+                    <div class="item_body">
+                        <div class="input_wrap">
+                            <input type="text" autocomplete="off" placeholder="例）とうきょうとしながわくにしごたんだ" title="住所ふりがな" class="input_inner">
+                        </div>
+                    </div>
+                </div>
+                <div @click="active" v-if="!isDisplay" class="add_address_wrap">
+                    <div class="add_address">閉じる</div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="pager_wrap">
+            <div class="pager_inner">
+                <router-link v-bind:to="{name: 'resume3'}" class="next_step_btn"><span>次へ</span></router-link>
+                <router-link v-bind:to="{name: 'resume'}" class="back_step_btn"><span>戻る</span></router-link>
+            </div>
+        </div>
+    </div>
+    <div class="preview_btn_wrap">
+        <router-link v-bind:to="{name: 'index'}" class="preview_btn">
+            <span>プレビュー</span>
+        </router-link>
+    </div>
+</div>
+</template>
+
+<script>
+    export default {
+    data() {
+        return {
+            isActive: false,
+            isDisplay: true,
+        }
+    },
+    methods: {
+        active: function(){
+            this.isActive = !this.isActive;
+            this.isDisplay = !this.isDisplay;
+    }
+    }
+}
+</script>

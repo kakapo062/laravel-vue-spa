@@ -2,9 +2,9 @@
     <div class="">
         <header class="header">
             <div class="header_inner">
-                <a href="#" class="header_logo_img_wrap">
+                <router-link v-bind:to="{name: 'index'}" class="header_logo_img_wrap">
                     <img src="/images/logo.svg" alt="宅建Jobエージェント" class="header_logo_img">
-                </a>
+                </router-link>
             </div>
         </header>
     </div>

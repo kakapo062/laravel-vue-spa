@@ -120,8 +120,16 @@ hr {
 input, select {
     vertical-align:middle;
     width: 100%;
+    border: 1px solid #E6E6E6;
+    height: 51px;
+    padding: 0 20px;
+    color: #233D4C;
+    font-size: 16px;
 }
-
+::placeholder{
+    color: #B3B3B3;
+    font-size: 13px;
+  }
 /*画像を縦に並べた時に余白が出ないように*/
 img {
     vertical-align: top;

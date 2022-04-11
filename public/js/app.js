@@ -5359,6 +5359,327 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Resume.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Resume.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  mounted: function mounted() {
+    console.log('Component mounted.');
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Resume2.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Resume2.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      isActive: false,
+      isDisplay: true
+    };
+  },
+  methods: {
+    active: function active() {
+      this.isActive = !this.isActive;
+      this.isDisplay = !this.isDisplay;
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/indexComponent.vue?vue&type=script&lang=js&":
 /*!*********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/indexComponent.vue?vue&type=script&lang=js& ***!
@@ -5370,7 +5691,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-//
 //
 //
 //
@@ -5490,10 +5810,14 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _components_HeaderComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/HeaderComponent */ "./resources/js/components/HeaderComponent.vue");
 /* harmony import */ var _components_FooterComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/FooterComponent */ "./resources/js/components/FooterComponent.vue");
 /* harmony import */ var _components_indexComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/indexComponent */ "./resources/js/components/indexComponent.vue");
+/* harmony import */ var _components_Resume__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Resume */ "./resources/js/components/Resume.vue");
+/* harmony import */ var _components_Resume2__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Resume2 */ "./resources/js/components/Resume2.vue");
+
+
 
 
 
@@ -5502,19 +5826,29 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = (__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js")["default"]);
-Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_3__["default"]);
-var router = new vue_router__WEBPACK_IMPORTED_MODULE_3__["default"]({
+Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_5__["default"]);
+var router = new vue_router__WEBPACK_IMPORTED_MODULE_5__["default"]({
   mode: 'history',
   routes: [{
     path: '/',
     name: 'index',
     component: _components_indexComponent__WEBPACK_IMPORTED_MODULE_2__["default"]
+  }, {
+    path: '/start/resume/',
+    name: 'resume',
+    component: _components_Resume__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }, {
+    path: '/start/resume/2/',
+    name: 'resume2',
+    component: _components_Resume2__WEBPACK_IMPORTED_MODULE_4__["default"]
   }]
 });
 Vue.component('example-component', (__webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]));
 Vue.component('header-component', _components_HeaderComponent__WEBPACK_IMPORTED_MODULE_0__["default"]);
 Vue.component('footer-component', _components_FooterComponent__WEBPACK_IMPORTED_MODULE_1__["default"]);
 Vue.component('index-component', _components_indexComponent__WEBPACK_IMPORTED_MODULE_2__["default"]);
+Vue.component('resume-start', _components_Resume__WEBPACK_IMPORTED_MODULE_3__["default"]);
+Vue.component('resume-2', _components_Resume2__WEBPACK_IMPORTED_MODULE_4__["default"]);
 var app = new Vue({
   el: '#app',
   router: router
@@ -28121,6 +28455,84 @@ component.options.__file = "resources/js/components/HeaderComponent.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/Resume.vue":
+/*!********************************************!*\
+  !*** ./resources/js/components/Resume.vue ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Resume_vue_vue_type_template_id_594b97d8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Resume.vue?vue&type=template&id=594b97d8& */ "./resources/js/components/Resume.vue?vue&type=template&id=594b97d8&");
+/* harmony import */ var _Resume_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Resume.vue?vue&type=script&lang=js& */ "./resources/js/components/Resume.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Resume_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Resume_vue_vue_type_template_id_594b97d8___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Resume_vue_vue_type_template_id_594b97d8___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Resume.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Resume2.vue":
+/*!*********************************************!*\
+  !*** ./resources/js/components/Resume2.vue ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Resume2_vue_vue_type_template_id_5f81e6ec___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Resume2.vue?vue&type=template&id=5f81e6ec& */ "./resources/js/components/Resume2.vue?vue&type=template&id=5f81e6ec&");
+/* harmony import */ var _Resume2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Resume2.vue?vue&type=script&lang=js& */ "./resources/js/components/Resume2.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Resume2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Resume2_vue_vue_type_template_id_5f81e6ec___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Resume2_vue_vue_type_template_id_5f81e6ec___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Resume2.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/indexComponent.vue":
 /*!****************************************************!*\
   !*** ./resources/js/components/indexComponent.vue ***!
@@ -28208,6 +28620,38 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Resume.vue?vue&type=script&lang=js&":
+/*!*********************************************************************!*\
+  !*** ./resources/js/components/Resume.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Resume_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Resume.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Resume.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Resume_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Resume2.vue?vue&type=script&lang=js&":
+/*!**********************************************************************!*\
+  !*** ./resources/js/components/Resume2.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Resume2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Resume2.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Resume2.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Resume2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/indexComponent.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************!*\
   !*** ./resources/js/components/indexComponent.vue?vue&type=script&lang=js& ***!
@@ -28271,6 +28715,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderComponent_vue_vue_type_template_id_153bfd55___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderComponent_vue_vue_type_template_id_153bfd55___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./HeaderComponent.vue?vue&type=template&id=153bfd55& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/HeaderComponent.vue?vue&type=template&id=153bfd55&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Resume.vue?vue&type=template&id=594b97d8&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/Resume.vue?vue&type=template&id=594b97d8& ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Resume_vue_vue_type_template_id_594b97d8___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Resume_vue_vue_type_template_id_594b97d8___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Resume_vue_vue_type_template_id_594b97d8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Resume.vue?vue&type=template&id=594b97d8& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Resume.vue?vue&type=template&id=594b97d8&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Resume2.vue?vue&type=template&id=5f81e6ec&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/Resume2.vue?vue&type=template&id=5f81e6ec& ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Resume2_vue_vue_type_template_id_5f81e6ec___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Resume2_vue_vue_type_template_id_5f81e6ec___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Resume2_vue_vue_type_template_id_5f81e6ec___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Resume2.vue?vue&type=template&id=5f81e6ec& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Resume2.vue?vue&type=template&id=5f81e6ec&");
 
 
 /***/ }),
@@ -28438,19 +28916,18 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", {}, [
-      _c("header", { staticClass: "header" }, [
-        _c("div", { staticClass: "header_inner" }, [
+  return _c("div", {}, [
+    _c("header", { staticClass: "header" }, [
+      _c(
+        "div",
+        { staticClass: "header_inner" },
+        [
           _c(
-            "a",
-            { staticClass: "header_logo_img_wrap", attrs: { href: "#" } },
+            "router-link",
+            {
+              staticClass: "header_logo_img_wrap",
+              attrs: { to: { name: "index" } },
+            },
             [
               _c("img", {
                 staticClass: "header_logo_img",
@@ -28458,6 +28935,666 @@ var staticRenderFns = [
               }),
             ]
           ),
+        ],
+        1
+      ),
+    ]),
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Resume.vue?vue&type=template&id=594b97d8&":
+/*!******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Resume.vue?vue&type=template&id=594b97d8& ***!
+  \******************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "wrap" }, [
+    _c("div", { staticClass: "resume_wrap" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("h3", { staticClass: "resume_step_title" }, [_vm._v("プロフィール")]),
+      _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
+      _vm._m(2),
+      _vm._v(" "),
+      _c("div", { staticClass: "pager_wrap" }, [
+        _c(
+          "div",
+          { staticClass: "pager_inner" },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "next_step_btn",
+                attrs: { to: { name: "resume2" } },
+              },
+              [_c("span", [_vm._v("次へ")])]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              {
+                staticClass: "back_step_btn",
+                attrs: { to: { name: "index" } },
+              },
+              [_c("span", [_vm._v("戻る")])]
+            ),
+          ],
+          1
+        ),
+      ]),
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "preview_btn_wrap" },
+      [
+        _c(
+          "router-link",
+          { staticClass: "preview_btn", attrs: { to: { name: "index" } } },
+          [_c("span", [_vm._v("プレビュー")])]
+        ),
+      ],
+      1
+    ),
+  ])
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "step_nav_wrap" }, [
+      _c("ul", { staticClass: "step_nav_list" }, [
+        _c("li", { staticClass: "active" }, [_c("span", [_vm._v("1")])]),
+        _vm._v(" "),
+        _c("li", [_c("span", [_vm._v("2")])]),
+        _vm._v(" "),
+        _c("li", [_c("span", [_vm._v("3")])]),
+        _vm._v(" "),
+        _c("li", [_c("span", [_vm._v("4")])]),
+        _vm._v(" "),
+        _c("li", [_c("span", [_vm._v("5")])]),
+        _vm._v(" "),
+        _c("li", [_c("span", [_vm._v("6")])]),
+        _vm._v(" "),
+        _c("li", [_c("span", [_vm._v("7")])]),
+        _vm._v(" "),
+        _c("li", [_c("span", [_vm._v("8")])]),
+        _vm._v(" "),
+        _c("li", [_c("span", [_vm._v("9")])]),
+        _vm._v(" "),
+        _c("li", [_c("span", [_vm._v("10")])]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "resume_step_note_wrap" }, [
+      _c("p", { staticClass: "resume_step_note" }, [
+        _vm._v("※不明な点がありましたら未記入のまま次の項目へお進みください。"),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "resume_form_wrap" }, [
+      _c("div", { staticClass: "form_inner" }, [
+        _c("div", { staticClass: "item_wrap" }, [
+          _c("p", { staticClass: "item_name" }, [_vm._v("氏名")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "item_body flex" }, [
+            _c("div", { staticClass: "input_wrap" }, [
+              _c("input", {
+                staticClass: "input_inner",
+                attrs: {
+                  type: "text",
+                  autocomplete: "off",
+                  placeholder: "山田",
+                  title: "姓",
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "input_wrap" }, [
+              _c("input", {
+                staticClass: "input_inner",
+                attrs: {
+                  type: "text",
+                  autocomplete: "off",
+                  placeholder: "太郎",
+                  title: "名",
+                },
+              }),
+            ]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "item_wrap" }, [
+          _c("p", { staticClass: "item_name" }, [_vm._v("ふりがな")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "item_body flex" }, [
+            _c("div", { staticClass: "input_wrap" }, [
+              _c("input", {
+                staticClass: "input_inner",
+                attrs: {
+                  type: "text",
+                  autocomplete: "off",
+                  placeholder: "やまだ",
+                  title: "せい",
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "input_wrap" }, [
+              _c("input", {
+                staticClass: "input_inner",
+                attrs: {
+                  type: "text",
+                  autocomplete: "off",
+                  placeholder: "たろう",
+                  title: "めい",
+                },
+              }),
+            ]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "item_wrap" }, [
+          _c("p", { staticClass: "item_name" }, [_vm._v("生年月日")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "item_body flex" }, [
+            _c("div", { staticClass: "input_wrap input_year" }, [
+              _c("select", { attrs: { name: "", id: "" } }, [
+                _c("option", { attrs: { value: "2000" } }, [_vm._v("2000")]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("span", [_vm._v("年")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "input_wrap" }, [
+              _c("select", { attrs: { name: "", id: "" } }, [
+                _c("option", { attrs: { value: "1" } }, [_vm._v("1")]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("span", [_vm._v("月")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "input_wrap" }, [
+              _c("select", { attrs: { name: "", id: "" } }, [
+                _c("option", { attrs: { value: "1" } }, [_vm._v("1")]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("span", [_vm._v("日")]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "item_wrap" }, [
+          _c("p", { staticClass: "item_name" }, [_vm._v("年齢")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "item_body flex" }, [
+            _c("div", { staticClass: "input_wrap input_age" }, [
+              _c("select", { attrs: { name: "", id: "" } }, [
+                _c("option", { attrs: { value: "30" } }, [_vm._v("30")]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("span", [_vm._v("歳")]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "item_wrap" }, [
+          _c("p", { staticClass: "item_name" }, [_vm._v("性別")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "item_body flex flex_column_2" }, [
+            _c(
+              "label",
+              {
+                staticClass: "form_label mr_12 mb_8",
+                attrs: { for: "gender_male" },
+              },
+              [
+                _c("input", {
+                  staticClass: "input_radio",
+                  attrs: {
+                    type: "radio",
+                    name: "gender",
+                    value: "男性",
+                    id: "gender_male",
+                  },
+                }),
+                _vm._v(" "),
+                _c("span", { staticClass: "radio_text" }, [_vm._v("男性")]),
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "label",
+              { staticClass: "form_label", attrs: { for: "gender_female" } },
+              [
+                _c("input", {
+                  staticClass: "input_radio",
+                  attrs: {
+                    type: "radio",
+                    name: "gender",
+                    value: "女性",
+                    id: "gender_female",
+                  },
+                }),
+                _vm._v(" "),
+                _c("span", { staticClass: "radio_text" }, [_vm._v("女性")]),
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "label",
+              { staticClass: "form_label", attrs: { for: "gender_no_answer" } },
+              [
+                _c("input", {
+                  staticClass: "input_radio",
+                  attrs: {
+                    type: "radio",
+                    name: "gender",
+                    value: "記入しない",
+                    id: "gender_no_answer",
+                  },
+                }),
+                _vm._v(" "),
+                _c("span", { staticClass: "radio_text" }, [
+                  _vm._v("記入しない"),
+                ]),
+              ]
+            ),
+          ]),
+        ]),
+      ]),
+    ])
+  },
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Resume2.vue?vue&type=template&id=5f81e6ec&":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Resume2.vue?vue&type=template&id=5f81e6ec& ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "wrap" }, [
+    _c("div", { staticClass: "resume_wrap" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("h3", { staticClass: "resume_step_title" }, [_vm._v("住所")]),
+      _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
+      _c("div", { staticClass: "resume_form_wrap" }, [
+        _c("div", { staticClass: "form_inner" }, [
+          _vm._m(2),
+          _vm._v(" "),
+          _vm._m(3),
+          _vm._v(" "),
+          _vm._m(4),
+          _vm._v(" "),
+          _vm._m(5),
+          _vm._v(" "),
+          _vm.isDisplay
+            ? _c(
+                "div",
+                { staticClass: "add_address_wrap", on: { click: _vm.active } },
+                [
+                  _c("div", { staticClass: "add_address" }, [
+                    _vm._v("上記以外に希望する住所を追加"),
+                  ]),
+                ]
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.isActive
+            ? _c("div", {}, [
+                _c("p", { staticClass: "address_note" }, [
+                  _vm._v("※現住所以外に連絡を希望する場合のみ入力してください"),
+                ]),
+                _vm._v(" "),
+                _vm._m(6),
+                _vm._v(" "),
+                _vm._m(7),
+                _vm._v(" "),
+                _vm._m(8),
+                _vm._v(" "),
+                _vm._m(9),
+                _vm._v(" "),
+                !_vm.isDisplay
+                  ? _c(
+                      "div",
+                      {
+                        staticClass: "add_address_wrap",
+                        on: { click: _vm.active },
+                      },
+                      [
+                        _c("div", { staticClass: "add_address" }, [
+                          _vm._v("閉じる"),
+                        ]),
+                      ]
+                    )
+                  : _vm._e(),
+              ])
+            : _vm._e(),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "pager_wrap" }, [
+        _c(
+          "div",
+          { staticClass: "pager_inner" },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "next_step_btn",
+                attrs: { to: { name: "resume3" } },
+              },
+              [_c("span", [_vm._v("次へ")])]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              {
+                staticClass: "back_step_btn",
+                attrs: { to: { name: "resume" } },
+              },
+              [_c("span", [_vm._v("戻る")])]
+            ),
+          ],
+          1
+        ),
+      ]),
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "preview_btn_wrap" },
+      [
+        _c(
+          "router-link",
+          { staticClass: "preview_btn", attrs: { to: { name: "index" } } },
+          [_c("span", [_vm._v("プレビュー")])]
+        ),
+      ],
+      1
+    ),
+  ])
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "step_nav_wrap" }, [
+      _c("ul", { staticClass: "step_nav_list" }, [
+        _c("li", [_c("span", [_vm._v("1")])]),
+        _vm._v(" "),
+        _c("li", { staticClass: "active" }, [_c("span", [_vm._v("2")])]),
+        _vm._v(" "),
+        _c("li", [_c("span", [_vm._v("3")])]),
+        _vm._v(" "),
+        _c("li", [_c("span", [_vm._v("4")])]),
+        _vm._v(" "),
+        _c("li", [_c("span", [_vm._v("5")])]),
+        _vm._v(" "),
+        _c("li", [_c("span", [_vm._v("6")])]),
+        _vm._v(" "),
+        _c("li", [_c("span", [_vm._v("7")])]),
+        _vm._v(" "),
+        _c("li", [_c("span", [_vm._v("8")])]),
+        _vm._v(" "),
+        _c("li", [_c("span", [_vm._v("9")])]),
+        _vm._v(" "),
+        _c("li", [_c("span", [_vm._v("10")])]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "resume_step_note_wrap" }, [
+      _c("p", { staticClass: "resume_step_note" }, [
+        _vm._v("※不明な点がありましたら未記入のまま次の項目へお進みください。"),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "item_wrap" }, [
+      _c("p", { staticClass: "item_name" }, [
+        _vm._v("郵便番号（ハイフン不要）"),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "item_body flex" }, [
+        _c("div", { staticClass: "input_wrap" }, [
+          _c("input", {
+            staticClass: "input_inner",
+            attrs: {
+              type: "text",
+              autocomplete: "off",
+              placeholder: "例) 000-1234",
+              title: "郵便番号",
+            },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "auto_btn_wrap" }, [
+          _c("div", { staticClass: "auto_btn" }, [_vm._v("自動入力")]),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "item_wrap" }, [
+      _c("p", { staticClass: "item_name" }, [
+        _vm._v("都道府県・市区町村・番地"),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "item_body" }, [
+        _c("div", { staticClass: "input_wrap" }, [
+          _c("input", {
+            staticClass: "input_inner",
+            attrs: {
+              type: "text",
+              autocomplete: "off",
+              placeholder: "例）〇〇県〇〇市○丁目",
+              title: "都道府県・市区町村・番地",
+            },
+          }),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "item_wrap" }, [
+      _c("p", { staticClass: "item_name" }, [_vm._v("マンション・建物名")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "item_body" }, [
+        _c("div", { staticClass: "input_wrap" }, [
+          _c("input", {
+            staticClass: "input_inner",
+            attrs: {
+              type: "text",
+              autocomplete: "off",
+              placeholder: "例）〇〇マンション",
+              title: "マンション・建物名",
+            },
+          }),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "item_wrap" }, [
+      _c("p", { staticClass: "item_name" }, [_vm._v("住所ふりがな")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "item_name_sub" }, [
+        _vm._v("都道府県と市区町村までを記入してください"),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "item_body" }, [
+        _c("div", { staticClass: "input_wrap" }, [
+          _c("input", {
+            staticClass: "input_inner",
+            attrs: {
+              type: "text",
+              autocomplete: "off",
+              placeholder: "例）とうきょうとしながわくにしごたんだ",
+              title: "住所ふりがな",
+            },
+          }),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "item_wrap" }, [
+      _c("p", { staticClass: "item_name" }, [
+        _vm._v("郵便番号（ハイフン不要）"),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "item_body flex" }, [
+        _c("div", { staticClass: "input_wrap" }, [
+          _c("input", {
+            staticClass: "input_inner",
+            attrs: {
+              type: "text",
+              autocomplete: "off",
+              placeholder: "例) 000-1234",
+              title: "郵便番号",
+            },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "auto_btn_wrap" }, [
+          _c("div", { staticClass: "auto_btn" }, [_vm._v("自動入力")]),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "item_wrap" }, [
+      _c("p", { staticClass: "item_name" }, [
+        _vm._v("都道府県・市区町村・番地"),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "item_body" }, [
+        _c("div", { staticClass: "input_wrap" }, [
+          _c("input", {
+            staticClass: "input_inner",
+            attrs: {
+              type: "text",
+              autocomplete: "off",
+              placeholder: "例）〇〇県〇〇市○丁目",
+              title: "都道府県・市区町村・番地",
+            },
+          }),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "item_wrap" }, [
+      _c("p", { staticClass: "item_name" }, [_vm._v("マンション・建物名")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "item_body" }, [
+        _c("div", { staticClass: "input_wrap" }, [
+          _c("input", {
+            staticClass: "input_inner",
+            attrs: {
+              type: "text",
+              autocomplete: "off",
+              placeholder: "例）〇〇マンション",
+              title: "マンション・建物名",
+            },
+          }),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "item_wrap" }, [
+      _c("p", { staticClass: "item_name" }, [_vm._v("住所ふりがな")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "item_name_sub" }, [
+        _vm._v("都道府県と市区町村までを記入してください"),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "item_body" }, [
+        _c("div", { staticClass: "input_wrap" }, [
+          _c("input", {
+            staticClass: "input_inner",
+            attrs: {
+              type: "text",
+              autocomplete: "off",
+              placeholder: "例）とうきょうとしながわくにしごたんだ",
+              title: "住所ふりがな",
+            },
+          }),
         ]),
       ]),
     ])
@@ -28485,262 +29622,301 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", {}, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "main_body", attrs: { id: "top_form" } }, [
+      _c("div", { staticClass: "main_body_inner" }, [
+        _vm._m(1),
+        _vm._v(" "),
+        _vm._m(2),
+        _vm._v(" "),
+        _c("div", { staticClass: "top_form_wrap" }, [
+          _c(
+            "div",
+            { staticClass: "top_form_item" },
+            [
+              _c("p", { staticClass: "top_form_title" }, [
+                _vm._v("履歴書（JIS規格）"),
+              ]),
+              _vm._v(" "),
+              _vm._m(3),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  staticClass: "top_form_btn",
+                  attrs: { to: { name: "resume" } },
+                },
+                [_c("span", [_vm._v("履歴書を作る")])]
+              ),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _vm._m(4),
+        ]),
+        _vm._v(" "),
+        _vm._m(5),
+      ]),
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "top_form_wrap second_form_wrap" }, [
+      _c(
+        "div",
+        { staticClass: "top_form_item" },
+        [
+          _c("p", { staticClass: "top_form_title" }, [
+            _vm._v("履歴書（JIS規格）"),
+          ]),
+          _vm._v(" "),
+          _vm._m(6),
+          _vm._v(" "),
+          _c(
+            "router-link",
+            { staticClass: "top_form_btn", attrs: { to: { name: "resume" } } },
+            [_c("span", [_vm._v("履歴書を作る")])]
+          ),
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _vm._m(7),
+    ]),
+  ])
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", {}, [
-      _c("div", { staticClass: "fv" }, [
-        _c("div", { staticClass: "fv_inner" }, [
-          _c("div", { staticClass: "fv_text_wrap" }, [
-            _c("p", { staticClass: "fv_small_title" }, [
-              _c("span", { staticClass: "red" }, [_vm._v("スマホ・パソコン")]),
-              _vm._v("で簡単作成！"),
-            ]),
-            _vm._v(" "),
-            _c("h2", { staticClass: "fv_main_title" }, [
-              _vm._v("履歴書"),
-              _c("br"),
-              _vm._v("職務経歴書"),
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "fv_sub_title" }, [
-              _c("span", { staticClass: "red" }, [_vm._v("オンライン作成")]),
-              _vm._v("ツール"),
-            ]),
+    return _c("div", { staticClass: "fv" }, [
+      _c("div", { staticClass: "fv_inner" }, [
+        _c("div", { staticClass: "fv_text_wrap" }, [
+          _c("p", { staticClass: "fv_small_title" }, [
+            _c("span", { staticClass: "red" }, [_vm._v("スマホ・パソコン")]),
+            _vm._v("で簡単作成！"),
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "fv_btn_wrap" }, [
-            _c("a", { staticClass: "fv_btn", attrs: { href: "#top_form" } }, [
-              _c("span", [_vm._v("履歴書・職務経歴書を作る")]),
-            ]),
-          ]),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "main_body", attrs: { id: "top_form" } }, [
-        _c("div", { staticClass: "main_body_inner" }, [
-          _c("h3", { staticClass: "main_body_title" }, [
-            _c("span", { staticClass: "red" }, [_vm._v("ガイド")]),
-            _vm._v("に沿ってフォームに\n                    "),
+          _c("h2", { staticClass: "fv_main_title" }, [
+            _vm._v("履歴書"),
             _c("br"),
-            _c("span", { staticClass: "red" }, [_vm._v("入力するだけ")]),
+            _vm._v("職務経歴書"),
           ]),
           _vm._v(" "),
-          _c("p", { staticClass: "main_desc" }, [
-            _vm._v(
-              "履歴書・職務経歴書のPDF/Wordデータを\n                    "
-            ),
-            _c("br"),
-            _vm._v(
-              "スマホやパソコンで簡単に作成することができます。\n               "
-            ),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "top_form_wrap" }, [
-            _c("div", { staticClass: "top_form_item" }, [
-              _c("p", { staticClass: "top_form_title" }, [
-                _vm._v("履歴書（JIS規格）"),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "top_form_img_wrap" }, [
-                _c("img", {
-                  staticClass: "top_form_img",
-                  attrs: {
-                    src: "/images/document01@2x.png",
-                    alt: "履歴書（JIS規格）",
-                  },
-                }),
-              ]),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass: "top_form_btn",
-                  attrs: { href: "/start/resume" },
-                },
-                [_c("span", [_vm._v("履歴書を作る")])]
-              ),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "top_form_item" }, [
-              _c("p", { staticClass: "top_form_title" }, [
-                _vm._v("職務経歴書"),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "top_form_img_wrap" }, [
-                _c("img", {
-                  staticClass: "top_form_img",
-                  attrs: {
-                    src: "/images/document02@2x.png",
-                    alt: "職務経歴書",
-                  },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("a", { staticClass: "top_form_btn", attrs: { href: "#" } }, [
-                _c("span", [_vm._v("職務経歴書を作る")]),
-              ]),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "guide" }, [
-            _c("h3", { staticClass: "guide_title" }, [_vm._v("使い方ガイド")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "guide_item" }, [
-              _c("div", { staticClass: "guide_img_wrap guide_img_wrap01" }, [
-                _c("img", {
-                  staticClass: "guide_img",
-                  attrs: {
-                    src: "/images/step01_images@2x.png",
-                    alt: "step1イメージ画像",
-                  },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "step_text_img/wrap" }, [
-                _c("img", {
-                  staticClass: "step_text_img",
-                  attrs: { src: "/images/step_01@2x.png", alt: "step01" },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "guide_item_head" }, [
-                _vm._v("作成する履歴書を選択"),
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "guide_item_content" }, [
-                _vm._v(
-                  "まずは作成したい書類を選びましょう。\n                       "
-                ),
-                _c("br"),
-                _vm._v(
-                  "選択した種類によって、フォームの項目や書類のレイアウトが変わります。\n                       "
-                ),
-                _c("br"),
-                _vm._v(
-                  "パソコンがなくても、スマホさえあれば今すぐ作成が可能です。\n                       "
-                ),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "guide_item" }, [
-              _c("div", { staticClass: "guide_img_wrap guide_img_wrap02" }, [
-                _c("img", {
-                  staticClass: "guide_img",
-                  attrs: {
-                    src: "/images/step02_images@2x.png",
-                    alt: "step2イメージ画像",
-                  },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "step_text_img/wrap" }, [
-                _c("img", {
-                  staticClass: "step_text_img",
-                  attrs: { src: "/images/step_02@2x.png", alt: "step02" },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "guide_item_head" }, [
-                _vm._v("フォームに入力"),
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "guide_item_content" }, [
-                _vm._v(
-                  "ガイドに沿って、フォームに入力してください。不明な点がありましたら、未記入のまま次の項目へお進みください。\n                       "
-                ),
-                _c("br"),
-                _vm._v(
-                  "画面下の「プレビュー」ボタンをクリックすると、\n                       "
-                ),
-                _c("br"),
-                _vm._v(
-                  "作成途中の書類を確認することができます。\n                       "
-                ),
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "guide_note" }, [
-                _vm._v(
-                  "※入力した情報は端末のブラウザ(Safari・Chrome等)の履歴に保存されます。ブラウザを閉じてもサイトに再度アクセスした際に続きを入力できます。"
-                ),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "guide_item" }, [
-              _c("div", { staticClass: "guide_img_wrap guide_img_wrap03" }, [
-                _c("img", {
-                  staticClass: "guide_img",
-                  attrs: {
-                    src: "/images/step03_images@2x.png",
-                    alt: "step3イメージ画像",
-                  },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "step_text_img/wrap" }, [
-                _c("img", {
-                  staticClass: "step_text_img",
-                  attrs: { src: "/images/step_03@2x.png", alt: "step03" },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "guide_item_head" }, [
-                _vm._v("メールアドレス宛にデータ送信"),
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "guide_item_content" }, [
-                _vm._v(
-                  "データ送信画面でメールアドレスを入力すると、作成した書類（PDF/Wordデータ）を自分のメールアドレス宛に送信することができます。\n                       "
-                ),
-                _c("br"),
-                _vm._v(
-                  "メールアドレスをお持ちでない方は、宅建Jobエージェントの公式LINEからデータをお送りすることも可能です。\n                       "
-                ),
-              ]),
-            ]),
-          ]),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "top_form_wrap second_form_wrap" }, [
-        _c("div", { staticClass: "top_form_item" }, [
-          _c("p", { staticClass: "top_form_title" }, [
-            _vm._v("履歴書（JIS規格）"),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "top_form_img_wrap" }, [
-            _c("img", {
-              staticClass: "top_form_img",
-              attrs: {
-                src: "/images/document01@2x.png",
-                alt: "履歴書（JIS規格）",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("a", { staticClass: "top_form_btn", attrs: { href: "#" } }, [
-            _c("span", [_vm._v("履歴書を作る")]),
+          _c("p", { staticClass: "fv_sub_title" }, [
+            _c("span", { staticClass: "red" }, [_vm._v("オンライン作成")]),
+            _vm._v("ツール"),
           ]),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "top_form_item" }, [
-          _c("p", { staticClass: "top_form_title" }, [_vm._v("職務経歴書")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "top_form_img_wrap" }, [
-            _c("img", {
-              staticClass: "top_form_img",
-              attrs: { src: "/images/document02@2x.png", alt: "職務経歴書" },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("a", { staticClass: "top_form_btn", attrs: { href: "#" } }, [
-            _c("span", [_vm._v("職務経歴書を作る")]),
+        _c("div", { staticClass: "fv_btn_wrap" }, [
+          _c("a", { staticClass: "fv_btn", attrs: { href: "#top_form" } }, [
+            _c("span", [_vm._v("履歴書・職務経歴書を作る")]),
           ]),
         ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h3", { staticClass: "main_body_title" }, [
+      _c("span", { staticClass: "red" }, [_vm._v("ガイド")]),
+      _vm._v("に沿ってフォームに\n                    "),
+      _c("br"),
+      _c("span", { staticClass: "red" }, [_vm._v("入力するだけ")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "main_desc" }, [
+      _vm._v("履歴書・職務経歴書のPDF/Wordデータを\n                    "),
+      _c("br"),
+      _vm._v(
+        "スマホやパソコンで簡単に作成することができます。\n               "
+      ),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "top_form_img_wrap" }, [
+      _c("img", {
+        staticClass: "top_form_img",
+        attrs: { src: "/images/document01@2x.png", alt: "履歴書（JIS規格）" },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "top_form_item" }, [
+      _c("p", { staticClass: "top_form_title" }, [_vm._v("職務経歴書")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "top_form_img_wrap" }, [
+        _c("img", {
+          staticClass: "top_form_img",
+          attrs: { src: "/images/document02@2x.png", alt: "職務経歴書" },
+        }),
+      ]),
+      _vm._v(" "),
+      _c("a", { staticClass: "top_form_btn", attrs: { href: "#" } }, [
+        _c("span", [_vm._v("職務経歴書を作る")]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "guide" }, [
+      _c("h3", { staticClass: "guide_title" }, [_vm._v("使い方ガイド")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "guide_item" }, [
+        _c("div", { staticClass: "guide_img_wrap guide_img_wrap01" }, [
+          _c("img", {
+            staticClass: "guide_img",
+            attrs: {
+              src: "/images/step01_images@2x.png",
+              alt: "step1イメージ画像",
+            },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "step_text_img/wrap" }, [
+          _c("img", {
+            staticClass: "step_text_img",
+            attrs: { src: "/images/step_01@2x.png", alt: "step01" },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "guide_item_head" }, [
+          _vm._v("作成する履歴書を選択"),
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "guide_item_content" }, [
+          _vm._v(
+            "まずは作成したい書類を選びましょう。\n                       "
+          ),
+          _c("br"),
+          _vm._v(
+            "選択した種類によって、フォームの項目や書類のレイアウトが変わります。\n                       "
+          ),
+          _c("br"),
+          _vm._v(
+            "パソコンがなくても、スマホさえあれば今すぐ作成が可能です。\n                       "
+          ),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "guide_item" }, [
+        _c("div", { staticClass: "guide_img_wrap guide_img_wrap02" }, [
+          _c("img", {
+            staticClass: "guide_img",
+            attrs: {
+              src: "/images/step02_images@2x.png",
+              alt: "step2イメージ画像",
+            },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "step_text_img/wrap" }, [
+          _c("img", {
+            staticClass: "step_text_img",
+            attrs: { src: "/images/step_02@2x.png", alt: "step02" },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "guide_item_head" }, [_vm._v("フォームに入力")]),
+        _vm._v(" "),
+        _c("p", { staticClass: "guide_item_content" }, [
+          _vm._v(
+            "ガイドに沿って、フォームに入力してください。不明な点がありましたら、未記入のまま次の項目へお進みください。\n                       "
+          ),
+          _c("br"),
+          _vm._v(
+            "画面下の「プレビュー」ボタンをクリックすると、\n                       "
+          ),
+          _c("br"),
+          _vm._v(
+            "作成途中の書類を確認することができます。\n                       "
+          ),
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "guide_note" }, [
+          _vm._v(
+            "※入力した情報は端末のブラウザ(Safari・Chrome等)の履歴に保存されます。ブラウザを閉じてもサイトに再度アクセスした際に続きを入力できます。"
+          ),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "guide_item" }, [
+        _c("div", { staticClass: "guide_img_wrap guide_img_wrap03" }, [
+          _c("img", {
+            staticClass: "guide_img",
+            attrs: {
+              src: "/images/step03_images@2x.png",
+              alt: "step3イメージ画像",
+            },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "step_text_img/wrap" }, [
+          _c("img", {
+            staticClass: "step_text_img",
+            attrs: { src: "/images/step_03@2x.png", alt: "step03" },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "guide_item_head" }, [
+          _vm._v("メールアドレス宛にデータ送信"),
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "guide_item_content" }, [
+          _vm._v(
+            "データ送信画面でメールアドレスを入力すると、作成した書類（PDF/Wordデータ）を自分のメールアドレス宛に送信することができます。\n                       "
+          ),
+          _c("br"),
+          _vm._v(
+            "メールアドレスをお持ちでない方は、宅建Jobエージェントの公式LINEからデータをお送りすることも可能です。\n                       "
+          ),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "top_form_img_wrap" }, [
+      _c("img", {
+        staticClass: "top_form_img",
+        attrs: { src: "/images/document01@2x.png", alt: "履歴書（JIS規格）" },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "top_form_item" }, [
+      _c("p", { staticClass: "top_form_title" }, [_vm._v("職務経歴書")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "top_form_img_wrap" }, [
+        _c("img", {
+          staticClass: "top_form_img",
+          attrs: { src: "/images/document02@2x.png", alt: "職務経歴書" },
+        }),
+      ]),
+      _vm._v(" "),
+      _c("a", { staticClass: "top_form_btn", attrs: { href: "#" } }, [
+        _c("span", [_vm._v("職務経歴書を作る")]),
       ]),
     ])
   },
