@@ -28,7 +28,7 @@
                            <div class="top_form_img_wrap">
                                <img src="/images/document01@2x.png" alt="履歴書（JIS規格）" class="top_form_img">
                            </div>
-                           <a href="/start/resume" class="top_form_btn"><span>履歴書を作る</span></a>
+                           <router-link v-bind:to="{name: 'resume'}" class="top_form_btn"><span>履歴書を作る</span></router-link>
                        </div>
                        <div class="top_form_item">
                            <p class="top_form_title">職務経歴書</p>
@@ -82,14 +82,13 @@
                    </div>
                 </div>
             </div>
-       
             <div class="top_form_wrap second_form_wrap">
                <div class="top_form_item">
                    <p class="top_form_title">履歴書（JIS規格）</p>
                    <div class="top_form_img_wrap">
                        <img src="/images/document01@2x.png" alt="履歴書（JIS規格）" class="top_form_img">
                    </div>
-                   <a href="#" class="top_form_btn"><span>履歴書を作る</span></a>
+                   <router-link v-bind:to="{name: 'resume'}" class="top_form_btn"><span>履歴書を作る</span></router-link>
                </div>
                <div class="top_form_item">
                    <p class="top_form_title">職務経歴書</p>

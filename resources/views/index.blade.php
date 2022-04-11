@@ -13,7 +13,6 @@
      <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
      <link rel="stylesheet" href="/css/reset.css" rel="stylesheet">
      <link rel="stylesheet" href="/css/style.css" rel="stylesheet">
-
     </head>
     <body>
         <div id="app" class="top_wrap">
