@@ -77,8 +77,8 @@
                         </div>
                     </div>
                 </div>
-                <div @click="active" v-if="isDisplay" class="add_address_wrap">
-                    <div class="add_address">上記以外に希望する住所を追加</div>
+                <div @click="active" v-if="isDisplay" class="navy_btn_wrap">
+                    <div class="navy_btn">上記以外に希望する住所を追加</div>
                 </div>
                         <div v-if="isActive" class="">
                     <p class="address_note">※現住所以外に連絡を希望する場合のみ入力してください</p>
@@ -118,8 +118,8 @@
                         </div>
                     </div>
                 </div>
-                <div @click="active" v-if="!isDisplay" class="add_address_wrap">
-                    <div class="add_address">閉じる</div>
+                <div @click="active" v-if="!isDisplay" class="navy_btn_wrap">
+                    <div class="navy_btn">閉じる</div>
                 </div>
                 </div>
             </div>
