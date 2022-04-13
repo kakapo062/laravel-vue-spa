@@ -27,6 +27,15 @@ body {
     margin: 0 auto;
     max-width: 500px;
     background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.wrap {
+    flex: 1;
+    overflow-x: hidden;
+    background: #F5F5F7;
+    position: relative;
 }
 .fv {
     background: #CFE2E6;
@@ -264,7 +273,7 @@ main
     font-size: 12px;
 }
 .footer_inner {
-    padding: 40px 20px 24px;
+    padding: 40px 20px 74px;
 }
 .footer_list {
     display: flex;
@@ -294,7 +303,7 @@ main
 履歴書フォーム
 ***************/
 .resume_wrap {
-    padding: 32px;
+    padding: 37px 20px 108px;
     background: #F5F5F7;
 }
 .step_nav_wrap {
@@ -371,6 +380,9 @@ transform: translateY(-50%);
     line-height: 1.6923;
     margin-bottom: 24px;
 }
+.resume_step_note {
+    padding: 8px 16px;
+}
 .resume_form_wrap {
     margin-bottom: 40px;
 }
@@ -422,6 +434,10 @@ input[type="radio"] {
     width: 1px;
     position: absolute;
     height: 1px;
+}
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
 }
 .radio_text {
   position: relative;
@@ -508,6 +524,7 @@ input[type="radio"] {
     margin-right: 8px;
 }
 .preview_btn_wrap {
+    width: 100%;
     color: #fff;
     background: #D85041;
     font-size: 13px;
@@ -515,6 +532,8 @@ input[type="radio"] {
     text-align: center;
     padding: 16px 0;
     line-height: 1.4231;
+    position: absolute;
+    bottom: 0;
 }
 .preview_btn span {
     position: relative;
@@ -529,7 +548,7 @@ input[type="radio"] {
     height: 16px;
     left: -20px;
 }
-.add_address_wrap {
+.navy_btn_wrap {
     margin-top: 24px;
     background: #233D4C;
     border-radius: 3px;
@@ -537,14 +556,14 @@ input[type="radio"] {
     padding: 17px 0;
     cursor: pointer;
 }
-.add_address {
+.navy_btn {
     position: relative;
     font-weight: bold;
     font-size: 13px;
     color: #fff;
     line-height: 1.15384;
 }
-.add_address::after {
+.navy_btn::after {
     content: '';
     display: inline-block;
     background: url(/images/plus@2x.png) no-repeat center center;
@@ -576,4 +595,213 @@ input[type="radio"] {
     color: #fff;
     font-size: 13px;
     font-weight: bold;
+}
+.photo_upload_image {
+    width: 150px;
+    height: 200px;
+    margin: 0 auto;
+    margin-bottom: 16px;
+}
+.normal_text_wrap {
+    margin-top: 16px;
+    font-size: 13px;
+    line-height: 1.75;
+}
+.normal_text_wrap .red {
+    font-weight: bold;
+}
+.small_note_text {
+    font-size: 10px;
+    line-height: 1.75;
+    color: #A4AFB3;
+    margin-bottom: 16px;
+}
+.text_area {
+    width: 100%;
+    padding: 16px 20px 72px;
+    line-height: 1.75;
+    border: 1px solid #E6E6E6;
+    border-radius: 2px;
+}
+.reason_text_area {
+    min-height: 470px;
+}
+.request_text_area {
+    min-height: 119px;
+}
+.small_text {
+    font-size: 10px;
+}
+.mb_16 {
+    margin-bottom: 16px;
+}
+.align_item_base {
+    align-items: baseline;
+}
+.input_family {
+    width: 104px;
+}
+label, 
+input[type='checkbox'] {
+    cursor: pointer;
+}
+.mail_check_label {
+    font-size: 13px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+.mail_desc {
+    font-size: 13px;
+    line-height: 1.6923;
+    margin-bottom: 16px;
+}
+.thanks_wrap {
+    background: #FFF;
+    padding: 24px 20px 37px;
+    margin-bottom: 24px;
+}
+.thanks_header {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+.thanks_text {
+    font-size: 13px;
+    line-height: 1.6923;
+}
+.top_back_btn {
+    background: #D85041;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.accordion {
+    margin-top: 32px;
+}
+.accordion_item{
+    border-bottom: 1px solid #eee;
+    list-style: none;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+  }
+.accordion_title {
+    background: #fff;
+    border-radius: 3px;
+    padding: 16px 20px;
+    position: relative;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+.accordion_title:nth-of-type(1) {
+    margin-bottom: 8px;
+}
+.accordion_title::after {
+    content: '';
+    display: inline-block;
+    background: url(/images/accordion@2x.png) no-repeat center center;
+    background-size: contain;
+    width: 11px;
+    height: 12px;
+    position: absolute;
+    right: 12px;
+    top: 20px;
+}
+.accordion_content {
+    padding: 16px;
+}
+.accordion_content_list {
+    margin-bottom: 16px;
+}
+.accordion_content_item {
+    font-size: 13px;
+    line-height: 1.6923;
+}
+.content_normal_text {
+    font-size: 13px;
+    line-height: 1.6923;
+}
+.photo_img_wrap {
+    column-gap: 32px;
+    justify-content: center;
+}
+.photo_img img {
+    height: 160px;
+}
+.app_img_wrap {
+    justify-content: center;
+    column-gap: 10px;
+    margin-top: 25px;
+}
+.apple_link {
+    width: 130px;
+    height: 45px;
+}
+.apple_link img {
+    width: 100%;
+    height: auto;
+}
+.google_link {
+    width: 148px;
+    height: 47px;
+}
+.google_link img {
+    width: 100%;
+    height: auto;
+    margin-top: -5px;
+}
+.upload_label {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    position: relative;
+    font-weight: bold;
+    font-size: 13px;
+}
+.upload_label::after {
+    content: '';
+    display: inline-block;
+    background: url(/images/plus@2x.png) no-repeat center center;
+    background-size: contain;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 16px;
+}
+.none {
+    display: none;
+}
+.delete::after {
+    content: '';
+    display: inline-block;
+    background: url(/images/minus@2x.png) no-repeat center center;
+    background-size: contain;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 16px;
+}
+.history_item_wrap {
+    background: #fff;
+    margin-top: 16px;
+    padding: 16px;
+}
+.card_wrap .comp_name_wrap {
+    width: 266px;
+}
+.history_small {
+    font-weight: normal;
+    color: #596266;
+    margin-left: 5px;
 }
