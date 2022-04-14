@@ -6446,17 +6446,40 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       isActive: false,
-      isDisplay: true
+      isDisplay: true,
+      users: [{
+        name: ''
+      }]
     };
   },
   methods: {
     active: function active() {
       this.isActive = !this.isActive;
       this.isDisplay = !this.isDisplay;
+    },
+    add: function add() {
+      this.users.push({
+        name: '',
+        email: ''
+      });
+    },
+    del: function del(index) {
+      this.users.splice(index, 1);
     }
   }
 });
@@ -32413,7 +32436,7 @@ var render = function () {
                         expression: "url == '/images/profile_sample.png'",
                       },
                     ],
-                    staticClass: "navy_btn_wrap upload_label",
+                    staticClass: "navy_btn_wrap upload_label hover_up",
                   },
                   [
                     _c("input", {
@@ -32434,7 +32457,7 @@ var render = function () {
                   ? _c(
                       "div",
                       {
-                        staticClass: "navy_btn_wrap",
+                        staticClass: "navy_btn_wrap hover_up",
                         on: {
                           click: function ($event) {
                             return _vm.resetFile()
@@ -32667,11 +32690,6 @@ var staticRenderFns = [
           "a",
           {
             staticClass: "apple_link",
-            staticStyle: {
-              display: "inline-block",
-              overflow: "hidden",
-              "border-radius": "4px",
-            },
             attrs: {
               href: "https://apps.apple.com/us/app/%E5%B1%A5%E6%AD%B4%E6%9B%B8%E3%82%AB%E3%83%A1%E3%83%A9/id919409463?itsct=apps_box_badge&itscg=30200",
               target: "_blank",
@@ -32679,7 +32697,6 @@ var staticRenderFns = [
           },
           [
             _c("img", {
-              staticStyle: { "border-radius": "4px" },
               attrs: {
                 src: "https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&releaseDate=1421712000&h=98213d52eb3e8fbcbb8e7c311203c350",
                 alt: "Download on the App Store",
@@ -32702,8 +32719,8 @@ var staticRenderFns = [
           [
             _c("img", {
               attrs: {
-                alt: "Google Play で手に入れよう",
                 src: "https://play.google.com/intl/ja/badges/static/images/badges/ja_badge_web_generic.png",
+                alt: "Google Play で手に入れよう",
               },
             }),
           ]
@@ -32880,7 +32897,92 @@ var render = function () {
       _vm._v(" "),
       _vm._m(1),
       _vm._v(" "),
-      _vm._m(2),
+      _c("div", { staticClass: "resume_form_wrap" }, [
+        _c(
+          "div",
+          { staticClass: "form_inner" },
+          [
+            _vm._m(2),
+            _vm._v(" "),
+            _vm._l(_vm.users, function (user, index) {
+              return _c(
+                "div",
+                { key: user.id, staticClass: "card_wrap history_item_wrap" },
+                [
+                  _c("div", { staticClass: "item_wrap" }, [
+                    _c("p", { staticClass: "item_name" }, [_vm._v("会社名")]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "item_body" }, [
+                      _c("div", { staticClass: "input_wrap comp_name_wrap" }, [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: user.name,
+                              expression: "user.name",
+                            },
+                          ],
+                          staticClass: "input_inner",
+                          attrs: {
+                            type: "text",
+                            autocomplete: "off",
+                            placeholder: "例）〇〇〇株式会社",
+                            title: "会社名",
+                          },
+                          domProps: { value: user.name },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(user, "name", $event.target.value)
+                            },
+                          },
+                        }),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "item_wrap" }, [
+                    _vm._m(3, true),
+                    _vm._v(" "),
+                    _vm._m(4, true),
+                    _vm._v(" "),
+                    _vm._m(5, true),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card_btn_wrap flex" }, [
+                      _c("div", { staticClass: "card_register_btn" }, [
+                        _vm._v("登録"),
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "card_delete_btn",
+                          on: {
+                            click: function ($event) {
+                              return _vm.del(index)
+                            },
+                          },
+                        },
+                        [_vm._v("削除")]
+                      ),
+                    ]),
+                  ]),
+                ]
+              )
+            }),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "navy_btn_wrap", on: { click: _vm.add } },
+              [_c("div", { staticClass: "navy_btn" }, [_vm._v("職歴を追加")])]
+            ),
+          ],
+          2
+        ),
+      ]),
       _vm._v(" "),
       _c("div", { staticClass: "pager_wrap" }, [
         _c(
@@ -32967,87 +33069,65 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "resume_form_wrap" }, [
-      _c("div", { staticClass: "form_inner" }, [
-        _c("div", { staticClass: "normal_text_wrap" }, [
-          _c("p", { staticClass: "normal_text" }, [
-            _vm._v(
-              "「▲上へ」「▼下へ」ボタンをクリックして並び替え、古いものが上にくるようにしてください。"
-            ),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card_wrap history_item_wrap" }, [
-          _c("div", { staticClass: "item_wrap" }, [
-            _c("p", { staticClass: "item_name" }, [_vm._v("会社名")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "item_body" }, [
-              _c("div", { staticClass: "input_wrap comp_name_wrap" }, [
-                _c("input", {
-                  staticClass: "input_inner",
-                  attrs: {
-                    type: "text",
-                    autocomplete: "off",
-                    placeholder: "例）〇〇〇株式会社",
-                    title: "会社名",
-                  },
-                }),
-              ]),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "item_wrap" }, [
-            _c("div", { staticClass: "item_name" }, [
-              _c("p", {}, [
-                _vm._v("在籍期間"),
-                _c("span", { staticClass: "small_text history_small" }, [
-                  _vm._v("※現在もお勤めの場合は在籍開始年月のみご入力ください"),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "item_body flex mb_8" }, [
-              _c("div", { staticClass: "input_wrap" }, [
-                _c("select", { attrs: { name: "", id: "" } }, [
-                  _c("option", { attrs: { value: "2020年" } }, [
-                    _vm._v("2020年"),
-                  ]),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "input_wrap" }, [
-                _c("select", { attrs: { name: "", id: "" } }, [
-                  _c("option", { attrs: { value: "3月" } }, [_vm._v("3月")]),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("span", [_vm._v("から")]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "item_body flex mb_16" }, [
-              _c("div", { staticClass: "input_wrap" }, [
-                _c("select", { attrs: { name: "", id: "" } }, [
-                  _c("option", { attrs: { value: "2021年" } }, [
-                    _vm._v("2021年"),
-                  ]),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "input_wrap" }, [
-                _c("select", { attrs: { name: "", id: "" } }, [
-                  _c("option", { attrs: { value: "3月" } }, [_vm._v("3月")]),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("span", [_vm._v("まで")]),
-            ]),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "navy_btn_wrap" }, [
-          _c("div", { staticClass: "navy_btn" }, [_vm._v("職歴を追加")]),
+    return _c("div", { staticClass: "normal_text_wrap" }, [
+      _c("p", { staticClass: "normal_text" }, [
+        _vm._v(
+          "「▲上へ」「▼下へ」ボタンをクリックして並び替え、古いものが上にくるようにしてください。"
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "item_name" }, [
+      _c("p", {}, [
+        _vm._v("在籍期間"),
+        _c("span", { staticClass: "small_text history_small" }, [
+          _vm._v("※現在もお勤めの場合は在籍開始年月のみご入力ください"),
         ]),
       ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "item_body flex mb_8" }, [
+      _c("div", { staticClass: "input_wrap" }, [
+        _c("select", { attrs: { name: "", id: "" } }, [
+          _c("option", { attrs: { value: "2020年" } }, [_vm._v("2020年")]),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "input_wrap" }, [
+        _c("select", { attrs: { name: "", id: "" } }, [
+          _c("option", { attrs: { value: "3月" } }, [_vm._v("3月")]),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("span", [_vm._v("から")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "item_body flex mb_16" }, [
+      _c("div", { staticClass: "input_wrap" }, [
+        _c("select", { attrs: { name: "", id: "" } }, [
+          _c("option", { attrs: { value: "2021年" } }, [_vm._v("2021年")]),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "input_wrap" }, [
+        _c("select", { attrs: { name: "", id: "" } }, [
+          _c("option", { attrs: { value: "3月" } }, [_vm._v("3月")]),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("span", [_vm._v("まで")]),
     ])
   },
 ]
