@@ -44,12 +44,19 @@
                 <div class="normal_text_wrap">
                     <p class="normal_text">「▲上へ」「▼下へ」ボタンをクリックして並び替え、古いものが上にくるようにしてください。</p>
                 </div>
-                <div class="card_wrap history_item_wrap">
+                <div class="card_wrap history_item_wrap" v-for="(user, index) in users" v-bind:key="user.id">
                     <div class="item_wrap">
                         <p class="item_name">会社名</p>
                         <div class="item_body">
                             <div class="input_wrap comp_name_wrap">
-                                <input type="text" autocomplete="off" placeholder="例）〇〇〇株式会社" title="会社名" class="input_inner">
+                                <input
+                                v-model="user.name"
+                                type="text"
+                                autocomplete="off"
+                                placeholder="例）〇〇〇株式会社"
+                                title="会社名"
+                                class="input_inner"
+                                >
                             </div>
                         </div>
                     </div>
@@ -83,10 +90,14 @@
                             </div>
                             <span>まで</span>
                         </div>
+                        <div class="card_btn_wrap flex">
+                            <div class="card_register_btn">登録</div>
+                            <div @click="del(index)" class="card_delete_btn">削除</div>
+                        </div>
                     </div>
                 </div>
-                <div class="navy_btn_wrap">
-                        <div class="navy_btn">職歴を追加</div>
+                <div @click="add" class="navy_btn_wrap">
+                    <div class="navy_btn">職歴を追加</div>
                 </div>
             </div>
         </div>
@@ -111,13 +122,22 @@
         return {
             isActive: false,
             isDisplay: true,
+            users: [
+                {name: '',}
+            ]
         }
     },
     methods: {
         active: function(){
             this.isActive = !this.isActive;
             this.isDisplay = !this.isDisplay;
-    }
+        },
+        add: function(){
+            this.users.push({ name: '', email: '' })
+        },
+        del: function(index){
+            this.users.splice(index, 1)
+        },
     }
 }
 </script>

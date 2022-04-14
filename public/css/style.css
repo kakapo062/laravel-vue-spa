@@ -120,6 +120,11 @@ body {
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
+    transition: 0.2s ease-out;
+}
+.fv_btn:hover {
+    opacity: .9;
+    color: #fff;
 }
 
 /***************
@@ -188,6 +193,12 @@ main
     height: 50px;
     border-radius: 4px;
     box-shadow: 0px 4px 6px #D8504133;
+    transition: 0.2s ease-out;
+}
+.top_form_btn:hover {
+    transform: translateY(-2px);
+    opacity: .9;
+    color: #fff;
 }
 .top_form_btn::after {
     content: '';
@@ -286,6 +297,11 @@ main
 }
 .footer_item a {
     position: relative;
+    transition: .2s ease-out;
+}
+.footer_item a:hover {
+    color: #fff;
+    opacity: .7;
 }
 .footer_item a::after {
     content: '';
@@ -500,6 +516,12 @@ input[type="checkbox"] {
     height: 50px;
     border-radius: 4px;
     box-shadow: 0px 4px 6px #d8504133;
+    transition: .2s ease-out;
+}
+.next_step_btn:hover {
+    color: #fff;
+    opacity: .9;
+    transform: translateX(2px);
 }
 .next_step_btn::after {
     content: '';
@@ -513,6 +535,11 @@ input[type="checkbox"] {
 }
 .back_step_btn {
     font-size: 13px;
+    transition: .2s ease-out;
+}
+.back_step_btn:hover {
+    color: inherit;
+    transform: translateX(-2px);
 }
 .back_step_btn::before {
     content: '';
@@ -694,6 +721,7 @@ input[type='checkbox'] {
     list-style: none;
     letter-spacing: 0.1em;
     line-height: 1.5;
+    cursor: pointer;
   }
 .accordion_title {
     background: #fff;
@@ -744,8 +772,11 @@ input[type='checkbox'] {
     column-gap: 10px;
     margin-top: 25px;
 }
+.photo_app a {
+    display: inline-block;
+}
 .apple_link {
-    width: 130px;
+    width: 118px;
     height: 45px;
 }
 .apple_link img {
@@ -754,7 +785,7 @@ input[type='checkbox'] {
 }
 .google_link {
     width: 148px;
-    height: 47px;
+    height: auto;
 }
 .google_link img {
     width: 100%;
@@ -804,4 +835,30 @@ input[type='checkbox'] {
     font-weight: normal;
     color: #596266;
     margin-left: 5px;
+}
+.hover_up:hover {
+    opacity: .9;
+}
+.card_btn_wrap {
+    height: 51px;
+    text-align: right;
+    flex-direction: row-reverse;
+}
+.card_delete_btn {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding: 16px 24px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.card_register_btn {
+    background: #D85041;
+    color: #fff;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding: 16px 24px;
+    cursor: pointer;
 }

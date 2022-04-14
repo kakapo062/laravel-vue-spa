@@ -47,10 +47,10 @@
                             <div class="photo_upload_image preview_box" v-if="url">
                                 <img class="image_preview" v-bind:src="url" alt="証明写真">
                             </div>
-                            <label class="navy_btn_wrap upload_label" v-show="url == '/images/profile_sample.png'">
+                            <label class="navy_btn_wrap upload_label hover_up" v-show="url == '/images/profile_sample.png'">
                                 <input type="file" accept="image/*" name="avatar" class="none" ref="preview" @change="show">写真を登録する
                             </label>
-                            <div class="navy_btn_wrap" v-if="url !== '/images/profile_sample.png'" @click="resetFile()">
+                            <div class="navy_btn_wrap hover_up" v-if="url !== '/images/profile_sample.png'" @click="resetFile()">
                                 <div class="navy_btn delete">写真を削除する</div>
                             </div>
                         </div>
@@ -80,13 +80,13 @@
                         <p class="content_normal_text">スマートフォンのアプリ「履歴書カメラ」で履歴書写真を撮影いただけます。<br>無料でご利用いただけますのでご活用ください。</p>
                         <div class="app_img_wrap flex">
                             <div class="photo_app">
-                                <a href="https://apps.apple.com/us/app/%E5%B1%A5%E6%AD%B4%E6%9B%B8%E3%82%AB%E3%83%A1%E3%83%A9/id919409463?itsct=apps_box_badge&amp;itscg=30200" target="_blank" class="apple_link" style="display: inline-block; overflow: hidden; border-radius: 4px;">
-                                    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1421712000&h=98213d52eb3e8fbcbb8e7c311203c350" alt="Download on the App Store" style="border-radius: 4px;">
+                                <a href="https://apps.apple.com/us/app/%E5%B1%A5%E6%AD%B4%E6%9B%B8%E3%82%AB%E3%83%A1%E3%83%A9/id919409463?itsct=apps_box_badge&amp;itscg=30200" target="_blank" class="apple_link">
+                                    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1421712000&h=98213d52eb3e8fbcbb8e7c311203c350" alt="Download on the App Store">
                                 </a>
                             </div>
                             <div class="photo_app">
                                 <a href='https://play.google.com/store/apps/details?id=jp.gr.java_conf.siranet.idphoto&hl=ja&gl=US&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="_blank" class="google_link">
-                                    <img alt='Google Play で手に入れよう' src='https://play.google.com/intl/ja/badges/static/images/badges/ja_badge_web_generic.png'/>
+                                    <img src='https://play.google.com/intl/ja/badges/static/images/badges/ja_badge_web_generic.png' alt='Google Play で手に入れよう'>
                                 </a>
                             </div>
                         </div>
