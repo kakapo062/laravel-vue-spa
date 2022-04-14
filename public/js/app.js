@@ -5568,6 +5568,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -5587,6 +5607,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -5952,6 +5992,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -6056,6 +6116,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -6084,6 +6164,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -6311,6 +6411,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -6339,6 +6459,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -6563,6 +6703,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -6665,6 +6825,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -6693,6 +6873,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -31205,13 +31405,116 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "wrap" }, [
     _c("div", { staticClass: "resume_wrap" }, [
-      _vm._m(0),
+      _c("div", { staticClass: "step_nav_wrap" }, [
+        _c("ul", { staticClass: "step_nav_list" }, [
+          _c(
+            "li",
+            { staticClass: "active" },
+            [
+              _c("router-link", { attrs: { to: { name: "resume" } } }, [
+                _c("span", [_vm._v("1")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume2" } } }, [
+                _c("span", [_vm._v("2")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume3" } } }, [
+                _c("span", [_vm._v("3")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume4" } } }, [
+                _c("span", [_vm._v("4")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume5" } } }, [
+                _c("span", [_vm._v("5")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume6" } } }, [
+                _c("span", [_vm._v("6")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume7" } } }, [
+                _c("span", [_vm._v("7")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume8" } } }, [
+                _c("span", [_vm._v("8")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume9" } } }, [
+                _c("span", [_vm._v("9")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume10" } } }, [
+                _c("span", [_vm._v("10")]),
+              ]),
+            ],
+            1
+          ),
+        ]),
+      ]),
       _vm._v(" "),
       _c("h3", { staticClass: "resume_step_title" }, [_vm._v("プロフィール")]),
       _vm._v(" "),
-      _vm._m(1),
+      _vm._m(0),
       _vm._v(" "),
-      _vm._m(2),
+      _vm._m(1),
       _vm._v(" "),
       _c("div", { staticClass: "pager_wrap" }, [
         _c(
@@ -31256,34 +31559,6 @@ var render = function () {
   ])
 }
 var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "step_nav_wrap" }, [
-      _c("ul", { staticClass: "step_nav_list" }, [
-        _c("li", { staticClass: "active" }, [_c("span", [_vm._v("1")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("2")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("3")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("4")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("5")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("6")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("7")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("8")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("9")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("10")])]),
-      ]),
-    ])
-  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -31496,13 +31771,116 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "wrap" }, [
     _c("div", { staticClass: "resume_wrap" }, [
-      _vm._m(0),
+      _c("div", { staticClass: "step_nav_wrap" }, [
+        _c("ul", { staticClass: "step_nav_list" }, [
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume" } } }, [
+                _c("span", [_vm._v("1")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume2" } } }, [
+                _c("span", [_vm._v("2")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume3" } } }, [
+                _c("span", [_vm._v("3")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume4" } } }, [
+                _c("span", [_vm._v("4")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume5" } } }, [
+                _c("span", [_vm._v("5")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume6" } } }, [
+                _c("span", [_vm._v("6")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume7" } } }, [
+                _c("span", [_vm._v("7")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume8" } } }, [
+                _c("span", [_vm._v("8")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume9" } } }, [
+                _c("span", [_vm._v("9")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            { staticClass: "active" },
+            [
+              _c("router-link", { attrs: { to: { name: "resume10" } } }, [
+                _c("span", [_vm._v("10")]),
+              ]),
+            ],
+            1
+          ),
+        ]),
+      ]),
       _vm._v(" "),
       _c("h3", { staticClass: "resume_step_title" }, [_vm._v("本人希望欄")]),
       _vm._v(" "),
-      _vm._m(1),
+      _vm._m(0),
       _vm._v(" "),
-      _vm._m(2),
+      _vm._m(1),
       _vm._v(" "),
       _c("div", { staticClass: "pager_wrap" }, [
         _c(
@@ -31547,34 +31925,6 @@ var render = function () {
   ])
 }
 var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "step_nav_wrap" }, [
-      _c("ul", { staticClass: "step_nav_list" }, [
-        _c("li", [_c("span", [_vm._v("1")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("2")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("3")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("4")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("5")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("6")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("7")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("8")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("9")])]),
-        _vm._v(" "),
-        _c("li", { staticClass: "active" }, [_c("span", [_vm._v("10")])]),
-      ]),
-    ])
-  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -31874,21 +32224,124 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "wrap" }, [
     _c("div", { staticClass: "resume_wrap" }, [
-      _vm._m(0),
+      _c("div", { staticClass: "step_nav_wrap" }, [
+        _c("ul", { staticClass: "step_nav_list" }, [
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume" } } }, [
+                _c("span", [_vm._v("1")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            { staticClass: "active" },
+            [
+              _c("router-link", { attrs: { to: { name: "resume2" } } }, [
+                _c("span", [_vm._v("2")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume3" } } }, [
+                _c("span", [_vm._v("3")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume4" } } }, [
+                _c("span", [_vm._v("4")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume5" } } }, [
+                _c("span", [_vm._v("5")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume6" } } }, [
+                _c("span", [_vm._v("6")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume7" } } }, [
+                _c("span", [_vm._v("7")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume8" } } }, [
+                _c("span", [_vm._v("8")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume9" } } }, [
+                _c("span", [_vm._v("9")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume10" } } }, [
+                _c("span", [_vm._v("10")]),
+              ]),
+            ],
+            1
+          ),
+        ]),
+      ]),
       _vm._v(" "),
       _c("h3", { staticClass: "resume_step_title" }, [_vm._v("住所")]),
       _vm._v(" "),
-      _vm._m(1),
+      _vm._m(0),
       _vm._v(" "),
       _c("div", { staticClass: "resume_form_wrap" }, [
         _c("div", { staticClass: "form_inner" }, [
+          _vm._m(1),
+          _vm._v(" "),
           _vm._m(2),
           _vm._v(" "),
           _vm._m(3),
           _vm._v(" "),
           _vm._m(4),
-          _vm._v(" "),
-          _vm._m(5),
           _vm._v(" "),
           _vm.isDisplay
             ? _c(
@@ -31908,13 +32361,13 @@ var render = function () {
                   _vm._v("※現住所以外に連絡を希望する場合のみ入力してください"),
                 ]),
                 _vm._v(" "),
+                _vm._m(5),
+                _vm._v(" "),
                 _vm._m(6),
                 _vm._v(" "),
                 _vm._m(7),
                 _vm._v(" "),
                 _vm._m(8),
-                _vm._v(" "),
-                _vm._m(9),
                 _vm._v(" "),
                 !_vm.isDisplay
                   ? _c(
@@ -31978,34 +32431,6 @@ var render = function () {
   ])
 }
 var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "step_nav_wrap" }, [
-      _c("ul", { staticClass: "step_nav_list" }, [
-        _c("li", [_c("span", [_vm._v("1")])]),
-        _vm._v(" "),
-        _c("li", { staticClass: "active" }, [_c("span", [_vm._v("2")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("3")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("4")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("5")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("6")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("7")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("8")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("9")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("10")])]),
-      ]),
-    ])
-  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -32241,13 +32666,116 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "wrap" }, [
     _c("div", { staticClass: "resume_wrap" }, [
-      _vm._m(0),
+      _c("div", { staticClass: "step_nav_wrap" }, [
+        _c("ul", { staticClass: "step_nav_list" }, [
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume" } } }, [
+                _c("span", [_vm._v("1")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume2" } } }, [
+                _c("span", [_vm._v("2")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            { staticClass: "active" },
+            [
+              _c("router-link", { attrs: { to: { name: "resume3" } } }, [
+                _c("span", [_vm._v("3")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume4" } } }, [
+                _c("span", [_vm._v("4")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume5" } } }, [
+                _c("span", [_vm._v("5")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume6" } } }, [
+                _c("span", [_vm._v("6")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume7" } } }, [
+                _c("span", [_vm._v("7")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume8" } } }, [
+                _c("span", [_vm._v("8")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume9" } } }, [
+                _c("span", [_vm._v("9")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume10" } } }, [
+                _c("span", [_vm._v("10")]),
+              ]),
+            ],
+            1
+          ),
+        ]),
+      ]),
       _vm._v(" "),
       _c("h3", { staticClass: "resume_step_title" }, [_vm._v("連絡先")]),
       _vm._v(" "),
-      _vm._m(1),
+      _vm._m(0),
       _vm._v(" "),
-      _vm._m(2),
+      _vm._m(1),
       _vm._v(" "),
       _c("div", { staticClass: "pager_wrap" }, [
         _c(
@@ -32292,34 +32820,6 @@ var render = function () {
   ])
 }
 var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "step_nav_wrap" }, [
-      _c("ul", { staticClass: "step_nav_list" }, [
-        _c("li", [_c("span", [_vm._v("1")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("2")])]),
-        _vm._v(" "),
-        _c("li", { staticClass: "active" }, [_c("span", [_vm._v("3")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("4")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("5")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("6")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("7")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("8")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("9")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("10")])]),
-      ]),
-    ])
-  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -32401,11 +32901,114 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "wrap" }, [
     _c("div", { staticClass: "resume_wrap" }, [
-      _vm._m(0),
+      _c("div", { staticClass: "step_nav_wrap" }, [
+        _c("ul", { staticClass: "step_nav_list" }, [
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume" } } }, [
+                _c("span", [_vm._v("1")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume2" } } }, [
+                _c("span", [_vm._v("2")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume3" } } }, [
+                _c("span", [_vm._v("3")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            { staticClass: "active" },
+            [
+              _c("router-link", { attrs: { to: { name: "resume4" } } }, [
+                _c("span", [_vm._v("4")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume5" } } }, [
+                _c("span", [_vm._v("5")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume6" } } }, [
+                _c("span", [_vm._v("6")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume7" } } }, [
+                _c("span", [_vm._v("7")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume8" } } }, [
+                _c("span", [_vm._v("8")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume9" } } }, [
+                _c("span", [_vm._v("9")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume10" } } }, [
+                _c("span", [_vm._v("10")]),
+              ]),
+            ],
+            1
+          ),
+        ]),
+      ]),
       _vm._v(" "),
       _c("h3", { staticClass: "resume_step_title" }, [_vm._v("証明写真")]),
       _vm._v(" "),
-      _vm._m(1),
+      _vm._m(0),
       _vm._v(" "),
       _c("div", { staticClass: "resume_form_wrap" }, [
         _c("div", { staticClass: "form_inner" }, [
@@ -32503,13 +33106,13 @@ var render = function () {
                 staticClass: "accordion_item accordion_content",
               },
               [
-                _vm._m(2),
+                _vm._m(1),
                 _vm._v(" "),
                 _c("p", { staticClass: "content_normal_text" }, [
                   _vm._v("▼良い例"),
                 ]),
                 _vm._v(" "),
-                _vm._m(3),
+                _vm._m(2),
               ]
             ),
             _vm._v(" "),
@@ -32539,7 +33142,7 @@ var render = function () {
                 ],
                 staticClass: "accordion_item accordion_content",
               },
-              [_vm._m(4), _vm._v(" "), _vm._m(5)]
+              [_vm._m(3), _vm._v(" "), _vm._m(4)]
             ),
           ]),
         ]),
@@ -32588,34 +33191,6 @@ var render = function () {
   ])
 }
 var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "step_nav_wrap" }, [
-      _c("ul", { staticClass: "step_nav_list" }, [
-        _c("li", [_c("span", [_vm._v("1")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("2")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("3")])]),
-        _vm._v(" "),
-        _c("li", { staticClass: "active" }, [_c("span", [_vm._v("4")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("5")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("6")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("7")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("8")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("9")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("10")])]),
-      ]),
-    ])
-  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -32753,13 +33328,116 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "wrap" }, [
     _c("div", { staticClass: "resume_wrap" }, [
-      _vm._m(0),
+      _c("div", { staticClass: "step_nav_wrap" }, [
+        _c("ul", { staticClass: "step_nav_list" }, [
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume" } } }, [
+                _c("span", [_vm._v("1")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume2" } } }, [
+                _c("span", [_vm._v("2")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume3" } } }, [
+                _c("span", [_vm._v("3")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume4" } } }, [
+                _c("span", [_vm._v("4")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            { staticClass: "active" },
+            [
+              _c("router-link", { attrs: { to: { name: "resume5" } } }, [
+                _c("span", [_vm._v("5")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume6" } } }, [
+                _c("span", [_vm._v("6")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume7" } } }, [
+                _c("span", [_vm._v("7")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume8" } } }, [
+                _c("span", [_vm._v("8")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume9" } } }, [
+                _c("span", [_vm._v("9")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume10" } } }, [
+                _c("span", [_vm._v("10")]),
+              ]),
+            ],
+            1
+          ),
+        ]),
+      ]),
       _vm._v(" "),
       _c("h3", { staticClass: "resume_step_title" }, [_vm._v("学歴")]),
       _vm._v(" "),
-      _vm._m(1),
+      _vm._m(0),
       _vm._v(" "),
-      _vm._m(2),
+      _vm._m(1),
       _vm._v(" "),
       _c("div", { staticClass: "pager_wrap" }, [
         _c(
@@ -32804,34 +33482,6 @@ var render = function () {
   ])
 }
 var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "step_nav_wrap" }, [
-      _c("ul", { staticClass: "step_nav_list" }, [
-        _c("li", [_c("span", [_vm._v("1")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("2")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("3")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("4")])]),
-        _vm._v(" "),
-        _c("li", { staticClass: "active" }, [_c("span", [_vm._v("5")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("6")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("7")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("8")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("9")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("10")])]),
-      ]),
-    ])
-  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -32891,18 +33541,121 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "wrap" }, [
     _c("div", { staticClass: "resume_wrap" }, [
-      _vm._m(0),
+      _c("div", { staticClass: "step_nav_wrap" }, [
+        _c("ul", { staticClass: "step_nav_list" }, [
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume" } } }, [
+                _c("span", [_vm._v("1")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume2" } } }, [
+                _c("span", [_vm._v("2")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume3" } } }, [
+                _c("span", [_vm._v("3")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume4" } } }, [
+                _c("span", [_vm._v("4")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume5" } } }, [
+                _c("span", [_vm._v("5")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            { staticClass: "active" },
+            [
+              _c("router-link", { attrs: { to: { name: "resume6" } } }, [
+                _c("span", [_vm._v("6")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume7" } } }, [
+                _c("span", [_vm._v("7")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume8" } } }, [
+                _c("span", [_vm._v("8")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume9" } } }, [
+                _c("span", [_vm._v("9")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume10" } } }, [
+                _c("span", [_vm._v("10")]),
+              ]),
+            ],
+            1
+          ),
+        ]),
+      ]),
       _vm._v(" "),
       _c("h3", { staticClass: "resume_step_title" }, [_vm._v("職歴")]),
       _vm._v(" "),
-      _vm._m(1),
+      _vm._m(0),
       _vm._v(" "),
       _c("div", { staticClass: "resume_form_wrap" }, [
         _c(
           "div",
           { staticClass: "form_inner" },
           [
-            _vm._m(2),
+            _vm._m(1),
             _vm._v(" "),
             _vm._l(_vm.users, function (user, index) {
               return _c(
@@ -32945,11 +33698,11 @@ var render = function () {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "item_wrap" }, [
+                    _vm._m(2, true),
+                    _vm._v(" "),
                     _vm._m(3, true),
                     _vm._v(" "),
                     _vm._m(4, true),
-                    _vm._v(" "),
-                    _vm._m(5, true),
                     _vm._v(" "),
                     _c("div", { staticClass: "card_btn_wrap flex" }, [
                       _c("div", { staticClass: "card_register_btn" }, [
@@ -33027,34 +33780,6 @@ var render = function () {
   ])
 }
 var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "step_nav_wrap" }, [
-      _c("ul", { staticClass: "step_nav_list" }, [
-        _c("li", [_c("span", [_vm._v("1")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("2")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("3")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("4")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("5")])]),
-        _vm._v(" "),
-        _c("li", { staticClass: "active" }, [_c("span", [_vm._v("6")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("7")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("8")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("9")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("10")])]),
-      ]),
-    ])
-  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -33155,13 +33880,116 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "wrap" }, [
     _c("div", { staticClass: "resume_wrap" }, [
-      _vm._m(0),
+      _c("div", { staticClass: "step_nav_wrap" }, [
+        _c("ul", { staticClass: "step_nav_list" }, [
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume" } } }, [
+                _c("span", [_vm._v("1")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume2" } } }, [
+                _c("span", [_vm._v("2")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume3" } } }, [
+                _c("span", [_vm._v("3")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume4" } } }, [
+                _c("span", [_vm._v("4")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume5" } } }, [
+                _c("span", [_vm._v("5")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume6" } } }, [
+                _c("span", [_vm._v("6")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            { staticClass: "active" },
+            [
+              _c("router-link", { attrs: { to: { name: "resume7" } } }, [
+                _c("span", [_vm._v("7")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume8" } } }, [
+                _c("span", [_vm._v("8")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume9" } } }, [
+                _c("span", [_vm._v("9")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume10" } } }, [
+                _c("span", [_vm._v("10")]),
+              ]),
+            ],
+            1
+          ),
+        ]),
+      ]),
       _vm._v(" "),
       _c("h3", { staticClass: "resume_step_title" }, [_vm._v("免許・資格")]),
       _vm._v(" "),
-      _vm._m(1),
+      _vm._m(0),
       _vm._v(" "),
-      _vm._m(2),
+      _vm._m(1),
       _vm._v(" "),
       _c("div", { staticClass: "pager_wrap" }, [
         _c(
@@ -33206,34 +34034,6 @@ var render = function () {
   ])
 }
 var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "step_nav_wrap" }, [
-      _c("ul", { staticClass: "step_nav_list" }, [
-        _c("li", [_c("span", [_vm._v("1")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("2")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("3")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("4")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("5")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("6")])]),
-        _vm._v(" "),
-        _c("li", { staticClass: "active" }, [_c("span", [_vm._v("7")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("8")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("9")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("10")])]),
-      ]),
-    ])
-  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -33289,13 +34089,116 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "wrap" }, [
     _c("div", { staticClass: "resume_wrap" }, [
-      _vm._m(0),
+      _c("div", { staticClass: "step_nav_wrap" }, [
+        _c("ul", { staticClass: "step_nav_list" }, [
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume" } } }, [
+                _c("span", [_vm._v("1")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume2" } } }, [
+                _c("span", [_vm._v("2")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume3" } } }, [
+                _c("span", [_vm._v("3")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume4" } } }, [
+                _c("span", [_vm._v("4")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume5" } } }, [
+                _c("span", [_vm._v("5")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume6" } } }, [
+                _c("span", [_vm._v("6")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume7" } } }, [
+                _c("span", [_vm._v("7")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            { staticClass: "active" },
+            [
+              _c("router-link", { attrs: { to: { name: "resume8" } } }, [
+                _c("span", [_vm._v("8")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume9" } } }, [
+                _c("span", [_vm._v("9")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume10" } } }, [
+                _c("span", [_vm._v("10")]),
+              ]),
+            ],
+            1
+          ),
+        ]),
+      ]),
       _vm._v(" "),
       _c("h3", { staticClass: "resume_step_title" }, [_vm._v("志望動機")]),
       _vm._v(" "),
-      _vm._m(1),
+      _vm._m(0),
       _vm._v(" "),
-      _vm._m(2),
+      _vm._m(1),
       _vm._v(" "),
       _c("div", { staticClass: "pager_wrap" }, [
         _c(
@@ -33340,34 +34243,6 @@ var render = function () {
   ])
 }
 var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "step_nav_wrap" }, [
-      _c("ul", { staticClass: "step_nav_list" }, [
-        _c("li", [_c("span", [_vm._v("1")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("2")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("3")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("4")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("5")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("6")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("7")])]),
-        _vm._v(" "),
-        _c("li", { staticClass: "active" }, [_c("span", [_vm._v("8")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("9")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("10")])]),
-      ]),
-    ])
-  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -33433,13 +34308,116 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "wrap" }, [
     _c("div", { staticClass: "resume_wrap" }, [
-      _vm._m(0),
+      _c("div", { staticClass: "step_nav_wrap" }, [
+        _c("ul", { staticClass: "step_nav_list" }, [
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume" } } }, [
+                _c("span", [_vm._v("1")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume2" } } }, [
+                _c("span", [_vm._v("2")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume3" } } }, [
+                _c("span", [_vm._v("3")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume4" } } }, [
+                _c("span", [_vm._v("4")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume5" } } }, [
+                _c("span", [_vm._v("5")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume6" } } }, [
+                _c("span", [_vm._v("6")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume7" } } }, [
+                _c("span", [_vm._v("7")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume8" } } }, [
+                _c("span", [_vm._v("8")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            { staticClass: "active" },
+            [
+              _c("router-link", { attrs: { to: { name: "resume9" } } }, [
+                _c("span", [_vm._v("9")]),
+              ]),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "resume10" } } }, [
+                _c("span", [_vm._v("10")]),
+              ]),
+            ],
+            1
+          ),
+        ]),
+      ]),
       _vm._v(" "),
       _c("h3", { staticClass: "resume_step_title" }, [_vm._v("その他")]),
       _vm._v(" "),
-      _vm._m(1),
+      _vm._m(0),
       _vm._v(" "),
-      _vm._m(2),
+      _vm._m(1),
       _vm._v(" "),
       _c("div", { staticClass: "pager_wrap" }, [
         _c(
@@ -33484,34 +34462,6 @@ var render = function () {
   ])
 }
 var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "step_nav_wrap" }, [
-      _c("ul", { staticClass: "step_nav_list" }, [
-        _c("li", [_c("span", [_vm._v("1")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("2")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("3")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("4")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("5")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("6")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("7")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("8")])]),
-        _vm._v(" "),
-        _c("li", { staticClass: "active" }, [_c("span", [_vm._v("9")])]),
-        _vm._v(" "),
-        _c("li", [_c("span", [_vm._v("10")])]),
-      ]),
-    ])
-  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
