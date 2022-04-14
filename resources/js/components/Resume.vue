@@ -4,34 +4,54 @@
         <div class="step_nav_wrap">
             <ul class="step_nav_list">
                 <li class="active">
-                <span>1</span>
+                    <router-link v-bind:to="{name: 'resume'}">
+                        <span>1</span>
+                    </router-link>
                 </li>
                 <li>
-                <span>2</span>
+                    <router-link v-bind:to="{name: 'resume2'}">
+                        <span>2</span>
+                    </router-link>
                 </li>
                 <li>
-                <span>3</span>
+                    <router-link v-bind:to="{name: 'resume3'}">
+                        <span>3</span>
+                    </router-link>
                 </li>
                 <li>
-                <span>4</span>
+                    <router-link v-bind:to="{name: 'resume4'}">
+                        <span>4</span>
+                    </router-link>
                 </li>
                 <li>
-                <span>5</span>
+                    <router-link v-bind:to="{name: 'resume5'}">
+                        <span>5</span>
+                    </router-link>
                 </li>
                 <li>
-                <span>6</span>
+                    <router-link v-bind:to="{name: 'resume6'}">
+                        <span>6</span>
+                    </router-link>
                 </li>
                 <li>
-                <span>7</span>
+                    <router-link v-bind:to="{name: 'resume7'}">
+                        <span>7</span>
+                    </router-link>
                 </li>
                 <li>
-                <span>8</span>
+                    <router-link v-bind:to="{name: 'resume8'}">
+                        <span>8</span>
+                    </router-link>
                 </li>
                 <li>
-                <span>9</span>
+                    <router-link v-bind:to="{name: 'resume9'}">
+                        <span>9</span>
+                    </router-link>
                 </li>
                 <li>
-                <span>10</span>
+                    <router-link v-bind:to="{name: 'resume10'}">
+                        <span>10</span>
+                    </router-link>
                 </li>
             </ul>
         </div>
