@@ -72,9 +72,10 @@
                         ></textarea>
                     </div>
                 </div>
-                <div class="navy_btn_wrap">
-                        <div class="navy_btn">例文を追加</div>
+                <div  @click="show" class="navy_btn_wrap">
+                    <div class="navy_btn">例文を追加</div>
                 </div>
+                <motivation-modal />
             </div>
         </div>
         <div class="pager_wrap">
@@ -92,7 +93,8 @@
 </div>
 </template>
 
-<script>
+<script>import { functionExpression } from "@babel/types";
+
     export default {
     data() {
         return {
@@ -101,10 +103,16 @@
         }
     },
     methods: {
-        active: function(){
+        active(){
             this.isActive = !this.isActive;
             this.isDisplay = !this.isDisplay;
-    }
+        },
+        show(){
+        this.$modal.show('motivation-modal');
+        },
+        hide(){
+        this.$modal.hide('motivation-modal');
+        }
     }
 }
 </script>

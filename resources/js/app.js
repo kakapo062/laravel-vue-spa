@@ -16,6 +16,8 @@ import Resume11 from "./components/Resume11";
 import Resume12 from "./components/Resume12";
 import Thanks from "./components/Thanks";
 import Preview from "./components/Preview";
+import VModal from 'vue-js-modal';
+import MotivationModal from "./components/MotivationModal";
 
 
 require('./bootstrap');
@@ -23,6 +25,8 @@ require('./bootstrap');
 window.Vue = require('vue').default;
 
 Vue.use(VueRouter);
+Vue.use(VModal)
+
  const router = new VueRouter({
      mode: 'history',
      routes: [
@@ -122,6 +126,7 @@ Vue.component('resume-11', Resume11);
 Vue.component('resume-12', Resume12);
 Vue.component('thanks', Thanks);
 Vue.component('preview', Preview);
+Vue.component('motivation-modal', MotivationModal);
 
 
 

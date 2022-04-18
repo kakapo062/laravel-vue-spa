@@ -866,8 +866,6 @@ input[type='checkbox'] {
 .card_content_wrap {
     width: 100%;
 }
-.card_change_btn_wrap {
-}
 .card_change_btn_wrap img {
     width: 16px;
     height: 16px;
@@ -877,4 +875,109 @@ input[type='checkbox'] {
 }
 .card_down_btn {
     padding: 16px 0 0 21px;
+}
+.v--modal-box.v--modal {
+    background: #F5F5F7;
+    padding: 21px 20px 80px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.close_btn_wrap {
+    display: flex;
+    justify-content: flex-end;
+}
+.close_btn {
+    width: 16px;
+    cursor: pointer;
+}
+.close_btn img {
+    width: 16px;
+    height: 16px;
+}
+.modal_header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+.modal_note_wrap {
+    background: #F9F9F9;
+    padding: 8px 16px;
+    border-radius: 2px;
+    margin-bottom: 24px;
+    line-height: 1.692;
+}
+.modal_desc {
+    font-size: 13px;
+}
+.modal_head_note {
+    font-size: 11px;
+}
+.modal_sample_content {
+    background: #FFF;
+    padding: 16px 20px;
+    font-size: 12px;
+    line-height: 1.75;
+    border: 2px solid #E6E6E6;
+    border-radius: 2px;
+}
+.modal_sample_content:not(:first-child) {
+    margin-top: 16px;
+}
+.modal_footer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    position: fixed;
+    z-index: 9000;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.modal_add_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #EBA79F;
+    color: #fff;
+    padding: 16px;
+    font-weight: bold;
+    line-height: 1.15;
+    width: 66.4%;
+}
+.modal_close_btn {
+    background: #233D4C;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    font-weight: bold;
+    line-height: 1.15;
+    width: 33.6%;
+}
+.modal_add_btn span {
+    position: relative;
+}
+.modal_add_btn span::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    background: url(/images/plus@2x.png) no-repeat center center;
+    background-size: contain;
+    width: 16px;
+    height: 16px;
+    top: 1px;
+    right: -24px;
+    z-index: 9999;
+}
+.active {
+    background: #D85041;
+}
+.border_red {
+    border: 2px solid #D85041;
 }
