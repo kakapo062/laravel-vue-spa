@@ -6597,6 +6597,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -6723,17 +6733,77 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       isActive: false,
-      isDisplay: true
+      isDisplay: true,
+      users: [{
+        name: ''
+      }]
     };
   },
   methods: {
     active: function active() {
       this.isActive = !this.isActive;
       this.isDisplay = !this.isDisplay;
+    },
+    add: function add() {
+      this.users.push({
+        name: '',
+        email: ''
+      });
+    },
+    del: function del(index) {
+      this.users.splice(index, 1);
     }
   }
 });
@@ -33660,49 +33730,52 @@ var render = function () {
             _vm._l(_vm.users, function (user, index) {
               return _c(
                 "div",
-                { key: user.id, staticClass: "card_wrap history_item_wrap" },
+                {
+                  key: user.id,
+                  staticClass: "card_wrap history_item_wrap card_flex",
+                },
                 [
-                  _c("div", { staticClass: "item_wrap" }, [
-                    _c("p", { staticClass: "item_name" }, [_vm._v("会社名")]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "item_body" }, [
-                      _c("div", { staticClass: "input_wrap comp_name_wrap" }, [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: user.name,
-                              expression: "user.name",
-                            },
-                          ],
-                          staticClass: "input_inner",
-                          attrs: {
-                            type: "text",
-                            autocomplete: "off",
-                            placeholder: "例）〇〇〇株式会社",
-                            title: "会社名",
-                          },
-                          domProps: { value: user.name },
-                          on: {
-                            input: function ($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(user, "name", $event.target.value)
-                            },
-                          },
-                        }),
+                  _c("div", { staticClass: "card_content_wrap" }, [
+                    _c("div", { staticClass: "item_wrap" }, [
+                      _c("p", { staticClass: "item_name" }, [_vm._v("会社名")]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "item_body" }, [
+                        _c(
+                          "div",
+                          { staticClass: "input_wrap comp_name_wrap" },
+                          [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: user.name,
+                                  expression: "user.name",
+                                },
+                              ],
+                              staticClass: "input_inner",
+                              attrs: {
+                                type: "text",
+                                autocomplete: "off",
+                                placeholder: "例）〇〇〇株式会社",
+                                title: "会社名",
+                              },
+                              domProps: { value: user.name },
+                              on: {
+                                input: function ($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(user, "name", $event.target.value)
+                                },
+                              },
+                            }),
+                          ]
+                        ),
                       ]),
                     ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "item_wrap" }, [
+                    _vm._v(" "),
                     _vm._m(2, true),
-                    _vm._v(" "),
-                    _vm._m(3, true),
-                    _vm._v(" "),
-                    _vm._m(4, true),
                     _vm._v(" "),
                     _c("div", { staticClass: "card_btn_wrap flex" }, [
                       _c("div", { staticClass: "card_register_btn" }, [
@@ -33723,6 +33796,8 @@ var render = function () {
                       ),
                     ]),
                   ]),
+                  _vm._v(" "),
+                  _vm._m(3, true),
                 ]
               )
             }),
@@ -33806,12 +33881,46 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "item_name" }, [
-      _c("p", {}, [
-        _vm._v("在籍期間"),
-        _c("span", { staticClass: "small_text history_small" }, [
-          _vm._v("※現在もお勤めの場合は在籍開始年月のみご入力ください"),
+    return _c("div", { staticClass: "item_wrap" }, [
+      _c("div", { staticClass: "item_name" }, [
+        _c("p", {}, [
+          _vm._v("在籍期間"),
+          _c("span", { staticClass: "small_text history_small" }, [
+            _vm._v("※現在もお勤めの場合は在籍開始年月のみご入力ください"),
+          ]),
         ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "item_body flex mb_8" }, [
+        _c("div", { staticClass: "input_wrap" }, [
+          _c("select", { attrs: { name: "", id: "" } }, [
+            _c("option", { attrs: { value: "2020年" } }, [_vm._v("2020年")]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "input_wrap" }, [
+          _c("select", { attrs: { name: "", id: "" } }, [
+            _c("option", { attrs: { value: "3月" } }, [_vm._v("3月")]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("span", [_vm._v("から")]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "item_body flex mb_16" }, [
+        _c("div", { staticClass: "input_wrap" }, [
+          _c("select", { attrs: { name: "", id: "" } }, [
+            _c("option", { attrs: { value: "2021年" } }, [_vm._v("2021年")]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "input_wrap" }, [
+          _c("select", { attrs: { name: "", id: "" } }, [
+            _c("option", { attrs: { value: "3月" } }, [_vm._v("3月")]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("span", [_vm._v("まで")]),
       ]),
     ])
   },
@@ -33819,40 +33928,20 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "item_body flex mb_8" }, [
-      _c("div", { staticClass: "input_wrap" }, [
-        _c("select", { attrs: { name: "", id: "" } }, [
-          _c("option", { attrs: { value: "2020年" } }, [_vm._v("2020年")]),
-        ]),
+    return _c("div", { staticClass: "card_change_btn_wrap" }, [
+      _c("div", { staticClass: "card_up_btn" }, [
+        _c("img", {
+          staticClass: "up_img",
+          attrs: { src: "/images/card_up.svg", alt: "" },
+        }),
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "input_wrap" }, [
-        _c("select", { attrs: { name: "", id: "" } }, [
-          _c("option", { attrs: { value: "3月" } }, [_vm._v("3月")]),
-        ]),
+      _c("div", { staticClass: "card_down_btn" }, [
+        _c("img", {
+          staticClass: "down_img",
+          attrs: { src: "/images/card_down.svg", alt: "" },
+        }),
       ]),
-      _vm._v(" "),
-      _c("span", [_vm._v("から")]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "item_body flex mb_16" }, [
-      _c("div", { staticClass: "input_wrap" }, [
-        _c("select", { attrs: { name: "", id: "" } }, [
-          _c("option", { attrs: { value: "2021年" } }, [_vm._v("2021年")]),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "input_wrap" }, [
-        _c("select", { attrs: { name: "", id: "" } }, [
-          _c("option", { attrs: { value: "3月" } }, [_vm._v("3月")]),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("span", [_vm._v("まで")]),
     ])
   },
 ]
@@ -33989,7 +34078,99 @@ var render = function () {
       _vm._v(" "),
       _vm._m(0),
       _vm._v(" "),
-      _vm._m(1),
+      _c("div", { staticClass: "resume_form_wrap" }, [
+        _c(
+          "div",
+          { staticClass: "form_inner" },
+          [
+            _vm._m(1),
+            _vm._v(" "),
+            _vm._l(_vm.users, function (user, index) {
+              return _c(
+                "div",
+                {
+                  key: user.id,
+                  staticClass: "card_wrap history_item_wrap card_flex",
+                },
+                [
+                  _c("div", { staticClass: "card_content_wrap" }, [
+                    _vm._m(2, true),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "item_wrap mb_16" }, [
+                      _c("p", { staticClass: "item_name" }, [
+                        _vm._v("資格名称"),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "item_body" }, [
+                        _c(
+                          "div",
+                          { staticClass: "input_wrap comp_name_wrap" },
+                          [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: user.name,
+                                  expression: "user.name",
+                                },
+                              ],
+                              staticClass: "input_inner",
+                              attrs: {
+                                type: "text",
+                                autocomplete: "off",
+                                placeholder: "例）〇〇〇資格1級",
+                                title: "資格名称",
+                              },
+                              domProps: { value: user.name },
+                              on: {
+                                input: function ($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(user, "name", $event.target.value)
+                                },
+                              },
+                            }),
+                          ]
+                        ),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card_btn_wrap flex" }, [
+                      _c("div", { staticClass: "card_register_btn" }, [
+                        _vm._v("登録"),
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "card_delete_btn",
+                          on: {
+                            click: function ($event) {
+                              return _vm.del(index)
+                            },
+                          },
+                        },
+                        [_vm._v("削除")]
+                      ),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(3, true),
+                ]
+              )
+            }),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "navy_btn_wrap", on: { click: _vm.add } },
+              [_c("div", { staticClass: "navy_btn" }, [_vm._v("職歴を追加")])]
+            ),
+          ],
+          2
+        ),
+      ]),
       _vm._v(" "),
       _c("div", { staticClass: "pager_wrap" }, [
         _c(
@@ -34048,19 +34229,55 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "resume_form_wrap" }, [
-      _c("div", { staticClass: "form_inner" }, [
-        _c("div", { staticClass: "normal_text_wrap" }, [
-          _c("p", { staticClass: "normal_text" }, [
-            _vm._v(
-              "「▲上へ」「▼下へ」ボタンをクリックして並び替え、古いものが上にくるようにしてください。"
-            ),
+    return _c("div", { staticClass: "normal_text_wrap" }, [
+      _c("p", { staticClass: "normal_text" }, [
+        _vm._v(
+          "「▲上へ」「▼下へ」ボタンをクリックして並び替え、古いものが上にくるようにしてください。"
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "item_wrap" }, [
+      _c("div", { staticClass: "item_name" }, [
+        _c("p", {}, [_vm._v("資格取得時期")]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "item_body flex mb_8" }, [
+        _c("div", { staticClass: "input_wrap" }, [
+          _c("select", { attrs: { name: "", id: "" } }, [
+            _c("option", { attrs: { value: "2020年" } }, [_vm._v("2020年")]),
           ]),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "navy_btn_wrap" }, [
-          _c("div", { staticClass: "navy_btn" }, [_vm._v("資格を追加")]),
+        _c("div", { staticClass: "input_wrap" }, [
+          _c("select", { attrs: { name: "", id: "" } }, [
+            _c("option", { attrs: { value: "3月" } }, [_vm._v("3月")]),
+          ]),
         ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card_change_btn_wrap" }, [
+      _c("div", { staticClass: "card_up_btn" }, [
+        _c("img", {
+          staticClass: "up_img",
+          attrs: { src: "/images/card_up.svg", alt: "" },
+        }),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card_down_btn" }, [
+        _c("img", {
+          staticClass: "down_img",
+          attrs: { src: "/images/card_down.svg", alt: "" },
+        }),
       ]),
     ])
   },
