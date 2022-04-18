@@ -828,9 +828,6 @@ input[type='checkbox'] {
     margin-top: 16px;
     padding: 16px;
 }
-.card_wrap .comp_name_wrap {
-    width: 266px;
-}
 .history_small {
     font-weight: normal;
     color: #596266;
@@ -838,6 +835,10 @@ input[type='checkbox'] {
 }
 .hover_up:hover {
     opacity: .9;
+}
+.card_flex {
+    display: flex;
+    align-items: center;
 }
 .card_btn_wrap {
     height: 51px;
@@ -861,4 +862,19 @@ input[type='checkbox'] {
     align-items: start;
     padding: 16px 24px;
     cursor: pointer;
+}
+.card_content_wrap {
+    width: 100%;
+}
+.card_change_btn_wrap {
+}
+.card_change_btn_wrap img {
+    width: 16px;
+    height: 16px;
+}
+.card_up_btn {
+    padding: 0 0 16px 21px;
+}
+.card_down_btn {
+    padding: 16px 0 0 21px;
 }

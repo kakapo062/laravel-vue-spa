@@ -64,8 +64,56 @@
                 <div class="normal_text_wrap">
                     <p class="normal_text">「▲上へ」「▼下へ」ボタンをクリックして並び替え、古いものが上にくるようにしてください。</p>
                 </div>
-                <div class="navy_btn_wrap">
-                        <div class="navy_btn">資格を追加</div>
+                <div class="card_wrap history_item_wrap card_flex" v-for="(user, index) in users" v-bind:key="user.id">
+                    <div class="card_content_wrap">
+                        <div class="item_wrap">
+                            <div class="item_name">
+                                <p class="">資格取得時期</p>
+                            </div>
+                            <div class="item_body flex mb_8">
+                                <div class="input_wrap">
+                                    <select name="" id="">
+                                        <option value="2020年">2020年</option>
+                                    </select>
+                                </div>
+                                <div class="input_wrap">
+                                    <select name="" id="">
+                                        <option value="3月">3月</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item_wrap mb_16">
+                            <p class="item_name">資格名称</p>
+                            <div class="item_body">
+                                <div class="input_wrap comp_name_wrap">
+                                    <input
+                                    v-model="user.name"
+                                    type="text"
+                                    autocomplete="off"
+                                    placeholder="例）〇〇〇資格1級"
+                                    title="資格名称"
+                                    class="input_inner"
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card_btn_wrap flex">
+                            <div class="card_register_btn">登録</div>
+                            <div @click="del(index)" class="card_delete_btn">削除</div>
+                        </div>
+                    </div>
+                    <div class="card_change_btn_wrap">
+                        <div class="card_up_btn">
+                            <img src="/images/card_up.svg" alt="" class="up_img">
+                        </div>
+                        <div class="card_down_btn">
+                            <img src="/images/card_down.svg" alt="" class="down_img">
+                        </div>
+                    </div>
+                </div>
+                <div @click="add" class="navy_btn_wrap">
+                    <div class="navy_btn">職歴を追加</div>
                 </div>
             </div>
         </div>
@@ -90,13 +138,22 @@
         return {
             isActive: false,
             isDisplay: true,
+            users: [
+                {name: '',}
+            ]
         }
     },
     methods: {
         active: function(){
             this.isActive = !this.isActive;
             this.isDisplay = !this.isDisplay;
-    }
+        },
+        add: function(){
+            this.users.push({ name: '', email: '' })
+        },
+        del: function(index){
+            this.users.splice(index, 1)
+        },
     }
 }
 </script>
