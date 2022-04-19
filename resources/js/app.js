@@ -18,6 +18,7 @@ import Thanks from "./components/Thanks";
 import Preview from "./components/Preview";
 import VModal from 'vue-js-modal';
 import MotivationModal from "./components/MotivationModal";
+import AcademyModal from "./components/AcademyModal";
 
 
 require('./bootstrap');
@@ -127,6 +128,7 @@ Vue.component('resume-12', Resume12);
 Vue.component('thanks', Thanks);
 Vue.component('preview', Preview);
 Vue.component('motivation-modal', MotivationModal);
+Vue.component('academy-modal', AcademyModal);
 
 
 

@@ -22,7 +22,7 @@
       <li  @click="active3" :class="{border_red: isActive3}" class="modal_sample_content">自分の〇〇という経験・スキルを活かして貴社に貢献できると考え、この度応募いたしました。今までの経験を活かしながら新しい業務にもチャレンジし、貴社の事業や組織の成長に貢献しならがら自分も成長したいと考えております。</li>
     </ul>
       <div class="modal_footer">
-          <div :class="{active: isActive1 || isActive2 || isActive3}" class="modal_add_btn"><span>例文を追加</span></div>
+          <div @click="add" :class="{active: isActive1 || isActive2 || isActive3}" class="modal_add_btn"><span>例文を追加</span></div>
           <div @click="hide" class="modal_close_btn">閉じる</div>
       </div>
   </modal>
@@ -60,7 +60,14 @@ export default {
           this.isActive1 = false;
           this.isActive2 = false;
           this.isActive3 = !this.isActive3;
-        }
+        },
+        add() {
+          if(!this.isActive1 && !this.isActive2 && !this.isActive3 ){
+            ;// 何もしない
+          } else {
+              this.$modal.hide('motivation-modal');
+          }
+        },
   }
 }
 </script>
