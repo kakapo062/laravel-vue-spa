@@ -72,7 +72,7 @@
                         ></textarea>
                     </div>
                 </div>
-                <div  @click="show" class="navy_btn_wrap">
+                <div @click="show" class="navy_btn_wrap">
                     <div class="navy_btn">例文を追加</div>
                 </div>
                 <motivation-modal />
@@ -93,7 +93,7 @@
 </div>
 </template>
 
-<script>import { functionExpression } from "@babel/types";
+<script>
 
     export default {
     data() {
@@ -112,7 +112,7 @@
         },
         hide(){
         this.$modal.hide('motivation-modal');
-        }
+        },
     }
 }
 </script>

@@ -61,13 +61,14 @@
         </div>
         <div class="resume_form_wrap">
             <div class="form_inner">
-                <div class="navy_btn_wrap">
-                        <div class="navy_btn">学歴を入力する</div>
+                <div @click="show" class="navy_btn_wrap">
+                    <div class="navy_btn">学歴を入力する</div>
                 </div>
                 <div class="normal_text_wrap">
                     <p class="normal_text">生年月日・最終学歴を入力すると、入学・卒業年度を自動で算出できます。</p>
                     <p class="red">学歴は高校卒業から記入してください。</p>
                 </div>
+                    <academy-modal />
             </div>
         </div>
         <div class="pager_wrap">
@@ -94,10 +95,19 @@
         }
     },
     methods: {
-        active: function(){
+        active(){
             this.isActive = !this.isActive;
             this.isDisplay = !this.isDisplay;
-    }
+        },
+        show() {
+        this.$modal.show('academy-modal');
+        },
+        hide() {
+        this.$modal.hide('academy-modal');
+        }
+        ,add() {
+            this.$modal.hide('academy-modal');
+        }
     }
 }
 </script>
