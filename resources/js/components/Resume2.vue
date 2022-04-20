@@ -165,6 +165,7 @@
         return {
             isActive: false,
             isDisplay: true,
+            ruby: '',
         }
     },
     methods: {

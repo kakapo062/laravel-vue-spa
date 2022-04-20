@@ -19,14 +19,17 @@ import Preview from "./components/Preview";
 import VModal from 'vue-js-modal';
 import MotivationModal from "./components/MotivationModal";
 import AcademyModal from "./components/AcademyModal";
-
+import ElementUI from 'element-ui';
+import locale from 'element-ui/lib/locale/lang/ja';
+import 'element-ui/lib/theme-chalk/index.css';
 
 require('./bootstrap');
 
 window.Vue = require('vue').default;
 
 Vue.use(VueRouter);
-Vue.use(VModal)
+Vue.use(VModal);
+Vue.use(ElementUI, {locale});
 
  const router = new VueRouter({
      mode: 'history',

@@ -438,7 +438,7 @@ transform: translateY(-50%);
 }
 .item_body > span {
     font-size: 13px;
-    margin: 0 8px 0 4px;
+    margin: 0 4px 0 4px;
 }
 .input_year select,
 .input_age select {
@@ -986,4 +986,7 @@ input[type='checkbox'] {
 }
 .border_red {
     border: 2px solid #D85041;
+}
+.date_input {
+    width: 100% !important;
 }
