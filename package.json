@@ -25,6 +25,7 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "element-ui": "^2.15.8",
         "vue-js-modal": "1.3"
     }
 }

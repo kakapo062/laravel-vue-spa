@@ -76,10 +76,11 @@
                     <p class="item_name">ふりがな</p>
                     <div class="item_body flex">
                         <div class="input_wrap">
-                            <input type="text" autocomplete="off" placeholder="やまだ" title="せい" class="input_inner">
+                            <el-input v-model="ruby" autocomplete="off" placeholder="やまだ" title="せい" class="input_inner">
+                            </el-input>
                         </div>
                         <div class="input_wrap">
-                            <input type="text" autocomplete="off" placeholder="たろう" title="めい" class="input_inner">
+                            <input type="text" autocomplete="off" placeholder="たろう" title="め" class="input_inner">
                         </div>
                     </div>
                 </div>
@@ -153,8 +154,12 @@
 
 <script>
     export default {
+        data() {
+            return {
+                ruby: '',
+            }
+        },
         mounted() {
-            console.log('Component mounted.')
-        }
+        },
     }
 </script>

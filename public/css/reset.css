@@ -142,7 +142,7 @@ img {
 }
 
 /*box-sizingを全ブラウザに対応*/
-*, *:before, *:after {
+/* *, *:before, *:after {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -o-box-sizing: border-box;
@@ -150,4 +150,4 @@ img {
     box-sizing: border-box;
 	margin: 0;
 	font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, sans-serif!important;
-}
+} */

@@ -6,7 +6,13 @@
         </div>
         <div class="resume_form_wrap">
             <div class="form_inner">
-                <input type="text" placeholder="2022年2月1日">
+            <el-date-picker
+                v-model="date"
+                type="date"
+                placeholder="作成日を選択します"
+                class="date_input"
+            >
+            </el-date-picker>
             </div>
         </div>
         <div class="pager_wrap">
@@ -30,6 +36,7 @@
         return {
             isActive: false,
             isDisplay: true,
+            date: '',
         }
     },
     methods: {
