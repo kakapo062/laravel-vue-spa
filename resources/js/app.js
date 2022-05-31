@@ -22,6 +22,8 @@ import AcademyModal from "./components/AcademyModal";
 import ElementUI from 'element-ui';
 import locale from 'element-ui/lib/locale/lang/ja';
 import 'element-ui/lib/theme-chalk/index.css';
+import VueCompositionAPI from '@vue/composition-api'
+import { createPinia, PiniaVuePlugin } from 'pinia'
 
 require('./bootstrap');
 
@@ -30,6 +32,9 @@ window.Vue = require('vue').default;
 Vue.use(VueRouter);
 Vue.use(VModal);
 Vue.use(ElementUI, {locale});
+Vue.use(VueCompositionAPI)
+Vue.use(PiniaVuePlugin)
+const pinia = createPinia()
 
  const router = new VueRouter({
      mode: 'history',
@@ -138,4 +143,5 @@ Vue.component('academy-modal', AcademyModal);
 const app = new Vue({
     el: '#app',
     router,
+    pinia,
 });
