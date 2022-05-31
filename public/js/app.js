@@ -7446,10 +7446,346 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      ruby: ''
+      family_name: '',
+      first_name: '',
+      family_ruby: '',
+      first_ruby: '',
+      age: '',
+      birthyears: [{
+        value: '010',
+        label: '2010'
+      }, {
+        value: '2009',
+        label: '2009'
+      }, {
+        value: '2008',
+        label: '2008'
+      }, {
+        value: '2007',
+        label: '2007'
+      }, {
+        value: '2006',
+        label: '2006'
+      }, {
+        value: '2005',
+        label: '2005'
+      }, {
+        value: '2004',
+        label: '2004'
+      }, {
+        value: '2003',
+        label: '2003'
+      }, {
+        value: '2002',
+        label: '2002'
+      }, {
+        value: '2001',
+        label: '2001'
+      }, {
+        value: '2000',
+        label: '2000'
+      }, {
+        value: '1999',
+        label: '1999'
+      }, {
+        value: '1998',
+        label: '1998'
+      }, {
+        value: '1997',
+        label: '1997'
+      }, {
+        value: '1996',
+        label: '1996'
+      }, {
+        value: '1995',
+        label: '1995'
+      }, {
+        value: '1994',
+        label: '1994'
+      }, {
+        value: '1993',
+        label: '1993'
+      }, {
+        value: '1992',
+        label: '1992'
+      }, {
+        value: '1991',
+        label: '1991'
+      }, {
+        value: '1990',
+        label: '1990'
+      }, {
+        value: '1989',
+        label: '1989'
+      }, {
+        value: '1988',
+        label: '1988'
+      }, {
+        value: '1987',
+        label: '1987'
+      }, {
+        value: '1986',
+        label: '1986'
+      }, {
+        value: '1985',
+        label: '1985'
+      }, {
+        value: '1984',
+        label: '1984'
+      }, {
+        value: '1983',
+        label: '1983'
+      }, {
+        value: '1982',
+        label: '1982'
+      }, {
+        value: '1981',
+        label: '1981'
+      }, {
+        value: '1980',
+        label: '1980'
+      }, {
+        value: '1979',
+        label: '1979'
+      }, {
+        value: '1978',
+        label: '1978'
+      }, {
+        value: '1977',
+        label: '1977'
+      }, {
+        value: '1976',
+        label: '1976'
+      }, {
+        value: '1975',
+        label: '1975'
+      }, {
+        value: '1974',
+        label: '1974'
+      }, {
+        value: '1973',
+        label: '1973'
+      }, {
+        value: '1972',
+        label: '1972'
+      }, {
+        value: '1971',
+        label: '1971'
+      }, {
+        value: '1970',
+        label: '1970'
+      }, {
+        value: '1969',
+        label: '1969'
+      }, {
+        value: '1968',
+        label: '1968'
+      }, {
+        value: '1967',
+        label: '1967'
+      }, {
+        value: '1966',
+        label: '1966'
+      }, {
+        value: '1965',
+        label: '1965'
+      }, {
+        value: '1964',
+        label: '1964'
+      }, {
+        value: '1963',
+        label: '1963'
+      }, {
+        value: '1962',
+        label: '1962'
+      }, {
+        value: '1961',
+        label: '1961'
+      }, {
+        value: '1960',
+        label: '1960'
+      }, {
+        value: '1959',
+        label: '1959'
+      }, {
+        value: '1958',
+        label: '1958'
+      }, {
+        value: '1957',
+        label: '1957'
+      }, {
+        value: '1956',
+        label: '1956'
+      }, {
+        value: '1955',
+        label: '1955'
+      }, {
+        value: '1954',
+        label: '1954'
+      }, {
+        value: '1953',
+        label: '1953'
+      }, {
+        value: '1952',
+        label: '1952'
+      }, {
+        value: '1951',
+        label: '1951'
+      }, {
+        value: '1950',
+        label: '1950'
+      }, {
+        value: '1949',
+        label: '1949'
+      }],
+      birthmonths: [{
+        value: '1',
+        label: '1'
+      }, {
+        value: '2',
+        label: '2'
+      }, {
+        value: '3',
+        label: '3'
+      }, {
+        value: '4',
+        label: '4'
+      }, {
+        value: '5',
+        label: '5'
+      }, {
+        value: '6',
+        label: '6'
+      }, {
+        value: '7',
+        label: '7'
+      }, {
+        value: '8',
+        label: '8'
+      }, {
+        value: '9',
+        label: '9'
+      }, {
+        value: '10',
+        label: '10'
+      }, {
+        value: '11',
+        label: '11'
+      }, {
+        value: '12',
+        label: '12'
+      }],
+      birthdays: [{
+        value: '1',
+        label: '1'
+      }, {
+        value: '2',
+        label: '2'
+      }, {
+        value: '3',
+        label: '3'
+      }, {
+        value: '4',
+        label: '4'
+      }, {
+        value: '5',
+        label: '5'
+      }, {
+        value: '6',
+        label: '6'
+      }, {
+        value: '7',
+        label: '7'
+      }, {
+        value: '8',
+        label: '8'
+      }, {
+        value: '9',
+        label: '9'
+      }, {
+        value: '10',
+        label: '10'
+      }, {
+        value: '11',
+        label: '11'
+      }, {
+        value: '12',
+        label: '12'
+      }, {
+        value: '13',
+        label: '13'
+      }, {
+        value: '14',
+        label: '14'
+      }, {
+        value: '15',
+        label: '15'
+      }, {
+        value: '16',
+        label: '16'
+      }, {
+        value: '17',
+        label: '17'
+      }, {
+        value: '18',
+        label: '18'
+      }, {
+        value: '19',
+        label: '19'
+      }, {
+        value: '20',
+        label: '20'
+      }, {
+        value: '21',
+        label: '21'
+      }, {
+        value: '22',
+        label: '22'
+      }, {
+        value: '23',
+        label: '23'
+      }, {
+        value: '24',
+        label: '24'
+      }, {
+        value: '25',
+        label: '25'
+      }, {
+        value: '26',
+        label: '26'
+      }, {
+        value: '27',
+        label: '27'
+      }, {
+        value: '28',
+        label: '28'
+      }, {
+        value: '29',
+        label: '29'
+      }, {
+        value: '30',
+        label: '30'
+      }, {
+        value: '31',
+        label: '31'
+      }],
+      birthyear: '',
+      birhtmonth: '',
+      birhtday: '',
+      radio1: '男性',
+      radio2: '女性',
+      radio3: '記入しない'
     };
   },
   mounted: function mounted() {}
@@ -95803,7 +96139,7 @@ var render = function () {
       _c("div", { staticClass: "item_wrap" }, [
         _c("p", { staticClass: "item_name" }, [_vm._v("最終学歴")]),
         _vm._v(" "),
-        _c("div", { staticClass: "item_body" }, [
+        _c("div", { staticClass: "item_body flex" }, [
           _c("div", { staticClass: "input_wrap input_age" }, [
             _c("select", { attrs: { name: "", id: "" } }, [
               _c("option", { attrs: { value: "30" } }, [_vm._v("30")]),
@@ -96369,7 +96705,59 @@ var render = function () {
       _vm._v(" "),
       _c("div", { staticClass: "resume_form_wrap" }, [
         _c("div", { staticClass: "form_inner" }, [
-          _vm._m(1),
+          _c("div", { staticClass: "item_wrap" }, [
+            _c("p", { staticClass: "item_name" }, [_vm._v("氏名")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "item_body flex" }, [
+              _c(
+                "div",
+                { staticClass: "input_wrap" },
+                [
+                  _c("el-input", {
+                    staticClass: "input_inner",
+                    attrs: {
+                      type: "text",
+                      autocomplete: "off",
+                      placeholder: "山田",
+                      title: "姓",
+                    },
+                    model: {
+                      value: _vm.family_name,
+                      callback: function ($$v) {
+                        _vm.family_name = $$v
+                      },
+                      expression: "family_name",
+                    },
+                  }),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "input_wrap" },
+                [
+                  _c("el-input", {
+                    staticClass: "input_inner",
+                    attrs: {
+                      type: "text",
+                      autocomplete: "off",
+                      placeholder: "太郎",
+                      title: "名",
+                    },
+                    model: {
+                      value: _vm.first_name,
+                      callback: function ($$v) {
+                        _vm.first_name = $$v
+                      },
+                      expression: "first_name",
+                    },
+                  }),
+                ],
+                1
+              ),
+            ]),
+          ]),
           _vm._v(" "),
           _c("div", { staticClass: "item_wrap" }, [
             _c("p", { staticClass: "item_name" }, [_vm._v("ふりがな")]),
@@ -96387,26 +96775,228 @@ var render = function () {
                       title: "せい",
                     },
                     model: {
-                      value: _vm.ruby,
+                      value: _vm.family_ruby,
                       callback: function ($$v) {
-                        _vm.ruby = $$v
+                        _vm.family_ruby = $$v
                       },
-                      expression: "ruby",
+                      expression: "family_ruby",
                     },
                   }),
                 ],
                 1
               ),
               _vm._v(" "),
-              _vm._m(2),
+              _c(
+                "div",
+                { staticClass: "input_wrap" },
+                [
+                  _c("el-input", {
+                    staticClass: "input_inner",
+                    attrs: {
+                      type: "text",
+                      autocomplete: "off",
+                      placeholder: "たろう",
+                      title: "め",
+                    },
+                    model: {
+                      value: _vm.first_ruby,
+                      callback: function ($$v) {
+                        _vm.first_ruby = $$v
+                      },
+                      expression: "first_ruby",
+                    },
+                  }),
+                ],
+                1
+              ),
             ]),
           ]),
           _vm._v(" "),
-          _vm._m(3),
+          _c("div", { staticClass: "item_wrap" }, [
+            _c("p", { staticClass: "item_name" }, [_vm._v("生年月日")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "item_body flex" }, [
+              _c(
+                "div",
+                { staticClass: "input_wrap input_year" },
+                [
+                  _c(
+                    "el-select",
+                    {
+                      staticClass: "input_year",
+                      attrs: { placeholder: "1996" },
+                      model: {
+                        value: _vm.birthyear,
+                        callback: function ($$v) {
+                          _vm.birthyear = $$v
+                        },
+                        expression: "birthyear",
+                      },
+                    },
+                    _vm._l(_vm.birthyears, function (item) {
+                      return _c("el-option", {
+                        key: item.value,
+                        attrs: { label: item.label, value: item.value },
+                      })
+                    }),
+                    1
+                  ),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("span", [_vm._v("年")]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "input_wrap" },
+                [
+                  _c(
+                    "el-select",
+                    {
+                      staticClass: "input_month",
+                      attrs: { placeholder: "1" },
+                      model: {
+                        value: _vm.birthmonth,
+                        callback: function ($$v) {
+                          _vm.birthmonth = $$v
+                        },
+                        expression: "birthmonth",
+                      },
+                    },
+                    _vm._l(_vm.birthmonths, function (item) {
+                      return _c("el-option", {
+                        key: item.value,
+                        attrs: { label: item.label, value: item.value },
+                      })
+                    }),
+                    1
+                  ),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("span", [_vm._v("月")]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "input_wrap" },
+                [
+                  _c(
+                    "el-select",
+                    {
+                      staticClass: "input_day",
+                      attrs: { placeholder: "1" },
+                      model: {
+                        value: _vm.birtyday,
+                        callback: function ($$v) {
+                          _vm.birtyday = $$v
+                        },
+                        expression: "birtyday",
+                      },
+                    },
+                    _vm._l(_vm.birthdays, function (item) {
+                      return _c("el-option", {
+                        key: item.value,
+                        attrs: { label: item.label, value: item.value },
+                      })
+                    }),
+                    1
+                  ),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("span", [_vm._v("日")]),
+            ]),
+          ]),
           _vm._v(" "),
-          _vm._m(4),
+          _c("div", { staticClass: "item_wrap" }, [
+            _c("p", { staticClass: "item_name" }, [_vm._v("年齢")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "item_body flex" }, [
+              _c(
+                "div",
+                { staticClass: "input_wrap input_age" },
+                [
+                  _c("el-input", {
+                    staticClass: "input_inner",
+                    attrs: {
+                      autocomplete: "off",
+                      placeholder: "25",
+                      title: "年齢",
+                    },
+                    model: {
+                      value: _vm.age,
+                      callback: function ($$v) {
+                        _vm.age = $$v
+                      },
+                      expression: "age",
+                    },
+                  }),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("span", [_vm._v("歳")]),
+            ]),
+          ]),
           _vm._v(" "),
-          _vm._m(5),
+          _c("div", { staticClass: "item_wrap" }, [
+            _c("p", { staticClass: "item_name" }, [_vm._v("性別")]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "item_body flex flex_column_2" },
+              [
+                _c(
+                  "el-radio",
+                  {
+                    attrs: { label: "男性", border: "" },
+                    model: {
+                      value: _vm.radio1,
+                      callback: function ($$v) {
+                        _vm.radio1 = $$v
+                      },
+                      expression: "radio1",
+                    },
+                  },
+                  [_vm._v("男性")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "el-radio",
+                  {
+                    attrs: { label: "女性", border: "" },
+                    model: {
+                      value: _vm.radio1,
+                      callback: function ($$v) {
+                        _vm.radio1 = $$v
+                      },
+                      expression: "radio1",
+                    },
+                  },
+                  [_vm._v("女性")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "el-radio",
+                  {
+                    attrs: { label: "記入しない", border: "" },
+                    model: {
+                      value: _vm.radio1,
+                      callback: function ($$v) {
+                        _vm.radio1 = $$v
+                      },
+                      expression: "radio1",
+                    },
+                  },
+                  [_vm._v("記入しない")]
+                ),
+              ],
+              1
+            ),
+          ]),
         ]),
       ]),
       _vm._v(" "),
@@ -96460,175 +97050,6 @@ var staticRenderFns = [
     return _c("div", { staticClass: "resume_step_note_wrap" }, [
       _c("p", { staticClass: "resume_step_note" }, [
         _vm._v("※不明な点がありましたら未記入のまま次の項目へお進みください。"),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "item_wrap" }, [
-      _c("p", { staticClass: "item_name" }, [_vm._v("氏名")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "item_body flex" }, [
-        _c("div", { staticClass: "input_wrap" }, [
-          _c("input", {
-            staticClass: "input_inner",
-            attrs: {
-              type: "text",
-              autocomplete: "off",
-              placeholder: "山田",
-              title: "姓",
-            },
-          }),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "input_wrap" }, [
-          _c("input", {
-            staticClass: "input_inner",
-            attrs: {
-              type: "text",
-              autocomplete: "off",
-              placeholder: "太郎",
-              title: "名",
-            },
-          }),
-        ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "input_wrap" }, [
-      _c("input", {
-        staticClass: "input_inner",
-        attrs: {
-          type: "text",
-          autocomplete: "off",
-          placeholder: "たろう",
-          title: "め",
-        },
-      }),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "item_wrap" }, [
-      _c("p", { staticClass: "item_name" }, [_vm._v("生年月日")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "item_body flex" }, [
-        _c("div", { staticClass: "input_wrap input_year" }, [
-          _c("select", { attrs: { name: "", id: "" } }, [
-            _c("option", { attrs: { value: "2000" } }, [_vm._v("2000")]),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("span", [_vm._v("年")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "input_wrap" }, [
-          _c("select", { attrs: { name: "", id: "" } }, [
-            _c("option", { attrs: { value: "1" } }, [_vm._v("1")]),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("span", [_vm._v("月")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "input_wrap" }, [
-          _c("select", { attrs: { name: "", id: "" } }, [
-            _c("option", { attrs: { value: "1" } }, [_vm._v("1")]),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("span", [_vm._v("日")]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "item_wrap" }, [
-      _c("p", { staticClass: "item_name" }, [_vm._v("年齢")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "item_body flex" }, [
-        _c("div", { staticClass: "input_wrap input_age" }, [
-          _c("select", { attrs: { name: "", id: "" } }, [
-            _c("option", { attrs: { value: "30" } }, [_vm._v("30")]),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("span", [_vm._v("歳")]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "item_wrap" }, [
-      _c("p", { staticClass: "item_name" }, [_vm._v("性別")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "item_body flex flex_column_2" }, [
-        _c(
-          "label",
-          {
-            staticClass: "form_label mr_12 mb_8",
-            attrs: { for: "gender_male" },
-          },
-          [
-            _c("input", {
-              staticClass: "input_radio",
-              attrs: {
-                type: "radio",
-                name: "gender",
-                value: "男性",
-                id: "gender_male",
-              },
-            }),
-            _vm._v(" "),
-            _c("span", { staticClass: "radio_text" }, [_vm._v("男性")]),
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "label",
-          { staticClass: "form_label", attrs: { for: "gender_female" } },
-          [
-            _c("input", {
-              staticClass: "input_radio",
-              attrs: {
-                type: "radio",
-                name: "gender",
-                value: "女性",
-                id: "gender_female",
-              },
-            }),
-            _vm._v(" "),
-            _c("span", { staticClass: "radio_text" }, [_vm._v("女性")]),
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "label",
-          { staticClass: "form_label", attrs: { for: "gender_no_answer" } },
-          [
-            _c("input", {
-              staticClass: "input_radio",
-              attrs: {
-                type: "radio",
-                name: "gender",
-                value: "記入しない",
-                id: "gender_no_answer",
-              },
-            }),
-            _vm._v(" "),
-            _c("span", { staticClass: "radio_text" }, [_vm._v("記入しない")]),
-          ]
-        ),
       ]),
     ])
   },

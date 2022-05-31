@@ -40,7 +40,7 @@
     </div>
     <div class="item_wrap">
         <p class="item_name">最終学歴</p>
-        <div class="item_body">
+        <div class="item_body flex">
             <div class="input_wrap input_age">
                 <select name="" id="">
                     <option value="30">30</option>
