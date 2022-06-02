@@ -21,11 +21,11 @@
 fv
 ***************/
 body {
-    background-color:beige;
+    background-color:#F9F9F9;
 }
 .top_wrap {
     margin: 0 auto;
-    max-width: 500px;
+    max-width: 550px;
     background-color: #fff;
     display: flex;
     flex-direction: column;
@@ -426,8 +426,12 @@ transform: translateY(-50%);
     column-gap: 12px;
     row-gap: 8px;
 }
-.input_wrap+.input_wrap {
-    margin-left: 12px;
+
+.col_12 {
+    column-gap: 12px;
+}
+.col_12 .input_wrap {
+    width: calc( 50% - 6px);
 }
 .mb_8 {
     margin-bottom: 8px;

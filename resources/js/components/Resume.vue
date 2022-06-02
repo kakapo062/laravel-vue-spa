@@ -63,7 +63,7 @@
             <div class="form_inner">
                 <div class="item_wrap">
                     <p class="item_name">氏名</p>
-                    <div class="item_body flex">
+                    <div class="item_body flex col_12">
                         <div class="input_wrap">
                             <el-input v-model="family_name" type="text" autocomplete="off" placeholder="山田" title="姓" class="input_inner">
                                 </el-input>
@@ -76,7 +76,7 @@
                 </div>
                 <div class="item_wrap">
                     <p class="item_name">ふりがな</p>
-                    <div class="item_body flex">
+                    <div class="item_body flex col_12">
                         <div class="input_wrap">
                             <el-input v-model="family_ruby" autocomplete="off" placeholder="やまだ" title="せい" class="input_inner">
                             </el-input>
@@ -153,13 +153,16 @@
         </div>
     </div>
     <div class="preview_btn_wrap">
-        <router-link v-bind:to="{name: 'index'}" class="preview_btn">
+        <router-link v-bind:to="{name: 'Preview'}" class="preview_btn">
             <span>プレビュー</span>
         </router-link>
     </div>
 </div>
 </template>
-
+<script setup>
+import { useStoreCounter } from './stores/pinia';
+const counter = useStoreCounter();
+</script>
 <script>
     export default {
         data() {
