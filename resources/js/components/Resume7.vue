@@ -125,7 +125,7 @@
         </div>
     </div>
     <div class="preview_btn_wrap">
-        <router-link v-bind:to="{name: 'index'}" class="preview_btn">
+        <router-link v-bind:to="{name: 'Preview'}" class="preview_btn">
             <span>プレビュー</span>
         </router-link>
     </div>

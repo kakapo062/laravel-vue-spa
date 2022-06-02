@@ -117,6 +117,11 @@ const pinia = createPinia()
      ]
  });
 
+ router.beforeEach((to, from, next) => {
+    router['referrer'] = from;
+    next();
+  })
+
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('header-component', HeaderComponent);
 Vue.component('footer-component', FooterComponent);
@@ -138,9 +143,7 @@ Vue.component('preview', Preview);
 Vue.component('motivation-modal', MotivationModal);
 Vue.component('academy-modal', AcademyModal);
 
-
-
-const app = new Vue({
+ new Vue({
     el: '#app',
     router,
     pinia,
