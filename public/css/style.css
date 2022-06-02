@@ -565,7 +565,8 @@ input[type="checkbox"] {
     height: 10px;
     margin-right: 8px;
 }
-.preview_btn_wrap {
+.preview_btn {
+    display: block;
     width: 100%;
     color: #fff;
     background: #D85041;
@@ -576,9 +577,17 @@ input[type="checkbox"] {
     line-height: 1.4231;
     position: absolute;
     bottom: 0;
+    transition: 0.1s ease-out all;
+}
+.preview_btn:hover {
+    opacity: .9;
 }
 .preview_btn span {
     position: relative;
+    color: #fff;
+}
+.preview_btn:hover.preview_btn span {
+    color: #fff;
 }
 .preview_btn span::before {
     position: absolute;

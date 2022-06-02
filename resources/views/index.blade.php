@@ -17,7 +17,9 @@
     <body>
         <div id="app" class="top_wrap">
             <header-component></header-component>
-            <router-view></router-view>
+            <keep-alive>
+                <router-view></router-view>
+            </keep-alive>
             <footer-component></footer-component>
         </div>
          <!-- Scripts -->
