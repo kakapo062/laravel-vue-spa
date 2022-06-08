@@ -27,7 +27,7 @@ import { createPinia, PiniaVuePlugin } from 'pinia'
 
 require('./bootstrap');
 
-require('./stores/vuex');
+require('./stores/vuex.js');
 
 window.Vue = require('vue').default;
 
