@@ -5,12 +5,14 @@
         <div class="resume_step_note_wrap">
             <p class="resume_step_note">※レイアウト崩れがないかご確認ください。ダウンロード後もデータ上で編集することが可能です。</p>
         </div>
-        <div class="resume_form_wrap">
-            <div class="form_inner">
-                <p class="small_note_text">給与・勤務時間・勤務地など希望があれば入力しましょう</p>
-            </div>
-        </div>
     </div>
+    <p>苗字：{{ resume.family_name }}</p>
+    <p>名前：{{ resume.first_name }}</p>
+    <p>苗字(ふりがな)：{{ resume.family_ruby }}</p>
+    <p>名前(ふりがな)：{{ resume.first_ruby }}</p>
+    <p>生年月日：{{ resume.birthyear }}年{{ resume.birthmonth }}月{{ resume.birthday }}日</p>
+    <p>年齢：{{ resume.age }}</p>
+    <p>性別：{{ resume.radio1 }}</p>
     <div class="preview_btn_wrap">
         <div @click="back" class="preview_btn">
             <span>入力画面に戻る</span>
@@ -26,6 +28,11 @@
             isActive: false,
             isDisplay: true,
         }
+    },
+    computed: {
+        resume(){
+                return this.$store.state.resume;
+            },
     },
     methods: {
         active(){

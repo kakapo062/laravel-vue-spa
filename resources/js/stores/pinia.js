@@ -1,30 +1,19 @@
-// defineStoreをインポート
-import {defineStore} from 'pinia'
 
-// defineStore`でストアを定義
-// 第一引数はアプリケーション内でユニークなキー
-export const useStoreCounter = defineStore('counter', {
+import { defineStore } from "pinia"
 
-    // state -> ストアの初期状態を定義
-    state: () => ({
-        count: 1,
-        family_name: '山田',
-    }),
-
-    // getters -> 状態を取得するgetter（computedに相当）
-    getters: {
-        doubleCount: (state) => state.count * 2,
+export const useStore = defineStore("counter", {
+  state: () => ({
+    count: 0,
+    suzuki: 'スズキ'
+  }),
+  getters: {
+    tenfold() {
+      return this.count * 10
     },
-
-    // actions -> 状態を変更するaction(methodsに相当)
-    actions: {
-        increment()
-        {
-            this.count++
-        },
-        decrement()
-        {
-            this.counter--
-        },
-    }
+  },
+  actions: {
+    increment() {
+      this.count++
+    },
+  },
 })

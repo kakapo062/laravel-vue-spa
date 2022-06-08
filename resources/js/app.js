@@ -27,7 +27,11 @@ import { createPinia, PiniaVuePlugin } from 'pinia'
 
 require('./bootstrap');
 
+require('./stores/vuex');
+
 window.Vue = require('vue').default;
+
+import store from './stores/vuex'
 
 Vue.use(VueRouter);
 Vue.use(VModal);
@@ -147,4 +151,5 @@ Vue.component('academy-modal', AcademyModal);
     el: '#app',
     router,
     pinia,
+    store,
 });
