@@ -22,20 +22,34 @@ fv
 ***************/
 body {
     background-color:#F9F9F9;
+    /* width: 100%; */
+    margin: 0 auto !important;
+    max-width: 900px;
 }
 .top_wrap {
     margin: 0 auto;
-    max-width: 550px;
+    width: 900px;
     background-color: #fff;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
+.preview_wrap {
+    width: 100%;
+}
 .wrap {
     flex: 1;
-    overflow-x: hidden;
     background: #F5F5F7;
     position: relative;
+}
+.preview_head {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+@media (max-width: 550px) {
+    .preview_head {
+    }
 }
 .fv {
     background: #CFE2E6;
@@ -322,6 +336,10 @@ main
     padding: 37px 20px 108px;
     background: #F5F5F7;
 }
+.preview_head_wrap {
+    padding: 37px 20px 32px;
+    background: #F5F5F7;
+}
 .step_nav_wrap {
 width: 500px;
 margin: 0 auto 32px;
@@ -577,6 +595,8 @@ input[type="checkbox"] {
     line-height: 1.4231;
     position: absolute;
     bottom: 0;
+    left: 0;
+    cursor: pointer;
     transition: 0.1s ease-out all;
 }
 .preview_btn:hover {
@@ -1035,5 +1055,20 @@ input[type='checkbox'] {
     .input_month,
     .input_day {
         width: 60px;
+    }
+}
+.preview-viewer {
+    height: 1070px;
+    background: #fff;
+}
+@media (max-width: 794px) {
+    .is-preview {
+        transform: scale(0.47229);
+        transform-origin: left top;
+    }
+}
+@media (min-width: 795px) {
+    .preview-viewer {
+        height: auto;
     }
 }
