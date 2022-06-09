@@ -10,12 +10,14 @@
      <title>{{ config('app.name', 'Vue Laravel SPA') }}</title>
  
      <!-- Styles -->
-     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
+     {{-- <link href="{{ mix('/css/app.css') }}" rel="stylesheet"> --}}
+     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
      <link rel="stylesheet" href="/css/reset.css" rel="stylesheet">
      <link rel="stylesheet" href="/css/style.css" rel="stylesheet">
+     <link rel="stylesheet" href="/css/rirekisho.css" rel="stylesheet">
     </head>
     <body>
-        <div id="app" class="top_wrap">
+        <div id="app" class="">
             <header-component></header-component>
             <keep-alive>
                 <router-view></router-view>

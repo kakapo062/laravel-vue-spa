@@ -1,27 +1,344 @@
 <template>
-<div class="wrap">
-    <div class="resume_wrap">
-        <h3 class="resume_step_title">プレビュー</h3>
-        <div class="resume_step_note_wrap">
-            <p class="resume_step_note">※レイアウト崩れがないかご確認ください。ダウンロード後もデータ上で編集することが可能です。</p>
+<div class="wrap preview_wrap">
+    <div class="preview_head_wrap">
+        <div class="preview_head">
+            <h3 class="resume_step_title">プレビュー</h3>
+            <div class="resume_step_note_wrap">
+                <p class="resume_step_note">※レイアウト崩れがないかご確認ください。ダウンロード後もデータ上で編集することが可能です。</p>
+            </div>
         </div>
     </div>
-    <p>苗字：{{ resume.family_name }}</p>
-    <p>名前：{{ resume.first_name }}</p>
-    <p>苗字(ふりがな)：{{ resume.family_ruby }}</p>
-    <p>名前(ふりがな)：{{ resume.first_ruby }}</p>
-    <p>生年月日：{{ resume.birthyear }}年{{ resume.birthmonth }}月{{ resume.birthday }}日</p>
-    <p>年齢：{{ resume.age }}</p>
-    <p>性別：{{ resume.radio1 }}</p>
-    <div class="preview_btn_wrap">
-        <div @click="back" class="preview_btn">
-            <span>入力画面に戻る</span>
+    <!-- <p>苗字：{{ resume.family_name }}</p> -->
+        <div class="preview-tabs">
+            <input id="user-viewer-tab" type="radio" name="preview-tab-active" value="previewFormat">
+            <label for="user-viewer-tab" class="tab-item">プレビュー</label>
+            <input id="example-viewer-tab" type="radio" name="preview-tab-active" value="sampleFormat">
+            <label for="example-viewer-tab" class="tab-item">記入例</label>
+        <div id="preview-viewer" class="preview-viewer tab-content">
+            <div class="is-preview">
+            <div id="preview-page-01" class="doc-paper preview rirekisho">
+                <div class="flex">
+                <div class="rirekisho-box1">
+                    <div class="rirekisho-header">
+                    <div class="title">履歴書</div>
+                    <div class="date"><span>2022年 6月 9日</span> 現在 </div>
+                    </div>
+                    <div data-highlight="タップで編集" class="rirekisho-profile">
+                    <div class="ruby flex">
+                        <div class="label">ふりがな</div>
+                        <div class="input">{{ resume.family_ruby }} {{ resume.first_ruby }}</div>
+                    </div>
+                    <div class="name flex">
+                        <div class="label">名前</div>
+                        <div class="input">{{ resume.family_name }} {{ resume.first_name }}</div>
+                    </div>
+                    <div class="etc flex">
+                        <div class="birthday"><span class="year">{{ resume.birthyear }}</span>年 <span class="month">{{ resume.birthmonth }}</span>月 <span class="day">{{ resume.birthday }}</span>日生（満 <span class="age">{{ resume.age }}</span> 歳） </div>
+                        <div class="gender"><span class="male">男</span><span>・</span><span class="female">女</span></div>
+                    </div>
+                    </div>
+                </div>
+                <div data-highlight="タップで編集" class="rirekisho-photo">
+                    <div>
+                    <div class="rirekisho-photo-inner">
+                        <p>証明写真 <br>縦 36mm〜40mm <br>横 24mm〜30mm <br>本人単身胸から上 <br>裏面のりづけ </p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <div class="rirekisho-box2">
+                <div class="contact-information contact-main flex">
+                    <div data-highlight="タップで編集" class="contact-information-address">
+                    <div class="ruby flex">
+                        <div class="label">ふりがな</div>
+                        <div class="input">とうきょうと　しながわく</div>
+                    </div>
+                    <div class="address flex">
+                        <div class="label">現住所</div>
+                        <div class="input">
+                        <div class="postal-code">〒111-1111</div>
+                        <pre>東京都品川区
+        </pre>
+                        </div>
+                    </div>
+                    </div>
+                    <div data-highlight="タップで編集" class="contact-information-etc">
+                    <div class="tel flex">
+                        <div class="label">電話</div>
+                        <div class="input"></div>
+                    </div>
+                    <div class="email flex">
+                        <div class="label">Email</div>
+                        <div class="input"></div>
+                    </div>
+                    </div>
+                </div>
+                <div class="contact-information contact-sub flex">
+                    <div class="contact-information-address">
+                    <div class="ruby flex">
+                        <div class="label">ふりがな</div>
+                        <div class="input"></div>
+                    </div>
+                    <div class="address flex">
+                        <div class="label">連絡先</div>
+                        <div class="input">
+                        <div class="postal-code">〒</div>
+                        <div class="comment">(現住所以外に連絡を希望する場合のみ入力)</div>
+                        <pre>
+        </pre>
+                        <!---->
+                        </div>
+                    </div>
+                    </div>
+                    <div class="contact-information-etc">
+                    <div class="tel flex">
+                        <div class="label">電話</div>
+                        <div class="input"></div>
+                    </div>
+                    <div class="email flex">
+                        <div class="label">Email</div>
+                        <div class="input"></div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <div data-highlight="タップで編集" class="rirekisho-table rirekisho-history-1">
+                <table class="">
+                    <thead>
+                    <tr>
+                        <th>年</th>
+                        <td>月</td>
+                        <td>学歴・職歴</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="education">
+                        <th></th>
+                        <td></td>
+                        <td class="">学歴</td>
+                    </tr>
+                    <tr class="empty">
+                        <th></th>
+                        <td></td>
+                        <td class=""></td>
+                    </tr>
+                    <tr class="empty">
+                        <th></th>
+                        <td></td>
+                        <td class=""></td>
+                    </tr>
+                    <tr class="empty">
+                        <th></th>
+                        <td></td>
+                        <td class=""></td>
+                    </tr>
+                    <tr class="empty">
+                        <th></th>
+                        <td></td>
+                        <td class=""></td>
+                    </tr>
+                    <tr class="empty">
+                        <th></th>
+                        <td></td>
+                        <td class=""></td>
+                    </tr>
+                    <tr class="empty">
+                        <th></th>
+                        <td></td>
+                        <td class=""></td>
+                    </tr>
+                    <tr class="empty">
+                        <th></th>
+                        <td></td>
+                        <td class=""></td>
+                    </tr>
+                    <tr class="empty">
+                        <th></th>
+                        <td></td>
+                        <td class=""></td>
+                    </tr>
+                    <tr class="empty">
+                        <th></th>
+                        <td></td>
+                        <td class=""></td>
+                    </tr>
+                    <tr class="empty">
+                        <th></th>
+                        <td></td>
+                        <td class=""></td>
+                    </tr>
+                    <tr class="empty">
+                        <th></th>
+                        <td></td>
+                        <td class=""></td>
+                    </tr>
+                    <tr class="empty">
+                        <th></th>
+                        <td></td>
+                        <td class=""></td>
+                    </tr>
+                    <tr class="empty">
+                        <th></th>
+                        <td></td>
+                        <td class=""></td>
+                    </tr>
+                    <tr class="empty">
+                        <th></th>
+                        <td></td>
+                        <td class=""></td>
+                    </tr>
+                    <tr class="empty">
+                        <th></th>
+                        <td></td>
+                        <td class=""></td>
+                    </tr>
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    </tbody>
+                </table>
+                </div>
+            </div>
+            <div id="preview-page-02" class="doc-paper preview rirekisho">
+                <div class="rirekisho-table rirekisho-history-2">
+                <table class="">
+                    <thead>
+                    <tr>
+                        <th>年</th>
+                        <td>月</td>
+                        <td>学歴・職歴</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <tr class="empty">
+                        <th></th>
+                        <td></td>
+                        <td class=""></td>
+                    </tr>
+                    <tr class="empty">
+                        <th></th>
+                        <td></td>
+                        <td class=""></td>
+                    </tr>
+                    <tr class="empty">
+                        <th></th>
+                        <td></td>
+                        <td class=""></td>
+                    </tr>
+                    <tr class="empty">
+                        <th></th>
+                        <td></td>
+                        <td class=""></td>
+                    </tr>
+                    <tr class="empty">
+                        <th></th>
+                        <td></td>
+                        <td class=""></td>
+                    </tr>
+                    <tr class="empty">
+                        <th></th>
+                        <td></td>
+                        <td class=""></td>
+                    </tr>
+                    <!---->
+                    </tbody>
+                </table>
+                </div>
+                <div data-highlight="タップで編集" class="rirekisho-table rirekisho-skill">
+                <table class="">
+                    <thead>
+                    <tr>
+                        <th>年</th>
+                        <td>月</td>
+                        <td>免許・資格</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="none">
+                        <th></th>
+                        <td></td>
+                        <td class="">なし</td>
+                    </tr>
+                    <tr class="empty">
+                        <th></th>
+                        <td></td>
+                        <td class=""></td>
+                    </tr>
+                    <tr class="empty">
+                        <th></th>
+                        <td></td>
+                        <td class=""></td>
+                    </tr>
+                    <tr class="empty">
+                        <th></th>
+                        <td></td>
+                        <td class=""></td>
+                    </tr>
+                    <tr class="empty">
+                        <th></th>
+                        <td></td>
+                        <td class=""></td>
+                    </tr>
+                    <tr class="empty">
+                        <th></th>
+                        <td></td>
+                        <td class=""></td>
+                    </tr>
+                    <!---->
+                    </tbody>
+                </table>
+                </div>
+                <div class="rirekisho-pr">
+                <div data-highlight="タップで編集" class="rirekisho-jis-pr-reason">
+                    <div class="label">志望動機・特技・アピールポイントなど</div>
+                    <div class="input">
+                    <pre class=""></pre>
+                    </div>
+                </div>
+                <!---->
+                </div>
+                <div data-highlight="タップで編集" class="rirekisho-hope">
+                <div class="label">本人希望欄（特に給料・職種・勤務時間・勤務地・その他について希望があれば記入）</div>
+                <div class="input">
+                    <pre class=""></pre>
+                </div>
+                </div>
+            </div>
+            </div>
         </div>
-    </div>
+        <!---->
+        </div>
+
+        <div class="preview_btn_wrap">
+            <div @click="back" class="preview_btn">
+                <span>入力画面に戻る</span>
+            </div>
+        </div>
 </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
     export default {
     data() {
         return {
@@ -30,9 +347,9 @@
         }
     },
     computed: {
-        resume(){
-                return this.$store.state.resume;
-            },
+         ...mapGetters([
+             'resume'
+             ]),
     },
     methods: {
         active(){
@@ -43,6 +360,10 @@
             // 1つ前へ
             this.$router.back()
         },
-    }
+    },
 }
 </script>
+
+<style>
+
+</style>

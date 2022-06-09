@@ -26,6 +26,7 @@ import VueCompositionAPI from '@vue/composition-api'
 import { createPinia, PiniaVuePlugin } from 'pinia'
 
 require('./bootstrap');
+require('./main');
 
 require('./stores/vuex.js');
 
