@@ -62,10 +62,11 @@
         <div class="resume_form_wrap">
             <div class="form_inner">
                 <div class="item_wrap">
-                    <p class="item_name">電話番号（ハイフン不要）</p>
+                    <p class="item_name">電話番号（ハイフンあり）</p>
                     <div class="item_body">
                         <div class="input_wrap">
-                            <input type="tel" autocomplete="off" placeholder="例）09012345678" title="電話番号" class="input_inner">
+                            <el-input v-model="resume.phone" @input="setResume()" autocomplete="off" placeholder="例）090-1234-5678" title="電話番号" class="input_inner">
+                            </el-input>
                         </div>
                     </div>
                 </div>
@@ -73,7 +74,8 @@
                     <p class="item_name">メールアドレス</p>
                     <div class="item_body">
                         <div class="input_wrap">
-                            <input type="email" autocomplete="off" placeholder="例）abc@example.com" title="メールアドレス" class="input_inner">
+                            <el-input v-model="resume.email" @input="setResume()" autocomplete="off" placeholder="例）abc@example.com" title="メールアドレス" class="input_inner">
+                            </el-input>
                         </div>
                     </div>
                 </div>
@@ -100,13 +102,20 @@
         return {
             isActive: false,
             isDisplay: true,
+            resume: {
+                phone: '',
+                email: '',
+            },
         }
     },
     methods: {
         active: function(){
             this.isActive = !this.isActive;
             this.isDisplay = !this.isDisplay;
-    }
+    },
+    setResume() {
+        this.$store.dispatch('setResume',this.resume)
+    },
     }
 }
 </script>

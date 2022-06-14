@@ -65,7 +65,8 @@
                     <p class="item_name">郵便番号（ハイフン不要）</p>
                     <div class="item_body flex">
                         <div class="input_wrap">
-                            <input type="text" autocomplete="off" placeholder="例) 000-1234" title="郵便番号" class="input_inner">
+                            <el-input v-model="resume.post_code" @input="setResume()" autocomplete="off" placeholder="例) 000-1234" title="郵便番号" class="input_inner">
+                            </el-input>
                         </div>
                         <div class="auto_btn_wrap">
                             <div class="auto_btn">自動入力</div>
@@ -76,7 +77,8 @@
                     <p class="item_name">都道府県・市区町村・番地</p>
                     <div class="item_body">
                         <div class="input_wrap">
-                            <input type="text" autocomplete="off" placeholder="例）〇〇県〇〇市○丁目" title="都道府県・市区町村・番地" class="input_inner">
+                            <el-input v-model="resume.address" @input="setResume()" autocomplete="off" placeholder="例）〇〇県〇〇市○丁目" title="都道府県・市区町村・番地" class="input_inner">
+                            </el-input>
                         </div>
                     </div>
                 </div>
@@ -84,7 +86,8 @@
                     <p class="item_name">マンション・建物名</p>
                     <div class="item_body">
                         <div class="input_wrap">
-                            <input type="text" autocomplete="off" placeholder="例）〇〇マンション" title="マンション・建物名" class="input_inner">
+                            <el-input v-model="resume.address_opt" @input="setResume()" autocomplete="off" placeholder="例）〇〇マンション" title="マンション・建物名" class="input_inner">
+                            </el-input>
                         </div>
                     </div>
                 </div>
@@ -93,7 +96,8 @@
                     <p class="item_name_sub">都道府県と市区町村までを記入してください</p>
                     <div class="item_body">
                         <div class="input_wrap">
-                            <input type="text" autocomplete="off" placeholder="例）とうきょうとしながわくにしごたんだ" title="住所ふりがな" class="input_inner">
+                            <el-input v-model="resume.address_ruby" @input="setResume()" autocomplete="off" placeholder="例）とうきょうとしながわくにしごたんだ" title="住所ふりがな" class="input_inner">
+                            </el-input>
                         </div>
                     </div>
                 </div>
@@ -106,7 +110,8 @@
                     <p class="item_name">郵便番号（ハイフン不要）</p>
                     <div class="item_body flex">
                         <div class="input_wrap">
-                            <input type="text" autocomplete="off" placeholder="例) 000-1234" title="郵便番号" class="input_inner">
+                            <el-input v-model="resume.post_code_add" @input="setResume()" autocomplete="off" placeholder="例) 000-1234" title="郵便番号" class="input_inner">
+                            </el-input>
                         </div>
                         <div class="auto_btn_wrap">
                             <div class="auto_btn">自動入力</div>
@@ -117,7 +122,8 @@
                     <p class="item_name">都道府県・市区町村・番地</p>
                     <div class="item_body">
                         <div class="input_wrap">
-                            <input type="text" autocomplete="off" placeholder="例）〇〇県〇〇市○丁目" title="都道府県・市区町村・番地" class="input_inner">
+                            <el-input v-model="resume.address_add" @input="setResume()" autocomplete="off" placeholder="例）〇〇県〇〇市○丁目" title="都道府県・市区町村・番地" class="input_inner">
+                            </el-input>
                         </div>
                     </div>
                 </div>
@@ -125,7 +131,8 @@
                     <p class="item_name">マンション・建物名</p>
                     <div class="item_body">
                         <div class="input_wrap">
-                            <input type="text" autocomplete="off" placeholder="例）〇〇マンション" title="マンション・建物名" class="input_inner">
+                            <el-input v-model="resume.address_opt" @input="setResume()" autocomplete="off" placeholder="例）〇〇マンション" title="マンション・建物名" class="input_inner">
+                            </el-input>
                         </div>
                     </div>
                 </div>
@@ -134,7 +141,8 @@
                     <p class="item_name_sub">都道府県と市区町村までを記入してください</p>
                     <div class="item_body">
                         <div class="input_wrap">
-                            <input type="text" autocomplete="off" placeholder="例）とうきょうとしながわくにしごたんだ" title="住所ふりがな" class="input_inner">
+                            <el-input v-model="resume.address_ruby_opt" @input="setResume()" autocomplete="off" placeholder="例）とうきょうとしながわくにしごたんだ" title="住所ふりがな" class="input_inner">
+                            </el-input>
                         </div>
                     </div>
                 </div>
@@ -151,6 +159,9 @@
             </div>
         </div>
     </div>
+        <router-link v-bind:to="{name: 'Preview'}" class="fixed_preview_btn">
+        <span>プレビュー</span>
+    </router-link>
     <div class="preview_btn_wrap">
         <router-link v-bind:to="{name: 'Preview'}" class="preview_btn">
             <span>プレビュー</span>
@@ -165,14 +176,26 @@
         return {
             isActive: false,
             isDisplay: true,
-            ruby: '',
+            resume: {
+                post_code: '',
+                address: '',
+                address_option: '',
+                address_ruby: '',
+                post_code_add: '',
+                address_add: '',
+                address_option_add: '',
+                address_ruby_add: '',
+            },
         }
     },
     methods: {
-        active: function(){
+        active() {
             this.isActive = !this.isActive;
             this.isDisplay = !this.isDisplay;
-    }
+        },
+        setResume() {
+            this.$store.dispatch('setResume',this.resume)
+        },
     }
 }
 </script>

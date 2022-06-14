@@ -41,7 +41,7 @@
                 <div data-highlight="タップで編集" class="rirekisho-photo">
                     <div>
                     <div class="rirekisho-photo-inner">
-                        <p>証明写真 <br>縦 36mm〜40mm <br>横 24mm〜30mm <br>本人単身胸から上 <br>裏面のりづけ </p>
+                        <!-- <p><img src="{{ resume.url }}" alt=""></p> -->
                     </div>
                     </div>
                 </div>
@@ -51,14 +51,13 @@
                     <div data-highlight="タップで編集" class="contact-information-address">
                     <div class="ruby flex">
                         <div class="label">ふりがな</div>
-                        <div class="input">とうきょうと　しながわく</div>
+                        <div class="input">{{ resume.address_ruby }}</div>
                     </div>
                     <div class="address flex">
                         <div class="label">現住所</div>
                         <div class="input">
-                        <div class="postal-code">〒111-1111</div>
-                        <pre>東京都品川区
-        </pre>
+                        <div class="postal-code">〒{{ resume.post_code }}</div>
+                        <pre>{{ resume.address }} {{ resume.address_opt }}</pre>
                         </div>
                     </div>
                     </div>
@@ -77,27 +76,25 @@
                     <div class="contact-information-address">
                     <div class="ruby flex">
                         <div class="label">ふりがな</div>
-                        <div class="input"></div>
+                        <div class="input">{{ resume.address_ruby_opt }}</div>
                     </div>
                     <div class="address flex">
                         <div class="label">連絡先</div>
                         <div class="input">
-                        <div class="postal-code">〒</div>
+                        <div class="postal-code">〒{{ resume.post_code_add }}</div>
                         <div class="comment">(現住所以外に連絡を希望する場合のみ入力)</div>
-                        <pre>
-        </pre>
-                        <!---->
+                        <pre>{{ resume.address_add }} {{ resume.address_opt_add }}</pre>
                         </div>
                     </div>
                     </div>
                     <div class="contact-information-etc">
                     <div class="tel flex">
                         <div class="label">電話</div>
-                        <div class="input"></div>
+                        <div class="input">{{ resume.phone }}</div>
                     </div>
                     <div class="email flex">
                         <div class="label">Email</div>
-                        <div class="input"></div>
+                        <div class="input">{{ resume.email }}</div>
                     </div>
                     </div>
                 </div>
@@ -329,7 +326,7 @@
         <!---->
         </div>
 
-        <div class="preview_btn_wrap">
+        <div class="preview_btn_wrap back">
             <div @click="back" class="preview_btn">
                 <span>入力画面に戻る</span>
             </div>
