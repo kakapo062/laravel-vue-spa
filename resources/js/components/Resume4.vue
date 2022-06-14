@@ -64,19 +64,11 @@
                 <div class="item_wrap">
                     <div class="item_body">
                         <div class="photo_upload_wrap">
-                            <el-upload
-                                class="avatar-uploader photo_upload_image preview_box"
-                                action="https://jsonplaceholder.typicode.com/posts/"
-                                :show-file-list="false"
-                                :on-success="handleAvatarSuccess"
-                                :before-upload="beforeAvatarUpload"
-                                >
-                                <!-- <img v-if="resume.url" :src="resume.url" @error="noimage" class="avatar"> -->
-                                <img :src="resume.url" @error="noimage" @change="setResume()" class="avatar">
-                                <!-- <i v-else class="el-icon-plus avatar-uploader-icon"></i> -->
-                            </el-upload>
+                            <div class="photo_upload_image preview_box">
+                                <img class="image_preview" :src="resume.url" @error="noImage" alt="証明写真">
+                            </div>
                             <label class="navy_btn_wrap upload_label hover_up" v-show="resume.url == ''">
-                                <input type="file" accept="image/*" name="avatar" class="none" ref="preview" @change="show">写真を登録する
+                                <input type="file" accept="image/*" name="avatar" class="none" ref="preview" @change="upFile()">写真を登録する
                             </label>
                             <div class="navy_btn_wrap hover_up" v-if="resume.url !== ''" @click="resetFile()">
                                 <div class="navy_btn delete">写真を削除する</div>
@@ -84,9 +76,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="">
-                    <img :src="resume.url" alt="">
-                </div> 
                 <el-collapse v-model="activeNames" @change="handleChange" class="accordion">
                     <el-collapse-item title="使用する写真について" name="1" class="accordion_title">
                         <ul class="accordion_content_list">
@@ -155,42 +144,24 @@
             this.isActive = !this.isActive;
             this.isDisplay = !this.isDisplay;
         },
-        noimage(element) {
+        noImage(element) {
           element.target.src = '/images/profile_sample.jpeg'
         },
-         handleChange(val) {
+         handleChange(val) {//アコーディオン
             console.log(val);
         },
-        handleAvatarSuccess(res, file) {
-        this.resume.url = URL.createObjectURL(file.raw);
-        // this.$store.dispatch('setResume',this.resume);
-        },
-        beforeAvatarUpload(file) {
-            const isJPG = file.type === 'image/jpeg';
-            const isLt2M = file.size / 1024 / 1024 < 2;
-
-            if (!isJPG) {
-            this.$message.error('Avatar picture must be JPG format!');
-            }
-            if (!isLt2M) {
-            this.$message.error('Avatar picture size can not exceed 2MB!');
-            }
-            return isLt2M;
-        },
-        show() {
+        upFile() {
             const file = this.$refs.preview.files[0];
+            console.log(file);
             this.resume.url = URL.createObjectURL(file);
+            this.$store.dispatch('setResume',this.resume);
         },
         resetFile() {
             const input = this.$refs.preview;
             input.type = 'text';
             input.type = 'file';
             this.resume.url = '';
-            console.log(input);
-        },
-        setResume() {
-            this.$store.dispatch('setResume',this.resume)
-            console.log('成功');
+            this.$store.dispatch('setResume',this.resume);
         },
     },
 }

@@ -41,7 +41,7 @@
                 <div data-highlight="タップで編集" class="rirekisho-photo">
                     <div>
                     <div class="rirekisho-photo-inner">
-                        <!-- <p><img src="{{ resume.url }}" alt=""></p> -->
+                        <img :src="resume.url" alt="">
                     </div>
                     </div>
                 </div>
