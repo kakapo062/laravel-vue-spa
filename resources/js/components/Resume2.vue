@@ -101,10 +101,15 @@
                         </div>
                     </div>
                 </div>
-                <div @click="active" v-if="isDisplay" class="navy_btn_wrap">
-                    <div class="navy_btn">上記以外に希望する住所を追加</div>
-                </div>
-                        <div v-if="isActive" class="">
+                <el-collapse accordion>
+                    <el-collapse-item name="1" class="step2">
+                        <template slot="title">
+                        <p class="width100" @click="openMenu =!openMenu">
+                                  <template v-if="openMenu === false">上記以外に希望する住所を追加</template>
+          <template v-else>閉じる</template>
+                        </p>
+                        </template>
+                    <div class="">
                     <p class="address_note">※現住所以外に連絡を希望する場合のみ入力してください</p>
                     <div class="item_wrap">
                     <p class="item_name">郵便番号（ハイフン不要）</p>
@@ -150,6 +155,57 @@
                     <div class="navy_btn">閉じる</div>
                 </div>
                 </div>
+                    </el-collapse-item>
+                </el-collapse>
+                <!-- <div @click="active" v-if="isDisplay" class="navy_btn_wrap">
+                    <div class="navy_btn">上記以外に希望する住所を追加</div>
+                </div>
+                <div v-if="isActive" class="">
+                    <p class="address_note">※現住所以外に連絡を希望する場合のみ入力してください</p>
+                    <div class="item_wrap">
+                    <p class="item_name">郵便番号（ハイフン不要）</p>
+                    <div class="item_body flex">
+                        <div class="input_wrap">
+                            <el-input v-model="resume.post_code_add" @input="setResume()" autocomplete="off" placeholder="例) 000-1234" title="郵便番号" class="input_inner">
+                            </el-input>
+                        </div>
+                        <div class="auto_btn_wrap">
+                            <div class="auto_btn">自動入力</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item_wrap">
+                    <p class="item_name">都道府県・市区町村・番地</p>
+                    <div class="item_body">
+                        <div class="input_wrap">
+                            <el-input v-model="resume.address_add" @input="setResume()" autocomplete="off" placeholder="例）〇〇県〇〇市○丁目" title="都道府県・市区町村・番地" class="input_inner">
+                            </el-input>
+                        </div>
+                    </div>
+                </div>
+                <div class="item_wrap">
+                    <p class="item_name">マンション・建物名</p>
+                    <div class="item_body">
+                        <div class="input_wrap">
+                            <el-input v-model="resume.address_opt" @input="setResume()" autocomplete="off" placeholder="例）〇〇マンション" title="マンション・建物名" class="input_inner">
+                            </el-input>
+                        </div>
+                    </div>
+                </div>
+                <div class="item_wrap">
+                    <p class="item_name">住所ふりがな</p>
+                    <p class="item_name_sub">都道府県と市区町村までを記入してください</p>
+                    <div class="item_body">
+                        <div class="input_wrap">
+                            <el-input v-model="resume.address_ruby_opt" @input="setResume()" autocomplete="off" placeholder="例）とうきょうとしながわくにしごたんだ" title="住所ふりがな" class="input_inner">
+                            </el-input>
+                        </div>
+                    </div>
+                </div>
+                <div @click="active" v-if="!isDisplay" class="navy_btn_wrap">
+                    <div class="navy_btn">閉じる</div>
+                </div>
+                </div> -->
             </div>
         </div>
         <div class="pager_wrap">
@@ -176,6 +232,7 @@
         return {
             isActive: false,
             isDisplay: true,
+            openMenu: false,
             resume: {
                 post_code: '',
                 address: '',
@@ -196,6 +253,13 @@
         setResume() {
             this.$store.dispatch('setResume',this.resume)
         },
+        open(){
+                if(this.openMenu ===false){
+                    this.openMenu = true
+                }else{
+                    this.openMenu = false
+                }
+            }
     }
 }
 </script>

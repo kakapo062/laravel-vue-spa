@@ -1148,3 +1148,37 @@ input[type='checkbox'] {
     display: block;
     object-fit: cover;
   }
+  .step2 .el-collapse-item__header {
+    background: #233D4C !important;
+    color: #fff !important;
+    text-align: center;
+    justify-content: center;
+    padding-left: 0 !important;
+    position: relative;
+  }
+  .step2 .el-collapse-item__arrow {
+      display: none !important;
+}
+.step2 .el-collapse-item__header::after {
+    content: '';
+    display: inline-block;
+    background: url(/images/plus@2x.png) no-repeat center center;
+    background-size: contain;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 16px;
+}
+.step2 .el-collapse-item__header.is-active::after {
+    content: '';
+    display: inline-block;
+    background: url(/images/minus@2x.png) no-repeat center center;
+    background-size: contain;
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    right: 18px;
+}
+.width100 {
+    width: 100%;
+}
