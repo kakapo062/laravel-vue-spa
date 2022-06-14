@@ -64,21 +64,31 @@
                 <div class="item_wrap">
                     <div class="item_body">
                         <div class="photo_upload_wrap">
-                            <div class="photo_upload_image preview_box" v-if="url">
-                                <img class="image_preview" v-bind:src="url" alt="証明写真">
-                            </div>
-                            <label class="navy_btn_wrap upload_label hover_up" v-show="url == '/images/profile_sample.png'">
+                            <el-upload
+                                class="avatar-uploader photo_upload_image preview_box"
+                                action="https://jsonplaceholder.typicode.com/posts/"
+                                :show-file-list="false"
+                                :on-success="handleAvatarSuccess"
+                                :before-upload="beforeAvatarUpload"
+                                >
+                                <!-- <img v-if="resume.url" :src="resume.url" @error="noimage" class="avatar"> -->
+                                <img :src="resume.url" @error="noimage" @change="setResume()" class="avatar">
+                                <!-- <i v-else class="el-icon-plus avatar-uploader-icon"></i> -->
+                            </el-upload>
+                            <label class="navy_btn_wrap upload_label hover_up" v-show="resume.url == ''">
                                 <input type="file" accept="image/*" name="avatar" class="none" ref="preview" @change="show">写真を登録する
                             </label>
-                            <div class="navy_btn_wrap hover_up" v-if="url !== '/images/profile_sample.png'" @click="resetFile()">
+                            <div class="navy_btn_wrap hover_up" v-if="resume.url !== ''" @click="resetFile()">
                                 <div class="navy_btn delete">写真を削除する</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <ul class="accordion">
-                    <li class="accordion_item accordion_title" @click="toggleAccordion('1')">使用する写真について</li>
-                    <li class="accordion_item accordion_content" v-show="isOpened.indexOf('1') >= 0">
+                <div class="">
+                    <img :src="resume.url" alt="">
+                </div> 
+                <el-collapse v-model="activeNames" @change="handleChange" class="accordion">
+                    <el-collapse-item title="使用する写真について" name="1" class="accordion_title">
                         <ul class="accordion_content_list">
                             <li class="accordion_content_item">・撮影から3カ月以内の写真を使用してください。</li>
                             <li class="accordion_content_item">・胸から上の画像を使用してください。</li>
@@ -94,9 +104,8 @@
                                 <img src="/images/woman_images@2x.png" alt="女性写真">
                             </div>
                         </div>
-                    </li>
-                    <li class="accordion_item accordion_title" @click="toggleAccordion('2')">スマホアプリで履歴書写真を撮影する場合</li>
-                    <li class="accordion_item accordion_content" v-show="isOpened.indexOf('2') >= 0">
+                    </el-collapse-item>
+                    <el-collapse-item title="スマホアプリで履歴書写真を撮影する場合" name="2" class="accordion_title">
                         <p class="content_normal_text">スマートフォンのアプリ「履歴書カメラ」で履歴書写真を撮影いただけます。<br>無料でご利用いただけますのでご活用ください。</p>
                         <div class="app_img_wrap flex">
                             <div class="photo_app">
@@ -110,8 +119,8 @@
                                 </a>
                             </div>
                         </div>
-                    </li>
-                </ul>
+                    </el-collapse-item>
+                </el-collapse>
             </div>
         </div>
         <div class="pager_wrap">
@@ -135,33 +144,54 @@
         return {
             isActive: false,
             isDisplay: true,
-            isOpened: [],
-            url: "/images/profile_sample.png",
+            activeNames: [''],
+            resume: {
+                url: '',
+            },
         }
     },
     methods: {
-        active: function(){
+        active() {
             this.isActive = !this.isActive;
             this.isDisplay = !this.isDisplay;
         },
-        toggleAccordion: function(data){
-            if (this.isOpened.indexOf(data) >= 0) {
-                this.isOpened = this.isOpened.filter(n => n !== data)
+        noimage(element) {
+          element.target.src = '/images/profile_sample.jpeg'
+        },
+         handleChange(val) {
+            console.log(val);
+        },
+        handleAvatarSuccess(res, file) {
+        this.resume.url = URL.createObjectURL(file.raw);
+        // this.$store.dispatch('setResume',this.resume);
+        },
+        beforeAvatarUpload(file) {
+            const isJPG = file.type === 'image/jpeg';
+            const isLt2M = file.size / 1024 / 1024 < 2;
+
+            if (!isJPG) {
+            this.$message.error('Avatar picture must be JPG format!');
             }
-            else {
-                this.isOpened.push(data)
+            if (!isLt2M) {
+            this.$message.error('Avatar picture size can not exceed 2MB!');
             }
+            return isLt2M;
         },
         show() {
             const file = this.$refs.preview.files[0];
-            this.url = URL.createObjectURL(file);
+            this.resume.url = URL.createObjectURL(file);
         },
         resetFile() {
             const input = this.$refs.preview;
             input.type = 'text';
             input.type = 'file';
-            this.url = "/images/profile_sample.png";
-        }
+            this.resume.url = '';
+            console.log(input);
+        },
+        setResume() {
+            this.$store.dispatch('setResume',this.resume)
+            console.log('成功');
+        },
     },
 }
 </script>
