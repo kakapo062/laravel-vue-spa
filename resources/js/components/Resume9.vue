@@ -68,9 +68,14 @@
                     </div>
                     <div class="item_body flex">
                         <div class="input_wrap input_family">
-                            <select name="" id="">
-                                <option value="1">1</option>
-                            </select>
+                        <el-select v-model="resume.dependent" @change="setResume()" placeholder="1" class="input_year">
+                            <el-option
+                            v-for="item in resume.dependents"
+                            :key="item.value"
+                            :label="item.label"
+                            :value="item.value">
+                            </el-option>
+                        </el-select>
                         </div>
                         <span>人</span>
                     </div>
@@ -78,27 +83,15 @@
                 <div class="item_wrap">
                     <p class="item_name">配偶者</p>
                     <div class="item_body flex flex_column_2">
-                        <label for="partner_yes" class="form_label mr_12 mb_8">
-                            <input type="radio" name="partner" value="配偶者あり" id="partner_yes" class="input_radio">
-                            <span class="radio_text">あり</span>
-                        </label>
-                        <label for="partner_no" class="form_label">
-                            <input type="radio" name="partner" value="配偶者なし" id="partner_no" class="input_radio">
-                            <span class="radio_text">なし</span>
-                        </label>
+                        <el-radio v-model="resume.spouse" @change="setResume()" label="あり" border>あり</el-radio>
+                        <el-radio v-model="resume.spouse" @change="setResume()" label="なし" border>なし</el-radio>
                     </div>
                 </div>
                 <div class="item_wrap">
                     <p class="item_name">配偶者の扶養義務</p>
                     <div class="item_body flex flex_column_2">
-                        <label for="duty_on" class="form_label mr_12 mb_8">
-                            <input type="radio" name="duty" value="扶養義務あり" id="duty_on" class="input_radio">
-                            <span class="radio_text">あり</span>
-                        </label>
-                        <label for="duty_no" class="form_label">
-                            <input type="radio" name="duty" value="扶養義務なし" id="duty_no" class="input_radio">
-                            <span class="radio_text">なし</span>
-                        </label>
+                        <el-radio v-model="resume.duty" @change="setResume()" label="あり" border>あり</el-radio>
+                        <el-radio v-model="resume.duty" @change="setResume()" label="なし" border>なし</el-radio>
                     </div>
                 </div>
             </div>
@@ -110,6 +103,9 @@
             </div>
         </div>
     </div>
+        <router-link v-bind:to="{name: 'Preview'}" class="fixed_preview_btn">
+        <span>プレビュー</span>
+    </router-link>
     <div class="preview_btn_wrap">
         <router-link v-bind:to="{name: 'Preview'}" class="preview_btn">
             <span>プレビュー</span>
@@ -124,13 +120,63 @@
         return {
             isActive: false,
             isDisplay: true,
+            resume: {
+                dependent: '',
+                dependents: [
+                    {
+                        value: '0',
+                        label: '0'
+                    },
+                    {
+                        value: '1',
+                        label: '1'
+                    },
+                    {
+                        value: '2',
+                        label: '2'
+                    },
+                    {
+                        value: '3',
+                        label: '3'
+                    },
+                    {
+                        value: '4',
+                        label: '4'
+                    },
+                    {
+                        value: '5',
+                        label: '5'
+                    },
+                    {
+                        value: '6',
+                        label: '6'
+                    },
+                    {
+                        value: '7',
+                        label: '7'
+                    },
+                    {
+                        value: '8',
+                        label: '8'
+                    },
+                    {
+                        value: '9',
+                        label: '9'
+                    },
+                ],
+                spouse: '',
+                duty: '',
+            }
         }
     },
     methods: {
-        active: function(){
+        active(){
             this.isActive = !this.isActive;
             this.isDisplay = !this.isDisplay;
-    }
+        },
+        setResume() {
+        this.$store.dispatch('setResume',this.resume)
+        },
     }
 }
 </script>

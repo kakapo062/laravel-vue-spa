@@ -7,14 +7,16 @@
         <div class="resume_form_wrap">
             <div class="form_inner">
             <el-date-picker
-                v-model="date"
+                v-model="resume.date"
                 type="date"
                 placeholder="作成日を選択します"
                 class="date_input"
+                @change="setResume()"
             >
             </el-date-picker>
             </div>
         </div>
+        <!-- <p>{{ resume.date }}</p> -->
         <div class="pager_wrap">
             <div class="pager_inner">
                 <router-link v-bind:to="{name: 'resume12'}" class="next_step_btn"><span>データを保存する</span></router-link>
@@ -22,6 +24,9 @@
             </div>
         </div>
     </div>
+    <router-link v-bind:to="{name: 'Preview'}" class="fixed_preview_btn">
+        <span>プレビュー</span>
+    </router-link>
     <div class="preview_btn_wrap">
         <router-link v-bind:to="{name: 'Preview'}" class="preview_btn">
             <span>プレビュー</span>
@@ -36,14 +41,31 @@
         return {
             isActive: false,
             isDisplay: true,
-            date: '',
+            resume: {
+                date: '',
+                year: '',
+                month: '',
+                day: '',
+            },
         }
     },
     methods: {
-        active: function(){
+        active() {
             this.isActive = !this.isActive;
             this.isDisplay = !this.isDisplay;
-    }
-    }
+        },
+        setResume(){
+            const dateValue = this.resume.date;
+            if(dateValue !== "") {
+                this.resume.year = dateValue.getFullYear();
+                this.resume.month = ('00' + (dateValue.getMonth()+1)).slice(-2);
+                this.resume.day = ('00' + dateValue.getDate()).slice(-2);
+                // return (this.resume.year + '年' + this.resume.month + '月' + this.resume.day + '日');
+                this.$store.dispatch('setResume',this.resume);
+            }
+        },
+    },
+      computed:{
+  }
 }
 </script>

@@ -64,13 +64,16 @@
                 <p class="small_note_text">給与・勤務時間・勤務地など希望があれば入力しましょう</p>
                 <div class="card_wrap">
                     <div class="card_inner">
-                        <textarea
-                        name=""
-                        id=""
-                        class="text_area request_text_area"
+                        <el-input
+                        type="textarea"
+                        :autosize="{ minRows: 5, maxRows: 20}"
                         placeholder="入力例：貴社の規定に従います。現在就業中のため、平日は17時以降にお電話頂けますと幸いです。"
-                        ></textarea>
+                        v-model="resume.hope"
+                        @change="setResume()"
+                        >
+                        </el-input>
                     </div>
+                    <p class="count_check">文字数：{{ resume.hope.length }}</p>
                 </div>
             </div>
         </div>
@@ -81,6 +84,9 @@
             </div>
         </div>
     </div>
+    <router-link v-bind:to="{name: 'Preview'}" class="fixed_preview_btn">
+        <span>プレビュー</span>
+    </router-link>
     <div class="preview_btn_wrap">
         <router-link v-bind:to="{name: 'Preview'}" class="preview_btn">
             <span>プレビュー</span>
@@ -95,13 +101,22 @@
         return {
             isActive: false,
             isDisplay: true,
+            resume: {
+                hope: '',
+            }
         }
     },
     methods: {
-        active: function(){
+        active(){
             this.isActive = !this.isActive;
             this.isDisplay = !this.isDisplay;
-    }
+        },
+        setResume(){
+            const dateValue = this.resume.date;
+            if(dateValue !== "") {
+                this.$store.dispatch('setResume',this.resume);
+            }
+        },
     }
 }
 </script>
