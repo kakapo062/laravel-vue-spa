@@ -78,6 +78,9 @@
             </div>
         </div>
     </div>
+    <router-link v-bind:to="{name: 'Preview'}" class="fixed_preview_btn">
+        <span>プレビュー</span>
+    </router-link>
     <div class="preview_btn_wrap">
         <router-link v-bind:to="{name: 'Preview'}" class="preview_btn">
             <span>プレビュー</span>

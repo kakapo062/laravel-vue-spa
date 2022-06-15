@@ -21,7 +21,7 @@
                 <div class="rirekisho-box1">
                     <div class="rirekisho-header">
                     <div class="title">履歴書</div>
-                    <div class="date"><span>2022年 6月 9日</span> 現在 </div>
+                    <div class="date"><span>{{ resume.year }}年 {{ resume.month }}月 {{ resume.day }}日</span> 現在 </div>
                     </div>
                     <div data-highlight="タップで編集" class="rirekisho-profile">
                     <div class="ruby flex">
@@ -309,7 +309,7 @@
                 <div data-highlight="タップで編集" class="rirekisho-jis-pr-reason">
                     <div class="label">志望動機・特技・アピールポイントなど</div>
                     <div class="input">
-                    <pre class=""></pre>
+                    <pre class="">{{ resume.reason }}</pre>
                     </div>
                 </div>
                 <!---->
@@ -317,7 +317,7 @@
                 <div data-highlight="タップで編集" class="rirekisho-hope">
                 <div class="label">本人希望欄（特に給料・職種・勤務時間・勤務地・その他について希望があれば記入）</div>
                 <div class="input">
-                    <pre class=""></pre>
+                    <pre class="">{{ resume.hope }}</pre>
                 </div>
                 </div>
             </div>

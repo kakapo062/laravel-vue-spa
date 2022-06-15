@@ -64,14 +64,17 @@
                 <p class="small_note_text">応募先企業の理解度や入社意欲の高さをアピールしましょう</p>
                 <div class="card_wrap">
                     <div class="card_inner">
-                        <textarea
-                        name=""
-                        id=""
-                        class="text_area reason_text_area"
-                        placeholder="私は賃貸仲介営業の仕事を通じて飲食店が抱える課題解決に貢献したいと考えています。前職では飲食チェーン店のスーパーバイザーとして、一都三県に展開される店舗の経営管理をしてきた結果、店舗が利益を出すには何よりも立地が重要だと感じました。飲食店舗物件を中心に賃貸仲介事業を行う貴社は、希少性の高い店舗物件を独自に仕入れるルートを確立しており、出店計画のあるお客様との的確なマッチングを可能にしている商材力・提案力が魅力だと感じています。営業職は未経験ですが、これまで培ってきた店舗運営の経験を活かし、お客様に信頼して頂けるような関係を築いていきたいと考えています。"
-                        ></textarea>
+                        <el-input
+                        type="textarea"
+                        :autosize="{ minRows: 13, maxRows: 19}"
+                        placeholder="入力例： 私は賃貸仲介営業の仕事を通じて、飲食店が抱える課題解決に貢献したいと考えています。 前職では飲食チェーン店のスーパーバイザーとして、一都三県に展開される店舗の経営管理をしてきた結果、店舗が利益を出すには何よりも立地が重要だと感じました。 飲食店舗物件を中心に賃貸仲介事業を行う貴社は、希少性の高い店舗物件を独自に仕入れるルートを確立しており、出店計画のあるお客様との的確なマッチングを可能にしている商材力・提案力が魅力だと感じています。 営業職は未経験ですが、これまで培ってきた店舗運営の経験を活かし、お客様に信頼して頂けるような関係を築いていきたいと考えています。"
+                        v-model="resume.reason"
+                        @input="setResume()"
+                        >
+                        </el-input>
                     </div>
                 </div>
+                <p class="count_check">文字数：{{ resume.reason.length }}</p>
                 <div @click="show" class="navy_btn_wrap">
                     <div class="navy_btn">例文を追加</div>
                 </div>
@@ -85,6 +88,9 @@
             </div>
         </div>
     </div>
+    <router-link v-bind:to="{name: 'Preview'}" class="fixed_preview_btn">
+        <span>プレビュー</span>
+    </router-link>
     <div class="preview_btn_wrap">
         <router-link v-bind:to="{name: 'Preview'}" class="preview_btn">
             <span>プレビュー</span>
@@ -94,12 +100,27 @@
 </template>
 
 <script>
-
     export default {
     data() {
         return {
             isActive: false,
             isDisplay: true,
+            resume: {
+                reason: '',
+                example1: '',
+                example2: '',
+                example3: '',
+            }
+        }
+    },
+    computed: {
+        getReason() {
+            return this.$store.getters.resume.reason
+        },
+    },
+    watch: {
+        getReason(val, old) {
+            this.resume.reason = val
         }
     },
     methods: {
@@ -112,6 +133,9 @@
         },
         hide(){
         this.$modal.hide('motivation-modal');
+        },
+        setResume(){
+            this.$store.dispatch('setResume',this.resume);
         },
     }
 }
