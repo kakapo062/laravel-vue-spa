@@ -1217,7 +1217,7 @@ input[type='checkbox'] {
     border-bottom: 1px solid #E6E6E6;
     margin-bottom: 16px;
 }
-.education_form_item .el-input {
+.education_form_title+.el-input {
     margin-bottom: 16px;
 }
 .select_state {
