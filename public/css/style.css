@@ -336,6 +336,8 @@ main
 .resume_wrap {
     padding: 37px 20px 108px;
     background: #F5F5F7;
+    max-width: 550px;
+    margin: 0 auto;
 }
 .preview_head_wrap {
     padding: 37px 20px 32px;
@@ -899,9 +901,10 @@ input[type='checkbox'] {
     display: flex;
     justify-content: center;
     align-items: start;
-    padding: 16px 24px;
+    padding: 11px 24px;
     text-decoration: underline;
     cursor: pointer;
+    font-size: 13px;
 }
 .card_register_btn {
     background: #D85041;
@@ -910,8 +913,9 @@ input[type='checkbox'] {
     display: flex;
     justify-content: center;
     align-items: start;
-    padding: 16px 24px;
+    padding: 11px 24px;
     cursor: pointer;
+    font-size: 13px;
 }
 .card_content_wrap {
     width: 100%;
@@ -1193,4 +1197,36 @@ input[type='checkbox'] {
 }
 .modal_sample_content {
     white-space: pre-wrap;
+}
+.lh_1 {
+    line-height: 1;
+}
+.age_label {
+    width: 30px;
+}
+.final_input .el-select {
+    width: 100%;
+}
+.education_form_item {
+    margin-top: 32px;
+    color: #233D4C;
+}
+.education_form_title {
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid #E6E6E6;
+    margin-bottom: 16px;
+}
+.education_form_item .el-input {
+    margin-bottom: 16px;
+}
+.select_state {
+    width: 100%;
+    max-width: 158px;
+}
+.education_form_item .flex {
+    align-items: baseline;
+}
+.edu_span {
+    margin: 0 16px 0 4px !important;
 }

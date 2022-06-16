@@ -128,9 +128,13 @@
                 <div class="item_wrap">
                     <p class="item_name">年齢</p>
                     <div class="item_body flex">
-                        <div class="input_wrap input_age">
-                            <el-input v-model="resume.age" @input="setResume()" autocomplete="off" placeholder="25" title="年齢" class="input_inner">
-                            </el-input>
+                        <div class="input_wrap">
+                            <!-- <el-input v-model="resume.age" @input="setResume()" autocomplete="off" placeholder="25" title="年齢" class="input_inner">
+                            {{ calcAge }}
+                            </el-input> -->
+                            <label for="" class="age_label">
+                                {{ calcAge }}
+                            </label>
                         </div>
                         <span>歳</span>
                     </div>
@@ -605,8 +609,41 @@
                 }
             }
         },
-        computed: {
+    computed: {
+        getBirthyear() {
+            return this.$store.getters.resume.birthyear
         },
+        getBirthmonth() {
+            return this.$store.getters.resume.birthmonth
+        },
+        getBirthday() {
+            return this.$store.getters.resume.birthday
+        },
+        calcAge() {
+            if(this.resume.birthyear && this.resume.birthmonth && this.resume.birthday){
+            let y = this.resume.birthyear;
+            let m = this.resume.birthmonth;
+            let d = this.resume.birthday;
+            let birthdate = y * 10000 + m * 100 + d * 10;
+            let today = new Date();
+            let targetdate = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate() * 10;
+            this.resume.age = Math.floor((targetdate - birthdate) / 10000);
+            this.$store.dispatch('setResume',this.resume)
+            return this.resume.age;
+            }
+        },
+    },
+    watch: {
+        getBirthyear(val, old) {
+            this.resume.birthyear = val
+        },
+        getBirthmonth(val, old) {
+            this.resume.birthmonth = val
+        },
+        getBirthday(val, old) {
+            this.resume.birthday = val
+        }
+    },
         methods: {
             setResume() {
                 this.$store.dispatch('setResume',this.resume)
