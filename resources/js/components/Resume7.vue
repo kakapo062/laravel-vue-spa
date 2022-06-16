@@ -98,15 +98,15 @@
                         <div class="item_wrap mb_16">
                             <p class="item_name">資格名称</p>
                             <div class="item_body">
-                                <div class="input_wrap comp_name_wrap">
-                                    <input
-                                    v-model="resume.name"
-                                    type="text"
+                                <div class="input_wrap">
+                                    <el-input
+                                    v-model="resume.license"
+                                    @input="setResume()"
                                     autocomplete="off"
                                     placeholder="例）〇〇〇資格1級"
                                     title="資格名称"
-                                    class="input_inner"
-                                    >
+                                    class="input_inner">
+                                    </el-input>
                                 </div>
                             </div>
                         </div>
@@ -136,6 +136,9 @@
             </div>
         </div>
     </div>
+    <router-link v-bind:to="{name: 'Preview'}" class="fixed_preview_btn">
+        <span>プレビュー</span>
+    </router-link>
     <div class="preview_btn_wrap">
         <router-link v-bind:to="{name: 'Preview'}" class="preview_btn">
             <span>プレビュー</span>
@@ -504,6 +507,7 @@
                     label: '12'
                 },
                 ],
+                license: '',
             }
         }
     },
@@ -517,6 +521,9 @@
         },
         del(index){
             this.users.splice(index, 1)
+        },
+        setResume(){
+            this.$store.dispatch('setResume',this.resume)
         },
     }
 }
