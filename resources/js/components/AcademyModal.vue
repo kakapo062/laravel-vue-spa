@@ -68,11 +68,37 @@
             </div>
         </div>
     </div>
+
     <div class="education_auto_wrap">
       <div class="education_form_item">
+        <p class="education_form_title">中学校</p>
+            <el-input
+            v-if="juniorHighSchool"
+            v-model="resume.junior_name"
+            @input="setResume()"
+            autocomplete="off"
+            placeholder="例）〇〇市立〇〇中学校"
+            title="中学校"
+            class="input_inner">
+            </el-input>
+            <div class="item_body flex">
+            <div class="input_year">
+            <el-select v-model="resume.junior_period" @change="setResume()" placeholder="3" class="select_period">
+                <el-option
+                v-for="item in resume.junior_periods"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value">
+                </el-option>
+            </el-select>
+            </div>
+            <span class="edu_span">年間在籍</span>
+        </div>
+      </div>
+      <div v-if="!juniorHighSchool && !higherProfessionalSchool" class="education_form_item">
         <p class="education_form_title">高等学校</p>
             <el-input
-            v-model="resume.highscool_name"
+            v-model="resume.junior_college_name"
             @input="setResume()"
             autocomplete="off"
             placeholder="例）〇〇高等学校 普通科"
@@ -103,7 +129,7 @@
             </div>
         </div>
       </div>
-      <div class="education_form_item">
+      <div v-if="!juniorHighSchool && !highSchool && !higherProfessionalSchool" class="education_form_item">
         <p class="education_form_title">高校卒業後（予備校・浪人期間 等）</p>
             <div class="item_body flex">
             <div class="input_year">
@@ -119,10 +145,112 @@
             <span>年間</span>
         </div>
       </div>
-      <div class="education_form_item">
+      <div v-if="higherProfessionalSchool" class="education_form_item">
+        <p class="education_form_title">高等専門学校</p>
+            <el-input
+            v-model="resume.high_pro_name"
+            @input="setResume()"
+            autocomplete="off"
+            placeholder="例）〇〇高等専門学校 〇〇科 〇〇コース"
+            title="高等専門学校"
+            class="input_inner">
+            </el-input>
+            <div class="item_body flex">
+            <div class="input_year">
+            <el-select v-model="resume.high_pro_period" @change="setResume()" placeholder="5" class="select_period">
+                <el-option
+                v-for="item in resume.high_pro_periods"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value">
+                </el-option>
+            </el-select>
+            </div>
+            <span class="edu_span">年間在籍</span>
+            <div class="input_wrap">
+            <el-select v-model="resume.high_pro_state" @change="setResume()" placeholder="卒業" class="select_state">
+                <el-option
+                v-for="item in resume.high_pro_states"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value">
+                </el-option>
+            </el-select>
+            </div>
+        </div>
+      </div>
+      <div v-if="professionalSchool" class="education_form_item">
+        <p class="education_form_title">専門学校</p>
+        <el-input
+        v-model="resume.pro_name"
+        @input="setResume()"
+        autocomplete="off"
+        placeholder="例）〇〇専門学校 〇〇学科 〇〇コース"
+        title="専門学校"
+        class="input_inner edu_name">
+        </el-input>
+        <div class="item_body flex">
+          <div class="input_year">
+          <el-select v-model="resume.pro_period" @change="setResume()" placeholder="2" class="select_period">
+              <el-option
+              v-for="item in resume.pro_periods"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+              </el-option>
+          </el-select>
+          </div>
+          <span class="edu_span">年間在籍</span>
+          <div class="input_wrap">
+          <el-select v-model="resume.pro_state" @change="setResume()" placeholder="卒業" class="select_state">
+              <el-option
+              v-for="item in resume.pro_states"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+              </el-option>
+          </el-select>
+          </div>
+        </div>
+      </div>
+      <div v-if="juniorCollege" class="education_form_item">
+        <p class="education_form_title">短期大学</p>
+        <el-input
+        v-model="resume.junior_college_name"
+        @input="setResume()"
+        autocomplete="off"
+        placeholder="例）〇〇短期大学 〇〇学部 〇〇学科"
+        title="大学"
+        class="input_inner edu_name">
+        </el-input>
+        <div class="item_body flex">
+          <div class="input_year">
+          <el-select v-model="resume.junior_college_period" @change="setResume()" placeholder="2" class="select_period">
+              <el-option
+              v-for="item in resume.junior_college_periods"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+              </el-option>
+          </el-select>
+          </div>
+          <span class="edu_span">年間在籍</span>
+          <div class="input_wrap">
+          <el-select v-model="resume.junior_college_state" @change="setResume()" placeholder="卒業" class="select_state">
+              <el-option
+              v-for="item in resume.junior_college_states"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+              </el-option>
+          </el-select>
+          </div>
+        </div>
+      </div>
+      <div v-if="univ || master || doctor" class="education_form_item">
         <p class="education_form_title">大学</p>
         <el-input
-        v-model="resume.highscool_name"
+        v-model="resume.junior_college_name"
         @input="setResume()"
         autocomplete="off"
         placeholder="例）〇〇大学 〇〇学部 〇〇学科"
@@ -153,6 +281,74 @@
           </div>
         </div>
       </div>
+      <div v-if="master || doctor" class="education_form_item">
+        <p class="education_form_title">大学院(修士)</p>
+        <el-input
+        v-model="resume.master_name"
+        @input="setResume()"
+        autocomplete="off"
+        placeholder="例）〇〇大学 大学院 〇〇学研究科 〇〇学専攻 修士課程"
+        title="大学院(修士)"
+        class="input_inner edu_name">
+        </el-input>
+        <div class="item_body flex">
+          <div class="input_year">
+          <el-select v-model="resume.master_period" @change="setResume()" placeholder="2" class="select_period">
+              <el-option
+              v-for="item in resume.master_periods"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+              </el-option>
+          </el-select>
+          </div>
+          <span class="edu_span">年間在籍</span>
+          <div class="input_wrap">
+          <el-select v-model="resume.master_state" @change="setResume()" placeholder="修了" class="select_state">
+              <el-option
+              v-for="item in resume.master_states"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+              </el-option>
+          </el-select>
+          </div>
+        </div>
+      </div>
+      <div v-if="doctor" class="education_form_item">
+        <p class="education_form_title">大学院(博士)</p>
+        <el-input
+        v-model="resume.doctor_name"
+        @input="setResume()"
+        autocomplete="off"
+        placeholder="例）〇〇大学 大学院 〇〇学研究科 〇〇学専攻 博士課程"
+        title="大学"
+        class="input_inner edu_name">
+        </el-input>
+        <div class="item_body flex">
+          <div class="input_year">
+          <el-select v-model="resume.doctor_period" @change="setResume()" placeholder="2" class="select_period">
+              <el-option
+              v-for="item in resume.doctor_periods"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+              </el-option>
+          </el-select>
+          </div>
+          <span class="edu_span">年間在籍</span>
+          <div class="input_wrap">
+          <el-select v-model="resume.doctor_state" @change="setResume()" placeholder="修了" class="select_state">
+              <el-option
+              v-for="item in resume.doctor_states"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+              </el-option>
+          </el-select>
+          </div>
+        </div>
+      </div>
     </div>
       <div class="modal_footer">
           <div @click="add" class="modal_add_btn active"><span>この内容で追加</span></div>
@@ -164,14 +360,11 @@
 export default {
   data() {
     return {
-        isActive1: false,
-        isActive2: false,
-        isActive3: false,
         resume: {
             birthyear: '',
             birthmonth: '',
             birthday: '',
-            final_education: '',
+            final_education: '大学',
             birthyears: [
                 {
                 value: '2010',
@@ -631,9 +824,45 @@ export default {
                 value: '大学院(博士)',
                 label: '大学院(博士)'
               },
-            ],
+            ],//最終学歴
+            junior_name: '',
+            junior_period: '3',
+            junior_periods: [
+              {
+                  value: '3',
+                  label: '3'
+              },
+              {
+                  value: '4',
+                  label: '4'
+              },
+              {
+                  value: '5',
+                  label: '5'
+              },
+              {
+                  value: '6',
+                  label: '6'
+              },
+              {
+                  value: '7',
+                  label: '7'
+              },
+              {
+                  value: '8',
+                  label: '8'
+              },
+              {
+                  value: '9',
+                  label: '9'
+              },
+              {
+                  value: '10',
+                  label: '10'
+              },
+            ],//高校
             highschool_name: '',
-            highschool_period: '',
+            highschool_period: '3',
             highschool_periods: [
               {
                   value: '1',
@@ -675,8 +904,8 @@ export default {
                   value: '10',
                   label: '10'
               },
-            ],
-            highschool_state: '',
+            ],//高校
+            highschool_state: '卒業',
             highschool_states: [
                {
                 value: '卒業',
@@ -699,7 +928,74 @@ export default {
                 label: '中退'
               },
             ],
-            free_time: '',
+            high_pro_name: '',
+            high_pro_period: '5',
+            high_pro_periods: [
+              {
+                  value: '1',
+                  label: '1'
+              },
+              {
+                  value: '2',
+                  label: '2'
+              },
+              {
+                  value: '3',
+                  label: '3'
+              },
+              {
+                  value: '4',
+                  label: '4'
+              },
+              {
+                  value: '5',
+                  label: '5'
+              },
+              {
+                  value: '6',
+                  label: '6'
+              },
+              {
+                  value: '7',
+                  label: '7'
+              },
+              {
+                  value: '8',
+                  label: '8'
+              },
+              {
+                  value: '9',
+                  label: '9'
+              },
+              {
+                  value: '10',
+                  label: '10'
+              },
+            ],//高等専門学校
+            high_pro_state: '卒業',
+            high_pro_states: [
+               {
+                value: '卒業',
+                label: '卒業'
+              },
+               {
+                value: '在学中',
+                label: '在学中'
+              },
+               {
+                value: '卒業見込み',
+                label: '卒業見込み'
+              },
+               {
+                value: '修了',
+                label: '修了'
+              },
+               {
+                value: '中退',
+                label: '中退'
+              },
+            ],
+            free_time: '0',
             free_times: [
               {
                   value: '1',
@@ -741,9 +1037,9 @@ export default {
                   value: '10',
                   label: '10'
               },
-            ],
+            ],//浪人期間
             univ_name: '',
-            univ_period: '',
+            univ_period: '4',
             univ_periods: [
               {
                   value: '1',
@@ -785,9 +1081,277 @@ export default {
                   value: '10',
                   label: '10'
               },
-            ],
-            univ_state: '',
+            ],//大学
+            univ_state: '卒業',
             univ_states: [
+               {
+                value: '卒業',
+                label: '卒業'
+              },
+               {
+                value: '在学中',
+                label: '在学中'
+              },
+               {
+                value: '卒業見込み',
+                label: '卒業見込み'
+              },
+               {
+                value: '修了',
+                label: '修了'
+              },
+               {
+                value: '中退',
+                label: '中退'
+              },
+            ],
+            master_name: '',
+            master_period: '2',
+            master_periods: [
+              {
+                  value: '1',
+                  label: '1'
+              },
+              {
+                  value: '2',
+                  label: '2'
+              },
+              {
+                  value: '3',
+                  label: '3'
+              },
+              {
+                  value: '4',
+                  label: '4'
+              },
+              {
+                  value: '5',
+                  label: '5'
+              },
+              {
+                  value: '6',
+                  label: '6'
+              },
+              {
+                  value: '7',
+                  label: '7'
+              },
+              {
+                  value: '8',
+                  label: '8'
+              },
+              {
+                  value: '9',
+                  label: '9'
+              },
+              {
+                  value: '10',
+                  label: '10'
+              },
+            ],//修士
+            master_state: '修了',
+            master_states: [
+               {
+                value: '卒業',
+                label: '卒業'
+              },
+               {
+                value: '在学中',
+                label: '在学中'
+              },
+               {
+                value: '卒業見込み',
+                label: '卒業見込み'
+              },
+               {
+                value: '修了',
+                label: '修了'
+              },
+               {
+                value: '中退',
+                label: '中退'
+              },
+            ],
+            doctor_name: '',
+            doctor_period: '2',
+            doctor_periods: [
+              {
+                  value: '1',
+                  label: '1'
+              },
+              {
+                  value: '2',
+                  label: '2'
+              },
+              {
+                  value: '3',
+                  label: '3'
+              },
+              {
+                  value: '4',
+                  label: '4'
+              },
+              {
+                  value: '5',
+                  label: '5'
+              },
+              {
+                  value: '6',
+                  label: '6'
+              },
+              {
+                  value: '7',
+                  label: '7'
+              },
+              {
+                  value: '8',
+                  label: '8'
+              },
+              {
+                  value: '9',
+                  label: '9'
+              },
+              {
+                  value: '10',
+                  label: '10'
+              },
+            ],//博士
+            doctor_state: '修了',
+            doctor_states: [
+               {
+                value: '卒業',
+                label: '卒業'
+              },
+               {
+                value: '在学中',
+                label: '在学中'
+              },
+               {
+                value: '卒業見込み',
+                label: '卒業見込み'
+              },
+               {
+                value: '修了',
+                label: '修了'
+              },
+               {
+                value: '中退',
+                label: '中退'
+              },
+            ],
+            junior_college_name: '',
+            junior_college_period: '2',
+            junior_college_periods: [
+              {
+                  value: '1',
+                  label: '1'
+              },
+              {
+                  value: '2',
+                  label: '2'
+              },
+              {
+                  value: '3',
+                  label: '3'
+              },
+              {
+                  value: '4',
+                  label: '4'
+              },
+              {
+                  value: '5',
+                  label: '5'
+              },
+              {
+                  value: '6',
+                  label: '6'
+              },
+              {
+                  value: '7',
+                  label: '7'
+              },
+              {
+                  value: '8',
+                  label: '8'
+              },
+              {
+                  value: '9',
+                  label: '9'
+              },
+              {
+                  value: '10',
+                  label: '10'
+              },
+            ],//短期大学
+            junior_college_state: '卒業',
+            junior_college_states: [
+               {
+                value: '卒業',
+                label: '卒業'
+              },
+               {
+                value: '在学中',
+                label: '在学中'
+              },
+               {
+                value: '卒業見込み',
+                label: '卒業見込み'
+              },
+               {
+                value: '修了',
+                label: '修了'
+              },
+               {
+                value: '中退',
+                label: '中退'
+              },
+            ],
+            pro_name: '',
+            pro_period: '2',
+            pro_periods: [
+              {
+                  value: '1',
+                  label: '1'
+              },
+              {
+                  value: '2',
+                  label: '2'
+              },
+              {
+                  value: '3',
+                  label: '3'
+              },
+              {
+                  value: '4',
+                  label: '4'
+              },
+              {
+                  value: '5',
+                  label: '5'
+              },
+              {
+                  value: '6',
+                  label: '6'
+              },
+              {
+                  value: '7',
+                  label: '7'
+              },
+              {
+                  value: '8',
+                  label: '8'
+              },
+              {
+                  value: '9',
+                  label: '9'
+              },
+              {
+                  value: '10',
+                  label: '10'
+              },
+            ],//専門学校
+            pro_state: '卒業',
+            pro_states: [
                {
                 value: '卒業',
                 label: '卒業'
@@ -822,6 +1386,30 @@ export default {
         getBirthday() {
             return this.$store.getters.resume.birthday
         },
+        juniorHighSchool() {
+          return this.resume.final_education === '中学校';
+        },
+        highSchool() {
+          return this.resume.final_education === '高等学校';
+        },
+        higherProfessionalSchool() {
+          return this.resume.final_education === '高等専門学校';
+        },
+        professionalSchool() {
+          return this.resume.final_education === '専門学校';
+        },
+        juniorCollege() {
+          return this.resume.final_education === '短期大学';
+        },
+        univ() {
+          return this.resume.final_education === '大学';
+        },
+        master() {
+          return this.resume.final_education === '大学院(修士)';
+        },
+        doctor() {
+          return this.resume.final_education === '大学院(博士)';
+        },
     },
     watch: {
         getBirthyear(val, old) {
@@ -837,21 +1425,6 @@ export default {
   methods: {
         hide () {
           this.$modal.hide('academy-modal');
-        },
-        active1 () {
-          this.isActive1 = !this.isActive1;
-          this.isActive2 = false;
-          this.isActive3 = false;
-        },
-        active2 () {
-          this.isActive1 = false;
-          this.isActive2 = !this.isActive2;
-          this.isActive3 = false;
-        },
-        active3 () {
-          this.isActive1 = false;
-          this.isActive2 = false;
-          this.isActive3 = !this.isActive3;
         },
         add() {
               this.$modal.hide('academy-modal');
