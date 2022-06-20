@@ -34,7 +34,7 @@
                     </div>
                     <div class="etc flex">
                         <div class="birthday"><span class="year">{{ resume.birthyear }}</span>年 <span class="month">{{ resume.birthmonth }}</span>月 <span class="day">{{ resume.birthday }}</span>日生（満 <span class="age">{{ resume.age }}</span> 歳） </div>
-                        <div class="gender"><span class="male">男</span><span>・</span><span class="female">女</span></div>
+                        <div class="gender"><span class="male preview-is-checked">男</span><span>・</span><span class="female">女</span></div>
                     </div>
                     </div>
                 </div>
@@ -306,13 +306,34 @@
                 </table>
                 </div>
                 <div class="rirekisho-pr">
-                <div data-highlight="タップで編集" class="rirekisho-jis-pr-reason">
+                <div data-highlight="タップで編集" class="rirekisho-pr-reason">
                     <div class="label">志望動機・特技・アピールポイントなど</div>
                     <div class="input">
-                    <pre class="">{{ resume.reason }}</pre>
+                    <pre class="">{{ resume.reason }}
+                </pre>
                     </div>
                 </div>
-                <!---->
+                <div data-highlight="タップで編集" class="rirekisho-pr-etc">
+                    <div class="time">
+                    <div class="label">通勤時間</div>
+                    <div class="input"></div>
+                    <!---->
+                    </div>
+                    <div class="family">
+                    <div class="label">扶養家族数（配偶者を除く）</div>
+                    <div class="input">{{ resume.dependent }} 人</div>
+                    </div>
+                    <div class="partner">
+                    <div class="existence">
+                        <div class="label">配偶者</div>
+                        <div class="input"><span class="yes preview-is-checked">有</span> ・ <span class="no">無</span></div>
+                    </div>
+                    <div class="support">
+                        <div class="label">配偶者の扶養義務</div>
+                        <div class="input"><span class="yes preview-is-checked">有</span> ・ <span class="no">無</span></div>
+                    </div>
+                    </div>
+                </div>
                 </div>
                 <div data-highlight="タップで編集" class="rirekisho-hope">
                 <div class="label">本人希望欄（特に給料・職種・勤務時間・勤務地・その他について希望があれば記入）</div>
@@ -325,7 +346,9 @@
         </div>
         <!---->
         </div>
-
+    <div @click="back" class="back_arrow">
+        <span>入力画面に戻る</span>
+    </div>
         <div class="preview_btn_wrap back">
             <div @click="back" class="preview_btn">
                 <span>入力画面に戻る</span>
