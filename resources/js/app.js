@@ -24,6 +24,8 @@ import locale from 'element-ui/lib/locale/lang/ja';
 import 'element-ui/lib/theme-chalk/index.css';
 import VueCompositionAPI from '@vue/composition-api'
 import { createPinia, PiniaVuePlugin } from 'pinia'
+import dayjs from "dayjs";
+
 
 require('./bootstrap');
 require('./main');
@@ -39,6 +41,10 @@ Vue.use(VModal);
 Vue.use(ElementUI, {locale});
 Vue.use(VueCompositionAPI)
 Vue.use(PiniaVuePlugin)
+
+dayjs.locale("ja");
+Vue.prototype.$dayjs = dayjs;
+
 const pinia = createPinia()
 
  const router = new VueRouter({

@@ -98,7 +98,7 @@
       <div v-if="!juniorHighSchool && !higherProfessionalSchool" class="education_form_item">
         <p class="education_form_title">高等学校</p>
             <el-input
-            v-model="resume.junior_college_name"
+            v-model="resume.highschool_name"
             @input="setResume()"
             autocomplete="off"
             placeholder="例）〇〇高等学校 普通科"
@@ -250,7 +250,7 @@
       <div v-if="univ || master || doctor" class="education_form_item">
         <p class="education_form_title">大学</p>
         <el-input
-        v-model="resume.junior_college_name"
+        v-model="resume.univ_name"
         @input="setResume()"
         autocomplete="off"
         placeholder="例）〇〇大学 〇〇学部 〇〇学科"
@@ -1373,7 +1373,7 @@ export default {
                 label: '中退'
               },
             ],
-        }
+        },
     }
   },
     computed: {
