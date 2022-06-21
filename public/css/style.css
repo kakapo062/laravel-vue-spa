@@ -879,6 +879,7 @@ input[type='checkbox'] {
     background: #fff;
     margin-top: 16px;
     padding: 16px;
+    cursor: pointer;
 }
 .history_small {
     font-weight: normal;
@@ -887,10 +888,6 @@ input[type='checkbox'] {
 }
 .hover_up:hover {
     opacity: .9;
-}
-.card_flex {
-    display: flex;
-    align-items: center;
 }
 .card_btn_wrap {
     height: 51px;
@@ -1260,4 +1257,9 @@ input[type='checkbox'] {
 }
 .edu_span {
     margin: 0 16px 0 4px !important;
+}
+.card_list_item {
+    display: flex;
+    align-items: center;
+    list-style: none;
 }

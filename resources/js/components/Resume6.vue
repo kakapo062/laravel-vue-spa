@@ -64,90 +64,94 @@
                 <div class="normal_text_wrap">
                     <p class="normal_text">「▲上へ」「▼下へ」ボタンをクリックして並び替え、古いものが上にくるようにしてください。</p>
                 </div>
-                <div class="card_wrap history_item_wrap card_flex" v-for="(user, index) in users" v-bind:key="user.id">
-                    <div class="card_content_wrap">
-                        <div class="item_wrap">
-                            <p class="item_name">会社名</p>
-                            <div class="item_body">
-                                <div class="input_wrap">
-                                    <el-input
-                                    v-model="resume.comp_name"
-                                    @input="setResume()"
-                                    autocomplete="off"
-                                    placeholder="例）〇〇〇株式会社"
-                                    title="会社名"
-                                    class="input_inner">
-                                    </el-input>
+                <ul>
+                    <li class="card_wrap history_item_wrap" v-for="(user, index) in users" v-bind:key="user.id">
+                        <div class="card_list_item">
+                            <div class="card_content_wrap">
+                                <div class="item_wrap">
+                                    <p class="item_name">会社名</p>
+                                    <div class="item_body">
+                                        <div class="input_wrap">
+                                            <el-input
+                                            v-model="resume.comp_name"
+                                            @input="setResume()"
+                                            autocomplete="off"
+                                            placeholder="例）〇〇〇株式会社"
+                                            title="会社名"
+                                            class="input_inner">
+                                            </el-input>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item_wrap">
+                                    <div class="item_name">
+                                        <p class="lh_1">在籍期間<span class="small_text history_small">※現在もお勤めの場合は在籍開始年月のみご入力ください</span></p>
+                                    </div>
+                                    <div class="item_body flex mb_8">
+                                        <div class="input_wrap">
+                                            <el-select v-model="resume.startyear" @change="setResume()" placeholder="1996" class="input_year">
+                                                <el-option
+                                                v-for="item in resume.startyears"
+                                                :key="item.value"
+                                                :label="item.label"
+                                                :value="item.value">
+                                                </el-option>
+                                            </el-select>
+                                        </div>
+                                        <span>年</span>
+                                        <div class="input_wrap">
+                                            <el-select v-model="resume.start_month" @change="setResume()" placeholder="1" class="input_month">
+                                                <el-option
+                                                v-for="item in resume.start_months"
+                                                :key="item.value"
+                                                :label="item.label"
+                                                :value="item.value">
+                                                </el-option>
+                                            </el-select>
+                                        </div>
+                                        <span>月から</span>
+                                    </div>
+                                    <div class="item_body flex mb_16">
+                                        <div class="input_wrap">
+                                            <el-select v-model="resume.endyear" @change="setResume()" placeholder="1996" class="input_year">
+                                                <el-option
+                                                v-for="item in resume.endyears"
+                                                :key="item.value"
+                                                :label="item.label"
+                                                :value="item.value">
+                                                </el-option>
+                                            </el-select>
+                                        </div>
+                                        <span>年</span>
+                                        <div class="input_wrap">
+                                            <el-select v-model="resume.end_month" @change="setResume()" placeholder="1" class="input_month">
+                                                <el-option
+                                                v-for="item in resume.end_months"
+                                                :key="item.value"
+                                                :label="item.label"
+                                                :value="item.value">
+                                                </el-option>
+                                            </el-select>
+                                        </div>
+                                        <span>月まで</span>
+                                    </div>
+                                </div>
+                                <div class="card_btn_wrap flex">
+                                    <div class="card_register_btn">登録</div>
+                                    <div @click="del(index)" class="card_delete_btn">削除</div>
+                                </div>
+                            </div>
+                            <div class="card_change_btn_wrap">
+                                <div class="card_up_btn">
+                                    <img src="/images/card_up.svg" alt="" class="up_img">
+                                </div>
+                                <div class="card_down_btn">
+                                    <img src="/images/card_down.svg" alt="" class="down_img">
                                 </div>
                             </div>
                         </div>
-                        <div class="item_wrap">
-                            <div class="item_name">
-                                <p class="lh_1">在籍期間<span class="small_text history_small">※現在もお勤めの場合は在籍開始年月のみご入力ください</span></p>
-                            </div>
-                            <div class="item_body flex mb_8">
-                                <div class="input_wrap">
-                                    <el-select v-model="resume.startyear" @change="setResume()" placeholder="1996" class="input_year">
-                                        <el-option
-                                        v-for="item in resume.startyears"
-                                        :key="item.value"
-                                        :label="item.label"
-                                        :value="item.value">
-                                        </el-option>
-                                    </el-select>
-                                </div>
-                                <span>年</span>
-                                <div class="input_wrap">
-                                    <el-select v-model="resume.start_month" @change="setResume()" placeholder="1" class="input_month">
-                                        <el-option
-                                        v-for="item in resume.start_months"
-                                        :key="item.value"
-                                        :label="item.label"
-                                        :value="item.value">
-                                        </el-option>
-                                    </el-select>
-                                </div>
-                                <span>月から</span>
-                            </div>
-                            <div class="item_body flex mb_16">
-                                <div class="input_wrap">
-                                    <el-select v-model="resume.endyear" @change="setResume()" placeholder="1996" class="input_year">
-                                        <el-option
-                                        v-for="item in resume.endyears"
-                                        :key="item.value"
-                                        :label="item.label"
-                                        :value="item.value">
-                                        </el-option>
-                                    </el-select>
-                                </div>
-                                <span>年</span>
-                                <div class="input_wrap">
-                                    <el-select v-model="resume.end_month" @change="setResume()" placeholder="1" class="input_month">
-                                        <el-option
-                                        v-for="item in resume.end_months"
-                                        :key="item.value"
-                                        :label="item.label"
-                                        :value="item.value">
-                                        </el-option>
-                                    </el-select>
-                                </div>
-                                <span>月まで</span>
-                            </div>
-                        </div>
-                        <div class="card_btn_wrap flex">
-                            <div class="card_register_btn">登録</div>
-                            <div @click="del(index)" class="card_delete_btn">削除</div>
-                        </div>
-                    </div>
-                    <div class="card_change_btn_wrap">
-                        <div class="card_up_btn">
-                            <img src="/images/card_up.svg" alt="" class="up_img">
-                        </div>
-                        <div class="card_down_btn">
-                            <img src="/images/card_down.svg" alt="" class="down_img">
-                        </div>
-                    </div>
-                </div>
+                    </li>
+                </ul>
                 <div @click="add" class="navy_btn_wrap">
                     <div class="navy_btn">職歴を追加</div>
                 </div>

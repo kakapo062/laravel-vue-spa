@@ -26,6 +26,7 @@
     },
     "dependencies": {
         "@vue/composition-api": "^1.6.2",
+        "dayjs": "^1.11.3",
         "element-ui": "^2.15.8",
         "pinia": "^2.0.14",
         "vue-js-modal": "1.3",
