@@ -68,7 +68,7 @@
                     <li
                     class="card_wrap history_item_wrap"
                     v-for="(license, index) in licenses"
-                    v-bind:key="license.name"
+                    v-bind:key="license.index"
                     >
                         <div class="card_list_item">
                             <div class="card_content_wrap">
@@ -106,7 +106,7 @@
                                     <div class="item_body">
                                         <div class="input_wrap">
                                             <el-input
-                                            v-model="license.license_name"
+                                            v-model="license.name"
                                             @input="setResume()"
                                             autocomplete="off"
                                             placeholder="例）〇〇〇資格1級"
@@ -132,7 +132,7 @@
                         </div>
                     </li>
                 </ul>
-                <div @click="addLicense" class="navy_btn_wrap">
+                <div @click="addLicense()" class="navy_btn_wrap">
                     <div class="navy_btn">職歴を追加</div>
                 </div>
             </div>
@@ -159,7 +159,6 @@
     export default {
     data() {
         return {
-            isEdit: false,
             resume: {
                 getyear: '',
                 getmonth: '',
@@ -512,7 +511,7 @@
                 },
                 ],
             },
-                licenses: [],
+            licenses: [],
         }
     },
     computed: {
@@ -522,6 +521,7 @@
     methods: {
         addLicense(){
             let license = {
+                isActive: false,
                 name: '',
                 getyear: '',
                 getmonth: '',

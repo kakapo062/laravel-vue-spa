@@ -13,7 +13,7 @@ export default new Vuex.Store({
   }, //スプレット構文を用いてオブジェクトを展開して結合させる。
   },
   getters: {
-    resume: state => state.resume,
+        resume: state => state.resume,
   },
   actions: {
     setResume({commit}, resume) {
