@@ -65,7 +65,7 @@
                     <p class="normal_text">「▲上へ」「▼下へ」ボタンをクリックして並び替え、古いものが上にくるようにしてください。</p>
                 </div>
                 <ul>
-                    <li class="card_wrap history_item_wrap" v-for="(user, index) in users" v-bind:key="user.id">
+                    <li class="card_wrap history_item_wrap" v-for="(workHistory, index) in workHistorys" v-bind:key="workHistory.index">
                         <div class="card_list_item">
                             <div class="card_content_wrap">
                                 <div class="item_wrap">
@@ -73,8 +73,8 @@
                                     <div class="item_body">
                                         <div class="input_wrap">
                                             <el-input
-                                            v-model="resume.comp_name"
-                                            @input="setResume()"
+                                            v-model="workHistory.comp_name"
+                                            @input="setWorkHistorys()"
                                             autocomplete="off"
                                             placeholder="例）〇〇〇株式会社"
                                             title="会社名"
@@ -89,9 +89,9 @@
                                     </div>
                                     <div class="item_body flex mb_8">
                                         <div class="input_wrap">
-                                            <el-select v-model="resume.startyear" @change="setResume()" placeholder="1996" class="input_year">
+                                            <el-select v-model="workHistory.start_year" @change="setWorkHistorys()" placeholder="1996" class="input_year">
                                                 <el-option
-                                                v-for="item in resume.startyears"
+                                                v-for="item in workHistory.start_years"
                                                 :key="item.value"
                                                 :label="item.label"
                                                 :value="item.value">
@@ -100,9 +100,9 @@
                                         </div>
                                         <span>年</span>
                                         <div class="input_wrap">
-                                            <el-select v-model="resume.start_month" @change="setResume()" placeholder="1" class="input_month">
+                                            <el-select v-model="workHistory.start_month" @change="setWorkHistorys()" placeholder="1" class="input_month">
                                                 <el-option
-                                                v-for="item in resume.start_months"
+                                                v-for="item in workHistory.start_months"
                                                 :key="item.value"
                                                 :label="item.label"
                                                 :value="item.value">
@@ -113,9 +113,9 @@
                                     </div>
                                     <div class="item_body flex mb_16">
                                         <div class="input_wrap">
-                                            <el-select v-model="resume.endyear" @change="setResume()" placeholder="1996" class="input_year">
+                                            <el-select v-model="workHistory.end_year" @change="setWorkHistorys()" placeholder="1996" class="input_year">
                                                 <el-option
-                                                v-for="item in resume.endyears"
+                                                v-for="item in workHistory.end_years"
                                                 :key="item.value"
                                                 :label="item.label"
                                                 :value="item.value">
@@ -124,9 +124,9 @@
                                         </div>
                                         <span>年</span>
                                         <div class="input_wrap">
-                                            <el-select v-model="resume.end_month" @change="setResume()" placeholder="1" class="input_month">
+                                            <el-select v-model="workHistory.end_month" @change="setWorkHistorys()" placeholder="1" class="input_month">
                                                 <el-option
-                                                v-for="item in resume.end_months"
+                                                v-for="item in workHistory.end_months"
                                                 :key="item.value"
                                                 :label="item.label"
                                                 :value="item.value">
@@ -142,17 +142,17 @@
                                 </div>
                             </div>
                             <div class="card_change_btn_wrap">
-                                <div class="card_up_btn">
+                                <div @click="up(index)" class="card_up_btn">
                                     <img src="/images/card_up.svg" alt="" class="up_img">
                                 </div>
-                                <div class="card_down_btn">
+                                <div @click="down(index)" class="card_down_btn">
                                     <img src="/images/card_down.svg" alt="" class="down_img">
                                 </div>
                             </div>
                         </div>
                     </li>
                 </ul>
-                <div @click="add" class="navy_btn_wrap">
+                <div @click="addWorkHistory()" class="navy_btn_wrap">
                     <div class="navy_btn">職歴を追加</div>
                 </div>
             </div>
@@ -181,10 +181,17 @@
         return {
             isActive: false,
             isDisplay: true,
-            users: [
-                {name: '',}
-            ],
-            resume: {
+            workHistorys: [],
+        }
+    },
+    methods: {
+        active: function(){
+            this.isActive = !this.isActive;
+            this.isDisplay = !this.isDisplay;
+        },
+       addWorkHistory(){
+            let workHistory = {
+                isActive: false,
                 comp_name: '',
                 start_year: '',
                 start_month: '',
@@ -887,18 +894,35 @@
                 },
                 ],
             }
-        }
-    },
-    methods: {
-        active: function(){
-            this.isActive = !this.isActive;
-            this.isDisplay = !this.isDisplay;
+            this.workHistorys.push(workHistory)
         },
-        add: function(){
-            this.users.push({ name: '', email: '' })
+        del(index){
+            this.workHistorys.splice(index, 1)
+            this.$store.dispatch('setWorkHistory',this.workHistorys)
         },
-        del: function(index){
-            this.users.splice(index, 1)
+        setWorkHistorys(){
+            this.$store.dispatch('setWorkHistory',this.workHistorys)
+        },
+        up(index) {
+            if(index == 0){
+                return false
+            } else {
+                let upstart = this.workHistorys.slice(0, index-1) //最初から、対象のindexの2個前まで取得
+                let uplast = this.workHistorys.slice(index+1) //対象のindexから最後までの配列。
+                const newArray = [...upstart, this.workHistorys[index], this.workHistorys[index-1], ...uplast]; //新しい配列作成
+                this.workHistorys = newArray //新しい配列をdataに入れ替え
+            }
+        },
+        down(index) {
+            let end = [this.workHistorys.length - 1] //最後の要素
+            if(index == end) {
+                return false
+            } else {
+                let downstart = this.workHistorys.slice(0, index) //最初から、対象のindexの1個前まで取得
+                let downlast = this.workHistorys.slice(index+2) //対象のindexの次から最後までの配列。
+                const newArray = [...downstart, this.workHistorys[index+1], this.workHistorys[index], ...downlast]; //新しい配列作成
+                this.workHistorys = newArray //新しい配列をdataに入れ替え
+            }
         },
     }
 }
