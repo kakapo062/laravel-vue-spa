@@ -5,19 +5,27 @@ Vue.use(Vuex)
  
 export default new Vuex.Store({
   state: {
-    resume:{}
+    resume:{},
+    licenses:[],
   },
   mutations: {
-    setResume(state, userDetail) {
-      state.resume = {...state.resume, ...userDetail}
-  }, //スプレット構文を用いてオブジェクトを展開して結合させる。
+    setResume(state, resume) {
+      state.resume = {...state.resume, ...resume}
+  },
+    setLicense(state, licenses) {
+      state.licenses = {...state.licenses, ...licenses}
+  },
   },
   getters: {
         resume: state => state.resume,
+        license: state => state.licenses,
   },
   actions: {
     setResume({commit}, resume) {
       commit("setResume", resume);
-  }, //スプレット構文を用いてオブジェクトを展開して結合させる。
+  }, 
+    setLicense({commit}, licenses) {
+      commit("setLicense", licenses);
+  }, 
   }
 })

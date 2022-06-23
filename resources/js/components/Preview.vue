@@ -368,7 +368,8 @@ import { mapGetters } from 'vuex'
     },
     computed: {
          ...mapGetters([
-             'resume'
+             'resume',
+             'licenses'
              ]),
     },
     methods: {

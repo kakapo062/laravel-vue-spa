@@ -878,7 +878,7 @@ input[type='checkbox'] {
 .history_item_wrap {
     background: #fff;
     margin-top: 16px;
-    padding: 16px;
+    padding: 16px 0 16px 16px;
     cursor: pointer;
 }
 .history_small {
@@ -915,17 +915,35 @@ input[type='checkbox'] {
     font-size: 13px;
 }
 .card_content_wrap {
-    width: 100%;
+    width: 85%;
+}
+.card_change_btn_wrap {
+    width: 15%;
+    text-align: center;
 }
 .card_change_btn_wrap img {
     width: 16px;
     height: 16px;
 }
 .card_up_btn {
-    padding: 0 0 16px 21px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    cursor: pointer;
+}
+.card_up_btn:hover {
+    background: pink;
 }
 .card_down_btn {
-    padding: 16px 0 0 21px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    cursor: pointer;
+}
+.card_down_btn:hover {
+    background: pink;
 }
 .v--modal-box.v--modal {
     background: #F5F5F7;

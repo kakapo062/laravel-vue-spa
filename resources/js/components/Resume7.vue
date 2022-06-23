@@ -78,7 +78,7 @@
                                     </div>
                                     <div class="item_body flex mb_8">
                                         <div class="input_wrap input_year">
-                                            <el-select v-model="license.getyear" @change="setResume()" placeholder="1996" class="input_year">
+                                            <el-select v-model="license.getyear" @change="setLicense()" placeholder="1996" class="input_year">
                                                 <el-option
                                                 v-for="item in license.getyears"
                                                 :key="item.value"
@@ -89,7 +89,7 @@
                                         </div>
                                         <span>年</span>
                                         <div class="input_wrap">
-                                            <el-select v-model="license.getmonth" @change="setResume()" placeholder="1" class="input_month">
+                                            <el-select v-model="license.getmonth" @change="setLicense()" placeholder="1" class="input_month">
                                                 <el-option
                                                 v-for="item in license.getmonths"
                                                 :key="item.value"
@@ -107,7 +107,7 @@
                                         <div class="input_wrap">
                                             <el-input
                                             v-model="license.name"
-                                            @input="setResume()"
+                                            @input="setLicense()"
                                             autocomplete="off"
                                             placeholder="例）〇〇〇資格1級"
                                             title="資格名称"
@@ -122,7 +122,7 @@
                                 </div>
                             </div>
                             <div class="card_change_btn_wrap">
-                                <div class="card_up_btn">
+                                <div @click="up(index)" class="card_up_btn">
                                     <img src="/images/card_up.svg" alt="" class="up_img">
                                 </div>
                                 <div class="card_down_btn">
@@ -878,10 +878,13 @@
         },
         del(index){
             this.licenses.splice(index, 1)
+            this.$store.dispatch('setLicense',this.licenses)
         },
-        setResume(){
-            this.$store.dispatch('setResume',this.resume)
+        setLicense(){
+            this.$store.dispatch('setLicense',this.licenses)
         },
+        up(index) {
+        }
     },
 }
 </script>
