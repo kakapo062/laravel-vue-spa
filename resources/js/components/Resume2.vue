@@ -62,15 +62,15 @@
         <div class="resume_form_wrap">
             <div class="form_inner">
                 <div class="item_wrap">
-                    <p class="item_name">郵便番号（ハイフン不要）</p>
+                    <p class="item_name">郵便番号（ハイフンなし）</p>
                     <div class="item_body flex">
                         <div class="input_wrap">
-                            <el-input v-model="resume.post_code" @input="setResume()" autocomplete="off" placeholder="例) 000-1234" title="郵便番号" class="input_inner">
+                            <el-input v-model="resume.post_code" @input="searchAddress()" autocomplete="off" placeholder="例) 0001234" title="郵便番号" class="input_inner">
                             </el-input>
                         </div>
-                        <div class="auto_btn_wrap">
+                        <!-- <div class="auto_btn_wrap" @click="searchAddress">
                             <div class="auto_btn">自動入力</div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="item_wrap">
@@ -86,7 +86,7 @@
                     <p class="item_name">マンション・建物名</p>
                     <div class="item_body">
                         <div class="input_wrap">
-                            <el-input v-model="resume.address_opt" @input="setResume()" autocomplete="off" placeholder="例）〇〇マンション" title="マンション・建物名" class="input_inner">
+                            <el-input v-model="resume.address_option" @input="setResume()" autocomplete="off" placeholder="例）〇〇マンション" title="マンション・建物名" class="input_inner">
                             </el-input>
                         </div>
                     </div>
@@ -112,15 +112,15 @@
                     <div class="">
                     <p class="address_note">※現住所以外に連絡を希望する場合のみ入力してください</p>
                     <div class="item_wrap">
-                    <p class="item_name">郵便番号（ハイフン不要）</p>
+                    <p class="item_name">郵便番号（ハイフンなし）</p>
                     <div class="item_body flex">
                         <div class="input_wrap">
-                            <el-input v-model="resume.post_code_add" @input="setResume()" autocomplete="off" placeholder="例) 000-1234" title="郵便番号" class="input_inner">
+                            <el-input v-model="resume.post_code_add" @input="addSearchAddress()" autocomplete="off" placeholder="例) 0001234" title="郵便番号" class="input_inner">
                             </el-input>
                         </div>
-                        <div class="auto_btn_wrap">
+                        <!-- <div class="auto_btn_wrap">
                             <div class="auto_btn">自動入力</div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="item_wrap">
@@ -136,7 +136,7 @@
                     <p class="item_name">マンション・建物名</p>
                     <div class="item_body">
                         <div class="input_wrap">
-                            <el-input v-model="resume.address_opt" @input="setResume()" autocomplete="off" placeholder="例）〇〇マンション" title="マンション・建物名" class="input_inner">
+                            <el-input v-model="resume.address_option_add" @input="setResume()" autocomplete="off" placeholder="例）〇〇マンション" title="マンション・建物名" class="input_inner">
                             </el-input>
                         </div>
                     </div>
@@ -146,7 +146,7 @@
                     <p class="item_name_sub">都道府県と市区町村までを記入してください</p>
                     <div class="item_body">
                         <div class="input_wrap">
-                            <el-input v-model="resume.address_ruby_opt" @input="setResume()" autocomplete="off" placeholder="例）とうきょうとしながわくにしごたんだ" title="住所ふりがな" class="input_inner">
+                            <el-input v-model="resume.address_ruby_add" @input="setResume()" autocomplete="off" placeholder="例）とうきょうとしながわくにしごたんだ" title="住所ふりがな" class="input_inner">
                             </el-input>
                         </div>
                     </div>
@@ -175,6 +175,7 @@
 </template>
 
 <script>
+const jsonpAdapter = require('axios-jsonp')
     export default {
     data() {
         return {
@@ -201,7 +202,35 @@
             }else{
                 this.openMenu = false
             }
+        },
+        searchAddress() {//１つ目の住所
+            if(this.resume.post_code.length == 7) {
+                // 郵便番号が7桁入力されたら
+                const zipCode = this.resume.post_code
+                axios.get(`https://api.zipaddress.net/?zipcode=${zipCode}`, {adapter: jsonpAdapter})
+                .then(rs => {
+                    const response = rs.data
+                    this.resume.address = response.pref + response.city + response.town
+                    this.$store.dispatch('setResume',this.resume)
+                })
+            } else {
+                return false
         }
+        },
+        addSearchAddress() {//オプションの住所
+            if(this.resume.post_code_add.length == 7) {
+                // 郵便番号が7桁入力されたら
+                const zipCode = this.resume.post_code_add
+                axios.get(`https://api.zipaddress.net/?zipcode=${zipCode}`, {adapter: jsonpAdapter})
+                .then(rs => {
+                    const response = rs.data
+                    this.resume.address_add = response.pref + response.city + response.town
+                    this.$store.dispatch('setResume',this.resume)
+                })
+            } else {
+                return false
+            }
+        },
     }
 }
 </script>

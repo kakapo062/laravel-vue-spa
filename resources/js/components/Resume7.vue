@@ -580,6 +580,7 @@
             if(this.activeIndex == index){
                 this.activeIndex = undefined;
                 this.licenses[index] = this.licenses[index];
+                this.$store.dispatch('setLicense',this.licenses)
             }
                 console.log(this.activeIndex) //undefinedになるのに、liタグの.isActiveが消えない
         },

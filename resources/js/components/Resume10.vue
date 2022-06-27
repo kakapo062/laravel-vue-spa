@@ -77,30 +77,6 @@
                 </div>
             </div>
         </div>
-        <div class="form-group">
-  <label>住所</label>
-  <div class="flex items-center">
-    <input class="form-control" type="number" v-model="postalcode1"/><span class="block ml-2 mr-2">ー</span>
-    <input class="form-control" type="number" v-model="postalcode2"/>
-    <button class="px-4 py-1 rounded-lg text-white bg-black font-normal text-sm ml-4" @click="searchAddress">住所検索</button>
-  </div>
-</div>
-<div class="form-group">
-  <label>都道府県</label>
-  <input class="form-control" type="text" v-model="prefecture"/>
-</div>
-<div class="form-group">
-  <label>市区町村</label>
-  <input class="form-control" type="text" v-model="city"/>
-</div>
-<div class="form-group">
-  <label>地名・番名</label>
-  <input class="form-control" type="text" v-model="town"/>
-</div>
-<div class="form-group">
-  <label>建物名・階・番号</label>
-  <input class="form-control" type="text" v-model="building"/>
-</div>
         <div class="pager_wrap">
             <div class="pager_inner">
                 <router-link v-bind:to="{name: 'resume11'}" class="next_step_btn"><span>次へ</span></router-link>
@@ -120,7 +96,6 @@
 </template>
 
 <script>
-const jsonpAdapter = require('axios-jsonp')
     export default {
     data() {
         return {
@@ -129,12 +104,6 @@ const jsonpAdapter = require('axios-jsonp')
             resume: {
                 hope: '',
             },
-            postalcode1: '',
-            postalcode2: '',
-            prefecture: '',
-            city: '',
-            town: '',
-            building: '',
         }
     },
     methods: {
@@ -148,16 +117,6 @@ const jsonpAdapter = require('axios-jsonp')
                 this.$store.dispatch('setResume',this.resume);
             }
         },
-            searchAddress() {
-            const zipCode = this.postalcode1 + this.postalcode2
-            api.get(`https://api.zipaddress.net/?zipcode=${zipCode}`, {adapter: jsonpAdapter}).then(rs => {
-                const response = rs.data
-                this.prefecture = response.pref
-                this.city = response.city
-                this.town = response.town
-                this.building = ''
-            })
-            },
     }
 }
 </script>
