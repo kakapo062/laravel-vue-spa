@@ -65,10 +65,13 @@
                     <p class="normal_text">「▲上へ」「▼下へ」ボタンをクリックして並び替え、古いものが上にくるようにしてください。</p>
                 </div>
                 <ul>
+                    <transition-group>
                     <li
                     class="card_wrap history_item_wrap"
                     v-for="(license, index) in licenses"
-                    v-bind:key="license.index"
+                    v-bind:key="license.id"
+                    @click="click(index)"
+                    :class="{isActive: activeIndex == index}"
                     >
                         <div class="card_list_item">
                             <div class="card_content_wrap">
@@ -109,6 +112,7 @@
                                             v-model="license.name"
                                             @input="setLicense()"
                                             autocomplete="off"
+                                            ref="focusInput"
                                             placeholder="例）〇〇〇資格1級"
                                             title="資格名称"
                                             class="input_inner">
@@ -116,12 +120,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card_btn_wrap flex">
-                                    <div class="card_register_btn">登録</div>
+                                <div class="card_btn_wrap flex" v-if="activeIndex == index" >
+                                    <div @click="register(index)" class="card_register_btn">登録</div>
                                     <div @click="del(index)" class="card_delete_btn">削除</div>
                                 </div>
                             </div>
-                            <div class="card_change_btn_wrap">
+                            <div class="card_change_btn_wrap" v-if="activeIndex !== index">
                                 <div @click="up(index)" class="card_up_btn">
                                     <img src="/images/card_up.svg" alt="" class="up_img">
                                 </div>
@@ -131,6 +135,7 @@
                             </div>
                         </div>
                     </li>
+                    </transition-group>
                 </ul>
                 <div @click="addLicense()" class="navy_btn_wrap">
                     <div class="navy_btn">免許・資格を追加</div>
@@ -160,16 +165,21 @@
     data() {
         return {
             licenses: [],
+            activeIndex: undefined,
         }
     },
     computed: {
     },
     watch: {
+        activeIndex: function (val, oldVal) {
+            this.activeIndex =  val
+    },
     },
     methods: {
         addLicense(){
             let license = {
                 isActive: false,
+                id: '',
                 name: '',
                 getyear: '',
                 getmonth: '',
@@ -522,6 +532,10 @@
                 },
                 ],
             }
+            // はじめの数値
+            let nextId = this.licenses.length;
+            // データを加えるとき
+            license.id = nextId
             this.licenses.push(license)
         },
         del(index){
@@ -532,6 +546,7 @@
             this.$store.dispatch('setLicense',this.licenses)
         },
         up(index) {
+            let end = [this.licenses.length - 1] //最後の要素
             if(index == 0){
                 return false
             } else {
@@ -543,8 +558,8 @@
         },
         down(index) {
             let end = [this.licenses.length - 1] //最後の要素
-            if(index == end) {
-                return false
+            if(index == end){
+                return false;
             } else {
                 let downstart = this.licenses.slice(0, index) //最初から、対象のindexの1個前まで取得
                 let downlast = this.licenses.slice(index+2) //対象のindexの次から最後までの配列。
@@ -552,6 +567,44 @@
                 this.licenses = newArray //新しい配列をdataに入れ替え
             }
         },
+        click(index) {
+            if(this.activeIndex != index){
+                this.activeIndex = index
+                this.licenses[index].isActive = !this.licenses[index].isActive
+                } else {
+                    // this.activeIndex = undefined;
+                    // これなら.isActiveが消えるが、登録ボタン以外を押したときも消えてしまう
+            }
+        },
+        register(index){
+            if(this.activeIndex == index){
+                this.activeIndex = undefined;
+                this.licenses[index] = this.licenses[index];
+            }
+                console.log(this.activeIndex) //undefinedになるのに、liタグの.isActiveが消えない
+        },
     },
 }
 </script>
+
+<style scoped>
+/* 表示・非表示アニメーション中 */
+.v-enter-active,
+.v-leave-active {
+  transition: all 700ms;
+}
+/* 表示アニメーション開始時 ・ 非表示アニメーション後 */
+.v-enter, .v-leave-to {
+  opacity: 0;
+}
+
+/* 要素が移動する時に700msで移動するように指定 */
+.v-move {
+  transition: all 700ms;
+}
+.v-leave-active {
+  /* 移動のトランジションをさせる場合は非表示アニメーション中に position: absoluteを指定しないと正しく動作しない */
+  position: absolute;
+}
+
+</style>

@@ -34,7 +34,7 @@
                     </div>
                     <div class="etc flex">
                         <div class="birthday"><span class="year">{{ resume.birthyear }}</span>年 <span class="month">{{ resume.birthmonth }}</span>月 <span class="day">{{ resume.birthday }}</span>日生（満 <span class="age">{{ resume.age }}</span> 歳） </div>
-                        <div class="gender"><span class="male preview-is-checked">男</span><span>・</span><span class="female">女</span></div>
+                        <div class="gender"><span class="male" :class="{'preview-is-checked': resume.radio1 == '男性' }">男</span><span>・</span><span class="female" :class="{'preview-is-checked': resume.radio1 == '女性' }">女</span></div>
                     </div>
                     </div>
                 </div>
@@ -262,6 +262,10 @@
                 </table>
                 </div>
                 <div data-highlight="タップで編集" class="rirekisho-table rirekisho-skill">
+                    <tr v-for="(license, index) in licenses" v-bind:key="license.id">
+                        <td>{{ index }}</td>
+                        <td>{{ license.name }}</td>
+                    </tr>
                 <table class="">
                     <thead>
                     <tr>
@@ -326,11 +330,11 @@
                     <div class="partner">
                     <div class="existence">
                         <div class="label">配偶者</div>
-                        <div class="input"><span class="yes preview-is-checked">有</span> ・ <span class="no">無</span></div>
+                        <div class="input"><span class="yes" :class="{'preview-is-checked': resume.spouse == 'あり' }">有</span> ・ <span class="no" :class="{'preview-is-checked': resume.spouse == 'なし' }">無</span></div>
                     </div>
                     <div class="support">
                         <div class="label">配偶者の扶養義務</div>
-                        <div class="input"><span class="yes preview-is-checked">有</span> ・ <span class="no">無</span></div>
+                        <div class="input"><span class="yes" :class="{'preview-is-checked': resume.duty == 'あり' }">有</span> ・ <span class="no" :class="{'preview-is-checked': resume.duty == 'なし' }">無</span></div>
                     </div>
                     </div>
                 </div>
@@ -369,7 +373,7 @@ import { mapGetters } from 'vuex'
     computed: {
          ...mapGetters([
              'resume',
-             'licenses'
+             'license'
              ]),
     },
     methods: {

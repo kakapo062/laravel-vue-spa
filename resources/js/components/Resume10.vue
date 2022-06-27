@@ -77,6 +77,30 @@
                 </div>
             </div>
         </div>
+        <div class="form-group">
+  <label>住所</label>
+  <div class="flex items-center">
+    <input class="form-control" type="number" v-model="postalcode1"/><span class="block ml-2 mr-2">ー</span>
+    <input class="form-control" type="number" v-model="postalcode2"/>
+    <button class="px-4 py-1 rounded-lg text-white bg-black font-normal text-sm ml-4" @click="searchAddress">住所検索</button>
+  </div>
+</div>
+<div class="form-group">
+  <label>都道府県</label>
+  <input class="form-control" type="text" v-model="prefecture"/>
+</div>
+<div class="form-group">
+  <label>市区町村</label>
+  <input class="form-control" type="text" v-model="city"/>
+</div>
+<div class="form-group">
+  <label>地名・番名</label>
+  <input class="form-control" type="text" v-model="town"/>
+</div>
+<div class="form-group">
+  <label>建物名・階・番号</label>
+  <input class="form-control" type="text" v-model="building"/>
+</div>
         <div class="pager_wrap">
             <div class="pager_inner">
                 <router-link v-bind:to="{name: 'resume11'}" class="next_step_btn"><span>次へ</span></router-link>
