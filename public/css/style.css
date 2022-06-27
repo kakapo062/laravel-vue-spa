@@ -932,8 +932,21 @@ input[type='checkbox'] {
     height: 40px;
     cursor: pointer;
 }
-.card_up_btn:hover {
-    background: pink;
+.history_item_wrap:first-of-type .card_up_btn {
+    opacity: .3;
+}
+.history_item_wrap:last-of-type .card_down_btn {
+    opacity: .3;
+}
+.isActive {
+    padding: 16px !important;
+    border: 2px solid #D85041;
+}
+.isActive .card_content_wrap {
+    width: 100% !important;
+}
+.isNone {
+    display: none !important; 
 }
 .card_down_btn {
     display: flex;
@@ -941,9 +954,6 @@ input[type='checkbox'] {
     align-items: center;
     height: 40px;
     cursor: pointer;
-}
-.card_down_btn:hover {
-    background: pink;
 }
 .v--modal-box.v--modal {
     background: #F5F5F7;
@@ -1281,3 +1291,4 @@ input[type='checkbox'] {
     align-items: center;
     list-style: none;
 }
+

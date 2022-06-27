@@ -65,7 +65,14 @@
                     <p class="normal_text">「▲上へ」「▼下へ」ボタンをクリックして並び替え、古いものが上にくるようにしてください。</p>
                 </div>
                 <ul>
-                    <li class="card_wrap history_item_wrap" v-for="(workHistory, index) in workHistorys" v-bind:key="workHistory.index">
+                    <transition-group>
+                    <li
+                    class="card_wrap history_item_wrap"
+                    v-for="(workHistory, index) in workHistorys"
+                    v-bind:key="workHistory.id"
+                    @click="click(index)"
+                    :class="{isActive: activeIndex == index}"
+                    >
                         <div class="card_list_item">
                             <div class="card_content_wrap">
                                 <div class="item_wrap">
@@ -124,7 +131,10 @@
                                         </div>
                                         <span>年</span>
                                         <div class="input_wrap">
-                                            <el-select v-model="workHistory.end_month" @change="setWorkHistorys()" placeholder="1" class="input_month">
+                                            <el-select v-model="workHistory.end_month"
+                                            @change="setWorkHistorys()"
+                                            placeholder="1"
+                                            class="input_month">
                                                 <el-option
                                                 v-for="item in workHistory.end_months"
                                                 :key="item.value"
@@ -136,12 +146,12 @@
                                         <span>月まで</span>
                                     </div>
                                 </div>
-                                <div class="card_btn_wrap flex">
-                                    <div class="card_register_btn">登録</div>
+                                <div class="card_btn_wrap flex" v-if="activeIndex == index">
+                                    <div @click="register(index)" class="card_register_btn">登録</div>
                                     <div @click="del(index)" class="card_delete_btn">削除</div>
                                 </div>
                             </div>
-                            <div class="card_change_btn_wrap">
+                            <div class="card_change_btn_wrap" v-if="activeIndex !== index">
                                 <div @click="up(index)" class="card_up_btn">
                                     <img src="/images/card_up.svg" alt="" class="up_img">
                                 </div>
@@ -151,6 +161,7 @@
                             </div>
                         </div>
                     </li>
+                    </transition-group>
                 </ul>
                 <div @click="addWorkHistory()" class="navy_btn_wrap">
                     <div class="navy_btn">職歴を追加</div>
@@ -179,19 +190,15 @@
     export default {
     data() {
         return {
-            isActive: false,
-            isDisplay: true,
+            activeIndex: undefined,
             workHistorys: [],
         }
     },
     methods: {
-        active: function(){
-            this.isActive = !this.isActive;
-            this.isDisplay = !this.isDisplay;
-        },
        addWorkHistory(){
             let workHistory = {
                 isActive: false,
+                id: '',
                 comp_name: '',
                 start_year: '',
                 start_month: '',
@@ -894,6 +901,10 @@
                 },
                 ],
             }
+            // はじめの数値
+            let nextId = this.workHistorys.length;
+            // データを加えるとき
+            workHistory.id = nextId
             this.workHistorys.push(workHistory)
         },
         del(index){
@@ -924,6 +935,44 @@
                 this.workHistorys = newArray //新しい配列をdataに入れ替え
             }
         },
+        click(index) {
+            if(this.activeIndex != index){
+                this.activeIndex = index
+                this.workHistorys[index].isActive = !this.workHistorys[index].isActive
+                } else {
+                    // this.activeIndex = undefined;
+                    // これなら.isActiveが消えるが、登録ボタン以外を押したときも消えてしまう
+            }
+        },
+        register(index){
+            if(this.activeIndex == index){
+                this.activeIndex = undefined;
+                this.workHistorys[index] = this.workHistorys[index];
+            }
+                console.log(this.activeIndex) //undefinedになるのに、liタグの.isActiveが消えない
+        },
     }
 }
 </script>
+
+<style scoped>
+/* 表示・非表示アニメーション中 */
+.v-enter-active,
+.v-leave-active {
+  transition: all 700ms;
+}
+/* 表示アニメーション開始時 ・ 非表示アニメーション後 */
+.v-enter, .v-leave-to {
+  opacity: 0;
+}
+
+/* 要素が移動する時に700msで移動するように指定 */
+.v-move {
+  transition: all 700ms;
+}
+.v-leave-active {
+  /* 移動のトランジションをさせる場合は非表示アニメーション中に position: absoluteを指定しないと正しく動作しない */
+  position: absolute;
+}
+
+</style>
