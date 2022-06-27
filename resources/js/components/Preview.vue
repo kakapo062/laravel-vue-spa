@@ -76,14 +76,14 @@
                     <div class="contact-information-address">
                     <div class="ruby flex">
                         <div class="label">ふりがな</div>
-                        <div class="input">{{ resume.address_ruby_opt }}</div>
+                        <div class="input">{{ resume.address_ruby_add }}</div>
                     </div>
                     <div class="address flex">
                         <div class="label">連絡先</div>
                         <div class="input">
                         <div class="postal-code">〒{{ resume.post_code_add }}</div>
                         <div class="comment">(現住所以外に連絡を希望する場合のみ入力)</div>
-                        <pre>{{ resume.address_add }} {{ resume.address_opt_add }}</pre>
+                        <pre>{{ resume.address_add }} {{ resume.address_option_add }}</pre>
                         </div>
                     </div>
                     </div>
@@ -318,11 +318,6 @@
                     </div>
                 </div>
                 <div data-highlight="タップで編集" class="rirekisho-pr-etc">
-                    <div class="time">
-                    <div class="label">通勤時間</div>
-                    <div class="input"></div>
-                    <!---->
-                    </div>
                     <div class="family">
                     <div class="label">扶養家族数（配偶者を除く）</div>
                     <div class="input">{{ resume.dependent }} 人</div>
