@@ -120,6 +120,7 @@
 </template>
 
 <script>
+const jsonpAdapter = require('axios-jsonp')
     export default {
     data() {
         return {
@@ -127,7 +128,13 @@
             isDisplay: true,
             resume: {
                 hope: '',
-            }
+            },
+            postalcode1: '',
+            postalcode2: '',
+            prefecture: '',
+            city: '',
+            town: '',
+            building: '',
         }
     },
     methods: {
@@ -141,6 +148,16 @@
                 this.$store.dispatch('setResume',this.resume);
             }
         },
+            searchAddress() {
+            const zipCode = this.postalcode1 + this.postalcode2
+            api.get(`https://api.zipaddress.net/?zipcode=${zipCode}`, {adapter: jsonpAdapter}).then(rs => {
+                const response = rs.data
+                this.prefecture = response.pref
+                this.city = response.city
+                this.town = response.town
+                this.building = ''
+            })
+            },
     }
 }
 </script>
