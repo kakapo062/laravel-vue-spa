@@ -121,15 +121,15 @@
                                     </div>
                                 </div>
                                 <div class="card_btn_wrap flex" v-if="activeIndex == index" >
-                                    <div @click="register(index)" class="card_register_btn">登録</div>
-                                    <div @click="del(index)" class="card_delete_btn">削除</div>
+                                    <div  @click.stop="register(index)" class="card_register_btn">登録</div>
+                                    <div @click.stop="del(index)" class="card_delete_btn">削除</div>
                                 </div>
                             </div>
                             <div class="card_change_btn_wrap" v-if="activeIndex !== index">
-                                <div @click="up(index)" class="card_up_btn">
+                                <div @click.stop="up(index)" class="card_up_btn">
                                     <img src="/images/card_up.svg" alt="" class="up_img">
                                 </div>
-                                <div @click="down(index)" class="card_down_btn">
+                                <div @click.stop="down(index)" class="card_down_btn">
                                     <img src="/images/card_down.svg" alt="" class="down_img">
                                 </div>
                             </div>
@@ -578,11 +578,9 @@
         },
         register(index){
             if(this.activeIndex == index){
-                this.activeIndex = undefined;
-                this.licenses[index] = this.licenses[index];
+                this.activeIndex = undefined;;
                 this.$store.dispatch('setLicense',this.licenses)
             }
-                console.log(this.activeIndex) //undefinedになるのに、liタグの.isActiveが消えない
         },
     },
 }
