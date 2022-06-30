@@ -648,6 +648,10 @@
             setResume() {
                 this.$store.dispatch('setResume',this.resume)
             },
+                    submit() {
+                    // data()内のformデータをコントローラに送る
+                        this.resume.post(this.route("PdfOutputController"));
+                },
         },
     }
 </script>

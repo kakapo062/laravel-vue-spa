@@ -28,7 +28,8 @@
         </div>
         <div class="pager_wrap">
             <div class="pager_inner">
-                <router-link v-bind:to="{name: 'Thanks'}" class="next_step_btn"><span>送信</span></router-link>
+                <!-- <router-link v-bind:to="{name: 'Thanks'}" class="next_step_btn"><span>送信</span></router-link> -->
+                <a href="/output" class="next_step_btn"><span>送信</span></a>
                 <router-link v-bind:to="{name: 'resume11'}" class="back_step_btn"><span>戻る</span></router-link>
             </div>
         </div>
@@ -53,7 +54,7 @@
         active: function(){
             this.isActive = !this.isActive;
             this.isDisplay = !this.isDisplay;
-    }
+        },
     }
 }
 </script>
