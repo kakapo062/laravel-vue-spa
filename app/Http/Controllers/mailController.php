@@ -21,8 +21,7 @@ class mailController extends Controller
                         ->subject('送信メールの表題');
         });
 
-        return back()->withInput($request->only(['name']))
-                     ->with('sent', '送信完了しました。');  //送信完了を表示
+        return redirect('/start/resume/thanks'); //returnは送信処理完了後に表示するページや内容を指定する。
     }
 
 }
