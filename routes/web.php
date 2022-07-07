@@ -16,4 +16,13 @@ Route::get('/start/{any}', function () {
 Route::get('/output', [PdfOutputController::class, 'output']);
 // 送信ボタンを押したとき
 
-Route::get('/mailsend', 'App\Http\Controllers\mailController@send');
+Route::get('contact', 'mailController@index');
+///mailsendにアクセスしたとき
+
+Route::post('contact', 'mailController@send');
+///contactページでpostメソッドが使われたとき
+
+Route::post('contact', 'mailController@send');
+///contactページでpostメソッドが使われたとき
+
+Route::post('welcome', 'MainController@write1');

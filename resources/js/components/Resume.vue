@@ -65,7 +65,7 @@
                     <p class="item_name">氏名</p>
                     <div class="item_body flex col_12">
                         <div class="input_wrap">
-                            <el-input v-model="resume.family_name" @input="setResume()" type="text" autocomplete="off" placeholder="山田" title="姓" class="input_inner">
+                            <el-input v-model="resume.family_name" @input="setResume()" name="family_name" type="text" autocomplete="off" placeholder="山田" title="姓" class="input_inner">
                                 </el-input>
                         </div>
                         <div class="input_wrap">

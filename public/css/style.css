@@ -728,6 +728,8 @@ input[type='checkbox'] {
     line-height: 1.6923;
     margin-bottom: 16px;
 }
+    font-weight: bold;
+}
 .thanks_wrap {
     background: #FFF;
     padding: 24px 20px 37px;

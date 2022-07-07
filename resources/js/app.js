@@ -23,7 +23,6 @@ import ElementUI from 'element-ui';
 import locale from 'element-ui/lib/locale/lang/ja';
 import 'element-ui/lib/theme-chalk/index.css';
 import VueCompositionAPI from '@vue/composition-api'
-import { createPinia, PiniaVuePlugin } from 'pinia'
 import dayjs from "dayjs";
 
 
@@ -39,13 +38,11 @@ import store from './stores/vuex'
 Vue.use(VueRouter);
 Vue.use(VModal);
 Vue.use(ElementUI, {locale});
-Vue.use(VueCompositionAPI)
-Vue.use(PiniaVuePlugin)
+Vue.use(VueCompositionAPI);
 
 dayjs.locale("ja");
 Vue.prototype.$dayjs = dayjs;
 
-const pinia = createPinia()
 
  const router = new VueRouter({
      mode: 'history',
@@ -157,6 +154,5 @@ Vue.component('academy-modal', AcademyModal);
  new Vue({
     el: '#app',
     router,
-    pinia,
     store,
 });
