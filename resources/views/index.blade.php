@@ -20,7 +20,6 @@
         <div id="app" class="">
             <header-component></header-component>
             <keep-alive>
-                    @csrf
                     <router-view>
                     </router-view>
             </keep-alive>

@@ -1172,6 +1172,9 @@ input[type='checkbox'] {
     .fixed_preview_btn {
         display: none;
     }
+    .back_arrow {
+        display: none;
+    }
 }
 
 .avatar-uploader .el-upload {

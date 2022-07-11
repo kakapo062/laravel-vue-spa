@@ -64,11 +64,11 @@
                     <div data-highlight="タップで編集" class="contact-information-etc">
                     <div class="tel flex">
                         <div class="label">電話</div>
-                        <div class="input"></div>
+                        <div class="input">{{ resume.phone }}</div>
                     </div>
                     <div class="email flex">
                         <div class="label">Email</div>
-                        <div class="input"></div>
+                        <div class="input">{{ resume.email }}</div>
                     </div>
                     </div>
                 </div>
@@ -90,11 +90,11 @@
                     <div class="contact-information-etc">
                     <div class="tel flex">
                         <div class="label">電話</div>
-                        <div class="input">{{ resume.phone }}</div>
+                        <div class="input">{{ resume.phone_add }}</div>
                     </div>
                     <div class="email flex">
                         <div class="label">Email</div>
-                        <div class="input">{{ resume.email }}</div>
+                        <div class="input">{{ resume.email_add }}</div>
                     </div>
                     </div>
                 </div>

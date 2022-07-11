@@ -13,7 +13,7 @@ Route::get('/start/{any}', function () {
 //  });
  
 
-Route::get('/output', [PdfOutputController::class, 'output']);
+Route::post('/output', [PdfOutputController::class, 'output']);
 // 送信ボタンを押したとき
 
 Route::get('contact', 'mailController@index');

@@ -69,7 +69,7 @@
                                 </el-input>
                         </div>
                         <div class="input_wrap">
-                            <el-input v-model="resume.first_name" @input="setResume()" type="text" autocomplete="off" placeholder="太郎" title="名" class="input_inner">
+                            <el-input v-model="resume.first_name" @input="setResume()" name="first_name" type="text" autocomplete="off" placeholder="太郎" title="名" class="input_inner">
                                 </el-input>
                         </div>
                     </div>
@@ -78,11 +78,11 @@
                     <p class="item_name">ふりがな</p>
                     <div class="item_body flex col_12">
                         <div class="input_wrap">
-                            <el-input v-model="resume.family_ruby" @input="setResume()" autocomplete="off" placeholder="やまだ" title="せい" class="input_inner">
+                            <el-input v-model="resume.family_ruby" @input="setResume()" name="family_ruby" autocomplete="off" placeholder="やまだ" title="せい" class="input_inner">
                             </el-input>
                         </div>
                         <div class="input_wrap">
-                            <el-input v-model="resume.first_ruby" @input="setResume()" type="text" autocomplete="off" placeholder="たろう" title="め" class="input_inner">
+                            <el-input v-model="resume.first_ruby" @input="setResume()" type="text" name="first_ruby" autocomplete="off" placeholder="たろう" title="め" class="input_inner">
                                 </el-input>
                         </div>
                     </div>
@@ -144,7 +144,7 @@
                     <div class="item_body flex flex_column_2">
                         <el-radio v-model="resume.radio1" @change="setResume()" label="男性" border>男性</el-radio>
                         <el-radio v-model="resume.radio1" @change="setResume()" label="女性" border>女性</el-radio>
-                        <el-radio v-model="resume.radio1"@change="setResume()" label="記入しない" border>記入しない</el-radio>
+                        <el-radio v-model="resume.radio1" @change="setResume()" label="記入しない" border>記入しない</el-radio>
                     </div>
                 </div>
             </div>
@@ -605,7 +605,7 @@
                         label: '31'
                     },
                     ],
-                    radio1: '男性',
+                    radio1: '',
                 }
             }
         },
