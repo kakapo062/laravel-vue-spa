@@ -8,6 +8,10 @@ Route::get('/start/{any}', function () {
     return view('index');
 })->where('any', '.*');
 
+Route::get('/', function () {
+    return view('index');
+ });
+
 // Route::get('/start', function () {
 //     return view('index');
 //  });

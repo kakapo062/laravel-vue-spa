@@ -25,7 +25,6 @@ import 'element-ui/lib/theme-chalk/index.css';
 import VueCompositionAPI from '@vue/composition-api'
 import dayjs from "dayjs";
 
-
 require('./bootstrap');
 require('./main');
 
