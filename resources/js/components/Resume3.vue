@@ -79,6 +79,37 @@
                         </div>
                     </div>
                 </div>
+                <el-collapse accordion>
+                    <el-collapse-item name="1" class="step2">
+                        <template slot="title">
+                        <p class="width100" @click="openMenu =!openMenu">
+                            <template v-if="openMenu === false">上記以外に希望する連絡先がある場合</template>
+                        <template v-else>閉じる</template>
+                        </p>
+                        </template>
+                    <div class="">
+                    <p class="address_note">※上記以外に連絡を希望する場合のみ入力してください</p>
+                    <div class="item_wrap">
+                        <p class="item_name">電話番号（ハイフンあり）</p>
+                        <div class="item_body">
+                            <div class="input_wrap">
+                                <el-input v-model="resume.phone_add" @input="setResume()" autocomplete="off" placeholder="例）090-1234-5678" title="電話番号" class="input_inner">
+                                </el-input>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item_wrap">
+                        <p class="item_name">メールアドレス</p>
+                        <div class="item_body">
+                            <div class="input_wrap">
+                                <el-input v-model="resume.email_add" @input="setResume()" autocomplete="off" placeholder="例）abc@example.com" title="メールアドレス" class="input_inner">
+                                </el-input>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    </el-collapse-item>
+                </el-collapse>
             </div>
         </div>
         <div class="pager_wrap">
@@ -103,22 +134,32 @@
     export default {
     data() {
         return {
+            openMenu: false,
             isActive: false,
             isDisplay: true,
             resume: {
                 phone: '',
                 email: '',
+                phone_add: '',
+                email_add: '',
             },
         }
     },
     methods: {
+        open(){
+            if(this.openMenu ===false){
+                this.openMenu = true
+            }else{
+                this.openMenu = false
+            }
+        },
         active: function(){
             this.isActive = !this.isActive;
             this.isDisplay = !this.isDisplay;
-    },
-    setResume() {
-        this.$store.dispatch('setResume',this.resume)
-    },
-    }
+        },
+        setResume() {
+            this.$store.dispatch('setResume',this.resume)
+            },
+        }
 }
 </script>
