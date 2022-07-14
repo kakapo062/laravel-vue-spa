@@ -1,10 +1,16 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import createPersistedState from "vuex-persistedstate" //←読み込む
+import VuexPersistence from 'vuex-persist'
+import localForage from "localforage" // 追加
 
 Vue.use(Vuex)
- 
-export default new Vuex.Store({
+
+const vuexLocal = new VuexPersistence({
+  storage: localForage,
+  asyncStorage: true,
+})
+
+const store = new Vuex.Store({
   state: {
     resume:{},
     licenses:[],
@@ -35,7 +41,9 @@ export default new Vuex.Store({
     }, 
       setWorkHistory({commit}, workHistorys) {
         commit("setLicense", workHistorys);
-    }, 
+    },
   },
-  plugins: [createPersistedState({storage: window.sessionStorage})]
-})
+  plugins: [vuexLocal.plugin],
+});
+
+export default store

@@ -207,8 +207,8 @@ import { mapGetters } from 'vuex'
 
             var url = document.createElement('input');
             url.name = 'url';
-            url.type = 'hidden';
-            url.value = this.$store.getters.resume.url || "";
+            url.type = 'file';
+            url.files = this.$store.getters.resume.image_file || "";
             form.appendChild(url);
 
             var year = document.createElement('input');
@@ -267,7 +267,7 @@ import { mapGetters } from 'vuex'
 
             // body に追加
             document.body.appendChild(form);
-            // submit
+            // // submit
             form.submit();
         },
         setResume() {
