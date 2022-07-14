@@ -130,6 +130,7 @@
 </div>
 </template>
 <script>
+const jsonpAdapter = require('axios-jsonp')
     export default {
     data() {
         return {
@@ -138,6 +139,7 @@
             activeNames: [''],
             resume: {
                 url: '',
+                image_file: ''
             },
         }
     },
@@ -154,10 +156,11 @@
         },
         upFile() {
             const file = this.$refs.preview.files[0];
-            console.log(file);
+            this.resume.image_file = this.$refs.preview.files; //そのままfilesプロパティを入れ込む
             this.resume.url = URL.createObjectURL(file);
             this.$store.dispatch('setResume',this.resume);
         },
+
         resetFile() {
             const input = this.$refs.preview;
             input.type = 'text';

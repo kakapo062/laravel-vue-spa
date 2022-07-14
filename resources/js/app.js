@@ -24,15 +24,14 @@ import locale from 'element-ui/lib/locale/lang/ja';
 import 'element-ui/lib/theme-chalk/index.css';
 import VueCompositionAPI from '@vue/composition-api'
 import dayjs from "dayjs";
+import store from './stores/vuex'
+
 
 require('./bootstrap');
+require('./stores/vuex');
 require('./main');
 
-require('./stores/vuex.js');
-
 window.Vue = require('vue').default;
-
-import store from './stores/vuex'
 
 Vue.use(VueRouter);
 Vue.use(VModal);
