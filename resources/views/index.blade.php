@@ -7,7 +7,7 @@
      <!-- CSRF Token -->
      <meta name="csrf-token" content="{{ csrf_token() }}">
  
-     <title>{{ config('app.name', 'Vue Laravel SPA') }}</title>
+     <title>{{ config('app.name', '履歴書作成アプリ') }}</title>
  
      <!-- Styles -->
      {{-- <link href="{{ mix('/css/app.css') }}" rel="stylesheet"> --}}

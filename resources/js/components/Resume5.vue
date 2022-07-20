@@ -69,6 +69,83 @@
                     <p class="red">学歴は高校卒業から記入してください。</p>
                 </div>
                     <academy-modal />
+                <ul>
+                    <transition-group>
+                    <li
+                    class="card_wrap history_item_wrap"
+                    v-for="(schoolHistory, index) in schoolHistories"
+                    :key="schoolHistory.id"
+                    @click="click(index)"
+                    :class="{isActive: activeIndex == index}"
+                    >
+                        <div class="card_list_item">
+                            <div class="card_content_wrap">
+                                <div class="item_wrap">
+                                    <div class="item_name">
+                                        <p class="">入学・卒業時期</p>
+                                    </div>
+                                    <div class="item_body flex mb_8">
+                                        <div class="input_wrap input_year">
+                                            <el-select v-model="schoolHistory.year" @change="setSchoolHistories()" placeholder="1996" class="input_year">
+                                                <el-option
+                                                v-for="item in schoolHistory.years"
+                                                :key="item.value"
+                                                :label="item.label"
+                                                :value="item.value">
+                                                </el-option>
+                                            </el-select>
+                                        </div>
+                                        <span>年</span>
+                                        <div class="input_wrap">
+                                            <el-select v-model="schoolHistory.month" @change="setSchoolHistories()" placeholder="1" class="input_month">
+                                                <el-option
+                                                v-for="item in schoolHistory.months"
+                                                :key="item.value"
+                                                :label="item.label"
+                                                :value="item.value">
+                                                </el-option>
+                                            </el-select>
+                                        </div>
+                                        <span>月</span>
+                                    </div>
+                                </div>
+                                <div class="item_wrap mb_16">
+                                    <p class="item_name">学校名</p>
+                                    <div class="item_body">
+                                        <div class="input_wrap">
+                                            <el-input
+                                            v-model="schoolHistory.name"
+                                            @input="setSchoolHistories()"
+                                            autocomplete="off"
+                                            ref="focusInput"
+                                            placeholder="例）〇〇高等学校 卒業"
+                                            title="学校名"
+                                            class="input_inner">
+                                            </el-input>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card_btn_wrap flex" v-if="activeIndex == index" >
+                                    <div  @click.stop="register(index)" class="card_register_btn">登録</div>
+                                    <div @click.stop="del(index)" class="card_delete_btn">削除</div>
+                                </div>
+                            </div>
+                            <div class="card_change_btn_wrap" v-if="activeIndex !== index">
+                                <div @click.stop="up(index)" class="card_up_btn">
+                                    <img src="/images/card_up.svg" alt="" class="up_img">
+                                </div>
+                                <div @click.stop="down(index)" class="card_down_btn">
+                                    <img src="/images/card_down.svg" alt="" class="down_img">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    </transition-group>
+                </ul>
+
+                <div @click="addSchoolHistory()" class="navy_btn_wrap">
+                    <div class="navy_btn">学歴を追加</div>
+                </div>
             </div>
         </div>
         <div class="pager_wrap">
@@ -90,12 +167,68 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
     export default {
     data() {
         return {
             isActive: false,
             isDisplay: true,
+            activeIndex: undefined,
         }
+    },
+    watch: {
+        activeIndex: function (val, oldVal) {
+            this.activeIndex =  val
+        },
+        getBirthyear(val, old) {
+            this.resume.birthyear = val
+        },
+        getBirthmonth(val, old) {
+            this.resume.birthmonth = val
+        },
+        getBirthday(val, old) {
+            this.resume.birthday = val
+        }
+    },
+    computed: {
+        ...mapGetters([
+             'resume',
+             'schoolHistories'
+             ]),
+        getBirthyear() {
+            return this.$store.getters.resume.birthyear
+        },
+        getBirthmonth() {
+            return this.$store.getters.resume.birthmonth
+        },
+        getBirthday() {
+            return this.$store.getters.resume.birthday
+        },
+        juniorHighSchool() {
+          return this.resume.final_education === '中学校';
+        },
+        highSchool() {
+          return this.resume.final_education === '高等学校';
+        },
+        higherProfessionalSchool() {
+          return this.resume.final_education === '高等専門学校';
+        },
+        professionalSchool() {
+          return this.resume.final_education === '専門学校';
+        },
+        juniorCollege() {
+          return this.resume.final_education === '短期大学';
+        },
+        univ() {
+          return this.resume.final_education === '大学';
+        },
+        master() {
+          return this.resume.final_education === '大学院(修士)';
+        },
+        doctor() {
+          return this.resume.final_education === '大学院(博士)';
+        },
+
     },
     methods: {
         active(){
@@ -107,10 +240,436 @@
         },
         hide() {
         this.$modal.hide('academy-modal');
-        }
-        ,add() {
+        },
+        add() {
             this.$modal.hide('academy-modal');
-        }
+        },
+        addSchoolHistory(){
+            let schoolHistory = {
+                isActive: false,
+                id: '',
+                name: '',
+                year: '',
+                month: '',
+                years: [
+                    {
+                    value: '2022',
+                    label: '2022'
+                    },
+                    {
+                    value: '2021',
+                    label: '2021'
+                    },
+                    {
+                    value: '2020',
+                    label: '2020'
+                    },
+                    {
+                    value: '2019',
+                    label: '2019'
+                    },
+                    {
+                    value: '2018',
+                    label: '2018'
+                    },
+                    {
+                    value: '2017',
+                    label: '2017'
+                    },
+                    {
+                    value: '2016',
+                    label: '2016'
+                    },
+                    {
+                    value: '2015',
+                    label: '2015'
+                    },
+                    {
+                    value: '2014',
+                    label: '2014'
+                    },
+                    {
+                    value: '2013',
+                    label: '2013'
+                    },
+                    {
+                    value: '2012',
+                    label: '2012'
+                    },
+                    {
+                    value: '2011',
+                    label: '2011'
+                    },
+                    {
+                    value: '2010',
+                    label: '2010'
+                    },
+                    {
+                    value: '2009',
+                    label: '2009'
+                    },
+                    {
+                    value: '2008',
+                    label: '2008'
+                    },
+                    {
+                    value: '2007',
+                    label: '2007'
+                    },
+                    {
+                    value: '2006',
+                    label: '2006'
+                    },
+                    {
+                    value: '2005',
+                    label: '2005'
+                    },
+                    {
+                    value: '2004',
+                    label: '2004'
+                    },
+                    {
+                    value: '2003',
+                    label: '2003'
+                    },
+                    {
+                    value: '2002',
+                    label: '2002'
+                    },
+                    {
+                    value: '2001',
+                    label: '2001'
+                    },
+                    {
+                    value: '2000',
+                    label: '2000'
+                    },
+                    {
+                    value: '1999',
+                    label: '1999'
+                    },
+                    {
+                    value: '1998',
+                    label: '1998'
+                    },
+                    {
+                    value: '1997',
+                    label: '1997'
+                    },
+                    {
+                    value: '1996',
+                    label: '1996'
+                    },
+                    {
+                    value: '1995',
+                    label: '1995'
+                    },
+                    {
+                    value: '1994',
+                    label: '1994'
+                    },
+                    {
+                    value: '1993',
+                    label: '1993'
+                    },
+                    {
+                    value: '1992',
+                    label: '1992'
+                    },
+                    {
+                    value: '1991',
+                    label: '1991'
+                    },
+                    {
+                    value: '1990',
+                    label: '1990'
+                    },
+                    {
+                    value: '1989',
+                    label: '1989'
+                    },
+                    {
+                    value: '1988',
+                    label: '1988'
+                    },
+                    {
+                    value: '1987',
+                    label: '1987'
+                    },
+                    {
+                    value: '1986',
+                    label: '1986'
+                    },
+                    {
+                    value: '1985',
+                    label: '1985'
+                    },
+                    {
+                    value: '1984',
+                    label: '1984'
+                    },
+                    {
+                    value: '1983',
+                    label: '1983'
+                    },
+                    {
+                    value: '1982',
+                    label: '1982'
+                    },
+                    {
+                    value: '1981',
+                    label: '1981'
+                    },
+                    {
+                    value: '1980',
+                    label: '1980'
+                    },
+                    {
+                    value: '1979',
+                    label: '1979'
+                    },
+                    {
+                    value: '1978',
+                    label: '1978'
+                    },
+                    {
+                    value: '1977',
+                    label: '1977'
+                    },
+                    {
+                    value: '1976',
+                    label: '1976'
+                    },
+                    {
+                    value: '1975',
+                    label: '1975'
+                    },
+                    {
+                    value: '1974',
+                    label: '1974'
+                    },
+                    {
+                    value: '1973',
+                    label: '1973'
+                    },
+                    {
+                    value: '1972',
+                    label: '1972'
+                    },
+                    {
+                    value: '1971',
+                    label: '1971'
+                    },
+                    {
+                    value: '1970',
+                    label: '1970'
+                    },
+                    {
+                    value: '1969',
+                    label: '1969'
+                    },
+                    {
+                    value: '1968',
+                    label: '1968'
+                    },
+                    {
+                    value: '1967',
+                    label: '1967'
+                    },
+                    {
+                    value: '1966',
+                    label: '1966'
+                    },
+                    {
+                    value: '1965',
+                    label: '1965'
+                    },
+                    {
+                    value: '1964',
+                    label: '1964'
+                    },
+                    {
+                    value: '1963',
+                    label: '1963'
+                    },
+                    {
+                    value: '1962',
+                    label: '1962'
+                    },
+                    {
+                    value: '1961',
+                    label: '1961'
+                    },
+                    {
+                    value: '1960',
+                    label: '1960'
+                    },
+                    {
+                    value: '1959',
+                    label: '1959'
+                    },
+                    {
+                    value: '1958',
+                    label: '1958'
+                    },
+                    {
+                    value: '1957',
+                    label: '1957'
+                    },
+                    {
+                    value: '1956',
+                    label: '1956'
+                    },
+                    {
+                    value: '1955',
+                    label: '1955'
+                    },
+                    {
+                    value: '1954',
+                    label: '1954'
+                    },
+                    {
+                    value: '1953',
+                    label: '1953'
+                    },
+                    {
+                    value: '1952',
+                    label: '1952'
+                    },
+                    {
+                    value: '1951',
+                    label: '1951'
+                    },
+                    {
+                    value: '1950',
+                    label: '1950'
+                    },
+                    {
+                    value: '1949',
+                    label: '1949'
+                    }
+                ],
+                months: [
+                {
+                    value: '1',
+                    label: '1'
+                },
+                {
+                    value: '2',
+                    label: '2'
+                },
+                {
+                    value: '3',
+                    label: '3'
+                },
+                {
+                    value: '4',
+                    label: '4'
+                },
+                {
+                    value: '5',
+                    label: '5'
+                },
+                {
+                    value: '6',
+                    label: '6'
+                },
+                {
+                    value: '7',
+                    label: '7'
+                },
+                {
+                    value: '8',
+                    label: '8'
+                },
+                {
+                    value: '9',
+                    label: '9'
+                },
+                {
+                    value: '10',
+                    label: '10'
+                },
+                {
+                    value: '11',
+                    label: '11'
+                },
+                {
+                    value: '12',
+                    label: '12'
+                },
+                ],
+            }
+            // はじめの数値
+            let nextId = this.schoolHistories.length;
+            // データを加えるとき
+            schoolHistory.id = nextId
+            this.schoolHistories.push(schoolHistory)
+        },
+        del(index){
+            this.schoolHistories.splice(index, 1)
+            this.$store.dispatch('setSchoolHistories',this.schoolHistories)
+        },
+        setSchoolHistories(){
+            this.$store.dispatch('setSchoolHistories',this.schoolHistories)
+        },
+        up(index) {
+            let end = [this.schoolHistories.length - 1] //最後の要素
+            if(index == 0){
+                return false
+            } else {
+                let upstart = this.schoolHistories.slice(0, index-1) //最初から、対象のindexの2個前まで取得
+                let uplast = this.schoolHistories.slice(index+1) //対象のindexから最後までの配列。
+                const newArray = [...upstart, this.schoolHistories[index], this.schoolHistories[index-1], ...uplast]; //新しい配列作成
+                this.schoolHistories = newArray //新しい配列をdataに入れ替え
+            }
+        },
+        down(index) {
+            let end = [this.schoolHistories.length - 1] //最後の要素
+            if(index == end){
+                return false;
+            } else {
+                let downstart = this.schoolHistories.slice(0, index) //最初から、対象のindexの1個前まで取得
+                let downlast = this.schoolHistories.slice(index+2) //対象のindexの次から最後までの配列。
+                const newArray = [...downstart, this.schoolHistories[index+1], this.schoolHistories[index], ...downlast]; //新しい配列作成
+                this.schoolHistories = newArray //新しい配列をdataに入れ替え
+            }
+        },
+        click(index) {
+            if(this.activeIndex != index){
+                this.activeIndex = index
+                this.schoolHistories[index].isActive = !this.schoolHistories[index].isActive
+                } else {
+            }
+        },
+        register(index){
+            if(this.activeIndex == index){
+                this.activeIndex = undefined;;
+                this.$store.dispatch('setSchoolHistories',this.schoolHistories)
+            }
+        },
     }
 }
 </script>
+
+<style scoped>
+/* 表示・非表示アニメーション中 */
+.v-enter-active,
+.v-leave-active {
+  transition: all 700ms;
+}
+/* 表示アニメーション開始時 ・ 非表示アニメーション後 */
+.v-enter, .v-leave-to {
+  opacity: 0;
+}
+
+/* 要素が移動する時に700msで移動するように指定 */
+.v-move {
+  transition: all 700ms;
+}
+.v-leave-active {
+  /* 移動のトランジションをさせる場合は非表示アニメーション中に position: absoluteを指定しないと正しく動作しない */
+  position: absolute;
+}
+
+</style>

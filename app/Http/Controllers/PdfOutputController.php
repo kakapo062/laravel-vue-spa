@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 
-
 class PdfOutputController extends Controller
 {
     public function output(Request $request) {

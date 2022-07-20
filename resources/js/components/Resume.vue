@@ -65,11 +65,11 @@
                     <p class="item_name">氏名</p>
                     <div class="item_body flex col_12">
                         <div class="input_wrap">
-                            <el-input v-model="resumeInput.family_name" @input="setResume()" name="family_name" type="text" autocomplete="off" placeholder="山田" title="姓" class="input_inner">
+                            <el-input v-model="resume.family_name" @input="setResume()" name="family_name" type="text" autocomplete="off" placeholder="山田" title="姓" class="input_inner">
                                 </el-input>
                         </div>
                         <div class="input_wrap">
-                            <el-input v-model="resumeInput.first_name" @input="setResume()" name="first_name" type="text" autocomplete="off" placeholder="太郎" title="名" class="input_inner">
+                            <el-input v-model="resume.first_name" @input="setResume()" name="first_name" type="text" autocomplete="off" placeholder="太郎" title="名" class="input_inner">
                                 </el-input>
                         </div>
                     </div>
@@ -78,11 +78,11 @@
                     <p class="item_name">ふりがな</p>
                     <div class="item_body flex col_12">
                         <div class="input_wrap">
-                            <el-input v-model="resumeInput.family_ruby" @input="setResume()" name="family_ruby" autocomplete="off" placeholder="やまだ" title="せい" class="input_inner">
+                            <el-input v-model="resume.family_ruby" @input="setResume()" name="family_ruby" autocomplete="off" placeholder="やまだ" title="せい" class="input_inner">
                             </el-input>
                         </div>
                         <div class="input_wrap">
-                            <el-input v-model="resumeInput.first_ruby" @input="setResume()" type="text" name="first_ruby" autocomplete="off" placeholder="たろう" title="め" class="input_inner">
+                            <el-input v-model="resume.first_ruby" @input="setResume()" type="text" name="first_ruby" autocomplete="off" placeholder="たろう" title="め" class="input_inner">
                                 </el-input>
                         </div>
                     </div>
@@ -91,9 +91,9 @@
                     <p class="item_name">生年月日</p>
                     <div class="item_body flex">
                         <div class="input_wrap input_year">
-                        <el-select v-model="resumeInput.birthyear" @change="setResume()" placeholder="1996" class="input_year">
+                        <el-select v-model="resume.birthyear" @change="setResume()" placeholder="1996" class="input_year">
                             <el-option
-                            v-for="item in resumeInput.birthyears"
+                            v-for="item in resume.birthyears"
                             :key="item.value"
                             :label="item.label"
                             :value="item.value">
@@ -102,9 +102,9 @@
                         </div>
                         <span>年</span>
                         <div class="input_wrap">
-                        <el-select v-model="resumeInput.birthmonth" @change="setResume()" placeholder="1" class="input_month">
+                        <el-select v-model="resume.birthmonth" @change="setResume()" placeholder="1" class="input_month">
                             <el-option
-                            v-for="item in resumeInput.birthmonths"
+                            v-for="item in resume.birthmonths"
                             :key="item.value"
                             :label="item.label"
                             :value="item.value">
@@ -113,9 +113,9 @@
                         </div>
                         <span>月</span>
                         <div class="input_wrap">
-                        <el-select v-model="resumeInput.birthday" @change="setResume()" placeholder="1" class="input_day">
+                        <el-select v-model="resume.birthday" @change="setResume()" placeholder="1" class="input_day">
                             <el-option
-                            v-for="item in resumeInput.birthdays"
+                            v-for="item in resume.birthdays"
                             :key="item.value"
                             :label="item.label"
                             :value="item.value">
@@ -129,9 +129,6 @@
                     <p class="item_name">年齢</p>
                     <div class="item_body flex">
                         <div class="input_wrap">
-                            <!-- <el-input v-model="resumeInput.age" @input="setResume()" autocomplete="off" placeholder="25" title="年齢" class="input_inner">
-                            {{ calcAge }}
-                            </el-input> -->
                             <label for="" class="age_label">
                                 {{ calcAge }}
                             </label>
@@ -142,9 +139,9 @@
                 <div class="item_wrap">
                     <p class="item_name">性別</p>
                     <div class="item_body flex flex_column_2">
-                        <el-radio v-model="resumeInput.radio1" @change="setResume()" label="男性" border>男性</el-radio>
-                        <el-radio v-model="resumeInput.radio1" @change="setResume()" label="女性" border>女性</el-radio>
-                        <el-radio v-model="resumeInput.radio1" @change="setResume()" label="記入しない" border>記入しない</el-radio>
+                        <el-radio v-model="resume.radio1" @change="setResume()" label="男性" border>男性</el-radio>
+                        <el-radio v-model="resume.radio1" @change="setResume()" label="女性" border>女性</el-radio>
+                        <el-radio v-model="resume.radio1" @change="setResume()" label="記入しない" border>記入しない</el-radio>
                     </div>
                 </div>
             </div>
@@ -171,7 +168,7 @@ import { mapGetters } from 'vuex'
     export default {
         data() {
             return {
-                resumeInput: {
+                resume: {
                     family_name: '',
                     first_name: '',
                     family_ruby: '',
@@ -610,16 +607,9 @@ import { mapGetters } from 'vuex'
                 }
             }
         },
-        created() {
-            this.resumeInput = this.resume
-        },
-        mounted() {
-            this.resumeInput = this.resume
-        },
     computed: {
         ...mapGetters([
-             'resume',
-            //  'license'
+            //  'resume',
              ]),
         getBirthyear() {
             return this.$store.getters.resume.birthyear
@@ -630,34 +620,52 @@ import { mapGetters } from 'vuex'
         getBirthday() {
             return this.$store.getters.resume.birthday
         },
+        getFamilyName() {
+            return this.$store.getters.resume.family_name
+        },
+        getFirstName() {
+            return this.$store.getters.resume.first_name
+        },
+        getRadio1() {
+             return this.$store.getters.resume.radio1
+        },
         calcAge() {
-            if(this.resumeInput.birthyear && this.resumeInput.birthmonth && this.resumeInput.birthday){
-            let y = this.resumeInput.birthyear;
-            let m = this.resumeInput.birthmonth;
-            let d = this.resumeInput.birthday;
+            if(this.resume.birthyear && this.resume.birthmonth && this.resume.birthday){
+            let y = this.resume.birthyear;
+            let m = this.resume.birthmonth;
+            let d = this.resume.birthday;
             let birthdate = y * 10000 + m * 100 + d * 10;
             let today = new Date();
             let targetdate = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate() * 10;
-            this.resumeInput.age = Math.floor((targetdate - birthdate) / 10000);
+            this.resume.age = Math.floor((targetdate - birthdate) / 10000);
             this.$store.dispatch('setResume',this.resume)
-            return this.resumeInput.age;
+            return this.resume.age;
             }
         },
     },
     watch: {
         getBirthyear(val, old) {
-            this.resumeInput.birthyear = val
+            this.resume.birthyear = val
         },
         getBirthmonth(val, old) {
-            this.resumeInput.birthmonth = val
+            this.resume.birthmonth = val
         },
         getBirthday(val, old) {
-            this.resumeInput.birthday = val
+            this.resume.birthday = val
+        },
+        getFamilyName(val, old) {
+            this.resume.family_name = val
+        },
+        getFirstName(val, old) {
+            this.resume.first_name = val
+        },
+        getRadio1(val, old) {
+            this.resume.radio1 = val
         },
     },
     methods: {
             setResume() {
-                this.$store.dispatch('setResume',this.resumeInput)
+                this.$store.dispatch('setResume',this.resume)
             },
         },
     }

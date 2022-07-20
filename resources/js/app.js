@@ -151,6 +151,6 @@ Vue.component('academy-modal', AcademyModal);
 
  new Vue({
     el: '#app',
-    router,
     store,
+    router,
 });

@@ -114,6 +114,11 @@
                         <td></td>
                         <td class="">学歴</td>
                     </tr>
+                    <tr v-for="(schoolHistory, index) in schoolHistories" :key="schoolHistory.id">
+                        <th>{{ schoolHistory.year }}</th>
+                        <td>{{ schoolHistory.month }}</td>
+                        <td>{{ schoolHistory.name }}</td>
+                    </tr>
                     <tr class="empty">
                         <th></th>
                         <td></td>
@@ -204,68 +209,60 @@
                 <div class="rirekisho-table rirekisho-history-2">
                 <table class="">
                     <thead>
-                    <tr>
-                        <th>年</th>
-                        <td>月</td>
-                        <td>学歴・職歴</td>
-                    </tr>
+                    <div class="work_list">
+                            <div class="work_year">年</div>
+                            <div class="work_month">月</div>
+                            <div class="work_title">学歴・職歴</div>
+                    </div>
                     </thead>
                     <tbody>
-                    <!---->
-                    <!---->
-                    <!---->
-                    <!---->
-                    <!---->
-                    <!---->
-                    <!---->
-                    <!---->
-                    <!---->
-                    <!---->
-                    <!---->
-                    <!---->
-                    <!---->
-                    <!---->
-                    <!---->
-                    <!---->
-                    <tr class="empty">
+                    <div class="list_empty">
+                            <div class="work_year"></div>
+                            <div class="work_month"></div>
+                            <div class="work_name"></div>
+                    </div>
+                    <div class="work_wrap" v-for="(workHistory, index) in workHistories" :key="workHistory.id">
+                        <div class="work_list">
+                            <div class="work_year">{{ workHistory.start_year }}</div>
+                            <div class="work_month">{{ workHistory.start_month }}</div>
+                            <div class="work_name">{{ workHistory.comp_name }} 入社</div>
+                        </div>
+                        <div class="work_list" v-if="workHistory.end_year || workHistory.end_month">
+                            <div class="work_year" v-if="workHistory.end_year">{{ workHistory.end_year }}</div>
+                            <div class="work_month" v-if="workHistory.end_month">{{ workHistory.end_month }}</div>
+                            <div class="work_name" v-if="workHistory.end_year && workHistory.end_month">{{ workHistory.comp_name }} 退社</div>
+                        </div>
+                    </div>
+                    <div class="list_empty">
+                            <div class="work_year"></div>
+                            <div class="work_month"></div>
+                            <div class="work_name"></div>
+                    </div>
+                    <div class="list_empty">
+                            <div class="work_year"></div>
+                            <div class="work_month"></div>
+                            <div class="work_name"></div>
+                    </div>
+                    <div class="list_empty">
+                            <div class="work_year"></div>
+                            <div class="work_month"></div>
+                            <div class="work_name"></div>
+                    </div>
+                    <div class="list_empty">
+                            <div class="work_year"></div>
+                            <div class="work_month"></div>
+                            <div class="work_name"></div>
+                    </div>
+                    <!-- <tr class="empty">
                         <th></th>
                         <td></td>
                         <td class=""></td>
-                    </tr>
-                    <tr class="empty">
-                        <th></th>
-                        <td></td>
-                        <td class=""></td>
-                    </tr>
-                    <tr class="empty">
-                        <th></th>
-                        <td></td>
-                        <td class=""></td>
-                    </tr>
-                    <tr class="empty">
-                        <th></th>
-                        <td></td>
-                        <td class=""></td>
-                    </tr>
-                    <tr class="empty">
-                        <th></th>
-                        <td></td>
-                        <td class=""></td>
-                    </tr>
-                    <tr class="empty">
-                        <th></th>
-                        <td></td>
-                        <td class=""></td>
-                    </tr>
+                    </tr> -->
                     <!---->
                     </tbody>
                 </table>
                 </div>
                 <div data-highlight="タップで編集" class="rirekisho-table rirekisho-skill">
-                    <tr v-for="(license, index) in licenses" v-bind:key="license.id">
-                        <td>{{ index }}</td>
-                        <td>{{ license.name }}</td>
-                    </tr>
                 <table class="">
                     <thead>
                     <tr>
@@ -279,6 +276,16 @@
                         <th></th>
                         <td></td>
                         <td class="">なし</td>
+                    </tr>
+                    <tr v-for="(license, index) in licenses" :key="license.id">
+                        <th>{{ license.getyear }}</th>
+                        <td>{{ license.getmonth }}</td>
+                        <td>{{ license.name }}</td>
+                    </tr>
+                    <tr class="empty">
+                        <th></th>
+                        <td></td>
+                        <td class=""></td>
                     </tr>
                     <tr class="empty">
                         <th></th>
@@ -361,21 +368,21 @@ import { mapGetters } from 'vuex'
     export default {
     data() {
         return {
-            isActive: false,
-            isDisplay: true,
         }
     },
+    mounted() {
+        },
     computed: {
          ...mapGetters([
              'resume',
-             'license'
+             'licenses',
+             'workHistories',
+             'schoolHistories',
              ]),
     },
+        watch: {
+    },
     methods: {
-        active(){
-            this.isActive = !this.isActive;
-            this.isDisplay = !this.isDisplay;
-        },
         back(){
             // 1つ前へ
             this.$router.back()
@@ -383,7 +390,3 @@ import { mapGetters } from 'vuex'
     },
 }
 </script>
-
-<style>
-
-</style>
