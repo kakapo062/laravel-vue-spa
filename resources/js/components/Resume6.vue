@@ -68,7 +68,7 @@
                     <transition-group>
                     <li
                     class="card_wrap history_item_wrap"
-                    v-for="(workHistory, index) in workHistorys"
+                    v-for="(workHistory, index) in workHistories"
                     v-bind:key="workHistory.id"
                     @click="click(index)"
                     :class="{isActive: activeIndex == index}"
@@ -81,7 +81,7 @@
                                         <div class="input_wrap">
                                             <el-input
                                             v-model="workHistory.comp_name"
-                                            @input="setWorkHistorys()"
+                                            @input="setWorkHistories()"
                                             autocomplete="off"
                                             placeholder="例）〇〇〇株式会社"
                                             title="会社名"
@@ -96,7 +96,7 @@
                                     </div>
                                     <div class="item_body flex mb_8">
                                         <div class="input_wrap">
-                                            <el-select v-model="workHistory.start_year" @change="setWorkHistorys()" placeholder="1996" class="input_year">
+                                            <el-select v-model="workHistory.start_year" @change="setWorkHistories()" placeholder="1996" class="input_year">
                                                 <el-option
                                                 v-for="item in workHistory.start_years"
                                                 :key="item.value"
@@ -107,7 +107,7 @@
                                         </div>
                                         <span>年</span>
                                         <div class="input_wrap">
-                                            <el-select v-model="workHistory.start_month" @change="setWorkHistorys()" placeholder="1" class="input_month">
+                                            <el-select v-model="workHistory.start_month" @change="setWorkHistories()" placeholder="1" class="input_month">
                                                 <el-option
                                                 v-for="item in workHistory.start_months"
                                                 :key="item.value"
@@ -120,7 +120,7 @@
                                     </div>
                                     <div class="item_body flex mb_16">
                                         <div class="input_wrap">
-                                            <el-select v-model="workHistory.end_year" @change="setWorkHistorys()" placeholder="1996" class="input_year">
+                                            <el-select v-model="workHistory.end_year" @change="setWorkHistories()" placeholder="1996" class="input_year">
                                                 <el-option
                                                 v-for="item in workHistory.end_years"
                                                 :key="item.value"
@@ -132,7 +132,7 @@
                                         <span>年</span>
                                         <div class="input_wrap">
                                             <el-select v-model="workHistory.end_month"
-                                            @change="setWorkHistorys()"
+                                            @change="setWorkHistories()"
                                             placeholder="1"
                                             class="input_month">
                                                 <el-option
@@ -191,7 +191,7 @@
     data() {
         return {
             activeIndex: undefined,
-            workHistorys: [],
+            workHistories: [],
         }
     },
     methods: {
@@ -902,43 +902,45 @@
                 ],
             }
             // はじめの数値
-            let nextId = this.workHistorys.length;
+            let nextId = this.workHistories.length;
             // データを加えるとき
             workHistory.id = nextId
-            this.workHistorys.push(workHistory)
+            this.workHistories.push(workHistory)
         },
         del(index){
-            this.workHistorys.splice(index, 1)
-            this.$store.dispatch('setWorkHistory',this.workHistorys)
+            this.workHistories.splice(index, 1)
+            this.$store.dispatch('setWorkHistories',this.workHistories)
         },
-        setWorkHistorys(){
-            this.$store.dispatch('setWorkHistory',this.workHistorys)
+        setWorkHistories(){
+            this.$store.dispatch('setWorkHistories',this.workHistories)
         },
         up(index) {
             if(index == 0){
                 return false
             } else {
-                let upstart = this.workHistorys.slice(0, index-1) //最初から、対象のindexの2個前まで取得
-                let uplast = this.workHistorys.slice(index+1) //対象のindexから最後までの配列。
-                const newArray = [...upstart, this.workHistorys[index], this.workHistorys[index-1], ...uplast]; //新しい配列作成
-                this.workHistorys = newArray //新しい配列をdataに入れ替え
+                let upstart = this.workHistories.slice(0, index-1) //最初から、対象のindexの2個前まで取得
+                let uplast = this.workHistories.slice(index+1) //対象のindexから最後までの配列。
+                const newArray = [...upstart, this.workHistories[index], this.workHistories[index-1], ...uplast]; //新しい配列作成
+                this.workHistories = newArray //新しい配列をdataに入れ替え
+                this.$store.dispatch('setWorkHistories',this.workHistories)
             }
         },
         down(index) {
-            let end = [this.workHistorys.length - 1] //最後の要素
+            let end = [this.workHistories.length - 1] //最後の要素
             if(index == end) {
                 return false
             } else {
-                let downstart = this.workHistorys.slice(0, index) //最初から、対象のindexの1個前まで取得
-                let downlast = this.workHistorys.slice(index+2) //対象のindexの次から最後までの配列。
-                const newArray = [...downstart, this.workHistorys[index+1], this.workHistorys[index], ...downlast]; //新しい配列作成
-                this.workHistorys = newArray //新しい配列をdataに入れ替え
+                let downstart = this.workHistories.slice(0, index) //最初から、対象のindexの1個前まで取得
+                let downlast = this.workHistories.slice(index+2) //対象のindexの次から最後までの配列。
+                const newArray = [...downstart, this.workHistories[index+1], this.workHistories[index], ...downlast]; //新しい配列作成
+                this.workHistories = newArray //新しい配列をdataに入れ替え
+                this.$store.dispatch('setWorkHistories',this.workHistories)
             }
         },
         click(index) {
             if(this.activeIndex != index){
                 this.activeIndex = index
-                this.workHistorys[index].isActive = !this.workHistorys[index].isActive
+                this.workHistories[index].isActive = !this.workHistories[index].isActive
                 } else {
                     // this.activeIndex = undefined;
                     // これなら.isActiveが消えるが、登録ボタン以外を押したときも消えてしまう
@@ -947,7 +949,7 @@
         register(index){
             if(this.activeIndex == index){
                 this.activeIndex = undefined;
-                this.$store.dispatch('setWorkHistory',this.workHistorys)
+                this.$store.dispatch('setWorkHistories',this.workHistories)
             }
         },
     }

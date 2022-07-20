@@ -96,6 +96,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
     export default {
     data() {
         return {
@@ -106,6 +107,19 @@
             },
         }
     },
+        computed: {
+        ...mapGetters([
+            //  'resume',
+             ]),
+        getHope() {
+            return this.$store.getters.resume.hope
+        },
+    },
+    watch: {
+        getHope(val, old) {
+            this.resume.hope = val
+        },
+    },
     methods: {
         active(){
             this.isActive = !this.isActive;
@@ -113,9 +127,7 @@
         },
         setResume(){
             const dateValue = this.resume.date;
-            if(dateValue !== "") {
-                this.$store.dispatch('setResume',this.resume);
-            }
+            this.$store.dispatch('setResume',this.resume);
         },
     }
 }

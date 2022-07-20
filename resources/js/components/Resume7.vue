@@ -69,7 +69,7 @@
                     <li
                     class="card_wrap history_item_wrap"
                     v-for="(license, index) in licenses"
-                    v-bind:key="license.id"
+                    :key="license.id"
                     @click="click(index)"
                     :class="{isActive: activeIndex == index}"
                     >
@@ -537,6 +537,7 @@
             // データを加えるとき
             license.id = nextId
             this.licenses.push(license)
+            this.$store.dispatch('setLicense',this.licenses)
         },
         del(index){
             this.licenses.splice(index, 1)
@@ -554,6 +555,7 @@
                 let uplast = this.licenses.slice(index+1) //対象のindexから最後までの配列。
                 const newArray = [...upstart, this.licenses[index], this.licenses[index-1], ...uplast]; //新しい配列作成
                 this.licenses = newArray //新しい配列をdataに入れ替え
+                this.$store.dispatch('setLicense',this.licenses)
             }
         },
         down(index) {
@@ -565,6 +567,7 @@
                 let downlast = this.licenses.slice(index+2) //対象のindexの次から最後までの配列。
                 const newArray = [...downstart, this.licenses[index+1], this.licenses[index], ...downlast]; //新しい配列作成
                 this.licenses = newArray //新しい配列をdataに入れ替え
+                this.$store.dispatch('setLicense',this.licenses)
             }
         },
         click(index) {

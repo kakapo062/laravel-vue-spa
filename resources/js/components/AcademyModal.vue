@@ -1424,10 +1424,11 @@ export default {
     },
   methods: {
         hide () {
-          this.$modal.hide('academy-modal');
+            this.$modal.hide('academy-modal');
         },
         add() {
-              this.$modal.hide('academy-modal');
+            this.$modal.hide('academy-modal');
+            this.$store.dispatch('setResume',this.resume)
         },
         setResume() {
             this.$store.dispatch('setResume',this.resume)

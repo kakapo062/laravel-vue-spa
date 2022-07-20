@@ -57,7 +57,7 @@ import { mapGetters } from 'vuex'
     },
     computed: {
          ...mapGetters([
-             'resume',
+            //  'resume',
             //  'license'
              ]),
     },
