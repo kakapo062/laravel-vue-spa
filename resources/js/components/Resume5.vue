@@ -61,11 +61,11 @@
         </div>
         <div class="resume_form_wrap">
             <div class="form_inner">
-                <div @click="show" class="navy_btn_wrap">
+                <!-- <div @click="show" class="navy_btn_wrap">
                     <div class="navy_btn">学歴を入力する</div>
-                </div>
+                </div> -->
                 <div class="normal_text_wrap">
-                    <p class="normal_text">生年月日・最終学歴を入力すると、入学・卒業年度を自動で算出できます。</p>
+                    <!-- <p class="normal_text">生年月日・最終学歴を入力すると、入学・卒業年度を自動で算出できます。</p> -->
                     <p class="red">学歴は高校卒業から記入してください。</p>
                 </div>
                     <academy-modal />
@@ -142,7 +142,6 @@
                     </li>
                     </transition-group>
                 </ul>
-
                 <div @click="addSchoolHistory()" class="navy_btn_wrap">
                     <div class="navy_btn">学歴を追加</div>
                 </div>
@@ -174,6 +173,7 @@ import { mapGetters } from 'vuex'
             isActive: false,
             isDisplay: true,
             activeIndex: undefined,
+            schoolHistories: [],
         }
     },
     watch: {
@@ -622,6 +622,7 @@ import { mapGetters } from 'vuex'
                 let uplast = this.schoolHistories.slice(index+1) //対象のindexから最後までの配列。
                 const newArray = [...upstart, this.schoolHistories[index], this.schoolHistories[index-1], ...uplast]; //新しい配列作成
                 this.schoolHistories = newArray //新しい配列をdataに入れ替え
+                this.$store.dispatch('setSchoolHistories',this.schoolHistories)
             }
         },
         down(index) {
@@ -633,6 +634,7 @@ import { mapGetters } from 'vuex'
                 let downlast = this.schoolHistories.slice(index+2) //対象のindexの次から最後までの配列。
                 const newArray = [...downstart, this.schoolHistories[index+1], this.schoolHistories[index], ...downlast]; //新しい配列作成
                 this.schoolHistories = newArray //新しい配列をdataに入れ替え
+                this.$store.dispatch('setSchoolHistories',this.schoolHistories)
             }
         },
         click(index) {

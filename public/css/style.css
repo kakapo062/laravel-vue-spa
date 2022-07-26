@@ -1003,6 +1003,7 @@ input[type='checkbox'] {
     line-height: 1.75;
     border: 2px solid #E6E6E6;
     border-radius: 2px;
+    cursor: pointer;
 }
 .modal_sample_content:not(:first-child) {
     margin-top: 16px;

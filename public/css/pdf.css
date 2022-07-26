@@ -1295,3 +1295,67 @@ html {
     min-width: 19px;
     margin-left: 8px
   }
+
+  .work_wrap {
+    width: 100%;
+  }
+  .work_list_head .work_year,
+  .work_list_head .work_month,
+  .work_list_head .work_title {
+    font-size: 12px;
+  }
+  .work_list {
+    width: 100%;
+    display: table;
+    border-bottom: 1px solid #000;
+    font-size: 15px;
+    height: 42px;
+  }
+  .list_empty {
+    width: 100%;
+    display: table;
+    vertical-align: middle;
+    border-bottom: 1px solid #000;
+    height: 42px;
+  }
+  .list_empty_last {
+    border-bottom: none;
+  }
+  .list_empty .work_name {
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+  }
+  .work_year {
+    display:table-cell;
+    width: 76px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .work_month {
+    display:table-cell;
+    width: 54px;
+    text-align: center;
+    vertical-align: middle;
+    border-left: 1px dotted #000;
+    border-right: 1px solid #000;
+  }
+  .work_title {
+    display:table-cell;
+    width: calc(100% - 130px);
+    text-align: center;
+    vertical-align: middle;
+  }
+  .work_name {
+    display:table-cell;
+    width: calc(100% - 130px);
+    text-align: left;
+    vertical-align: middle;
+    padding-left: 8px;
+  }
+  .rirekisho-history-2 {
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+  }

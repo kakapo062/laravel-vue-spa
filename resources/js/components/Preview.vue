@@ -159,41 +159,6 @@
                         <td></td>
                         <td class=""></td>
                     </tr>
-                    <tr class="empty">
-                        <th></th>
-                        <td></td>
-                        <td class=""></td>
-                    </tr>
-                    <tr class="empty">
-                        <th></th>
-                        <td></td>
-                        <td class=""></td>
-                    </tr>
-                    <tr class="empty">
-                        <th></th>
-                        <td></td>
-                        <td class=""></td>
-                    </tr>
-                    <tr class="empty">
-                        <th></th>
-                        <td></td>
-                        <td class=""></td>
-                    </tr>
-                    <tr class="empty">
-                        <th></th>
-                        <td></td>
-                        <td class=""></td>
-                    </tr>
-                    <tr class="empty">
-                        <th></th>
-                        <td></td>
-                        <td class=""></td>
-                    </tr>
-                    <tr class="empty">
-                        <th></th>
-                        <td></td>
-                        <td class=""></td>
-                    </tr>
                     <!---->
                     <!---->
                     <!---->
@@ -209,7 +174,7 @@
                 <div class="rirekisho-table rirekisho-history-2">
                 <table class="">
                     <thead>
-                    <div class="work_list">
+                    <div class="work_list work_list_head">
                             <div class="work_year">年</div>
                             <div class="work_month">月</div>
                             <div class="work_title">学歴・職歴</div>
@@ -219,7 +184,7 @@
                     <div class="list_empty">
                             <div class="work_year"></div>
                             <div class="work_month"></div>
-                            <div class="work_name"></div>
+                            <div class="work_name">職歴</div>
                     </div>
                     <div class="work_wrap" v-for="(workHistory, index) in workHistories" :key="workHistory.id">
                         <div class="work_list">

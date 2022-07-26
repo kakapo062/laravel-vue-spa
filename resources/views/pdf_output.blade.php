@@ -45,7 +45,9 @@
                       </div>
                       <div data-highlight="タップで編集" class="rirekisho-photo">
                         <div>
-                          <div class="rirekisho-photo-inner"><img src="{{$attributes['url']}}" alt="">{{$attributes['birthyear']}}</div>
+                          <div class="rirekisho-photo-inner">
+                            <img src="{{$attributes['url']}}" alt="">
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -70,8 +72,8 @@
                             <div class="input">{{$attributes['phone']}}</div>
                           </div>
                           <div class="email flex">
-                            <div class="label">Email</div>
-                            <div class="input">{{$attributes['email']}}</div>
+                            <div class="label">Email<br><span>{{$attributes['email']}}</span></div>
+                            <div class="input"></div>
                           </div>
                         </div>
                       </div>
@@ -96,8 +98,8 @@
                             <div class="input">{{$attributes['phone_add']}}</div>
                           </div>
                           <div class="email flex">
-                            <div class="label">Email</div>
-                            <div class="input">{{$attributes['email_add']}}</div>
+                            <div class="label">Email<br><span>{{$attributes['email']}}</span></div>
+                            <div class="input"></div>
                           </div>
                         </div>
                       </div>
@@ -117,6 +119,13 @@
                             <td></td>
                             <td>学歴</td>
                           </tr>
+                          @foreach($schoolHistories as $schoolHistory)
+                          <tr class="">
+                            <th>{{$schoolHistory->year}}</th>
+                            <td>{{$schoolHistory->month}}</td>
+                            <td>{{$schoolHistory->name}}</td>
+                          </tr>
+                          @endforeach
                           <tr class="empty">
                             <th></th>
                             <td></td>
@@ -195,43 +204,49 @@
                     <div class="rirekisho-table rirekisho-history-2">
                       <table>
                         <thead>
-                          <tr>
-                            <th>年</th>
-                            <td>月</td>
-                            <td>学歴・職歴</td>
-                          </tr>
+                          <div class="work_list work_list_head">
+                            <div class="work_year">年</div>
+                            <div class="work_month">月</div>
+                            <div class="work_title">学歴・職歴</div>
+                          </div>
                         </thead>
                         <tbody>
-                          <tr class="empty">
-                            <th></th>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr class="empty">
-                            <th></th>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr class="empty">
-                            <th></th>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr class="empty">
-                            <th></th>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr class="empty">
-                            <th></th>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr class="empty">
-                            <th></th>
-                            <td></td>
-                            <td></td>
-                          </tr>
+                          <div class="list_empty">
+                            <div class="work_year"></div>
+                            <div class="work_month"></div>
+                            <div class="work_name">職歴</div>
+                          </div>
+                          @foreach($workHistories as $workHistory)
+                          <div class="work_wrap">
+                            <div class="work_list">
+                              <div class="work_year">{{$workHistory->start_year}}</div>
+                              <div class="work_month">{{$workHistory->start_month}}</div>
+                              <div class="work_name">{{$workHistory->comp_name}} 入社</div>
+                            </div>
+                            @if($workHistory->end_year && $workHistory->end_month)
+                            <div class="work_list">
+                              <div class="work_year">{{$workHistory->end_year}}</div>
+                              <div class="work_month">{{$workHistory->end_month}}</div>
+                              <div class="work_name">{{$workHistory->comp_name}} 退社</div>
+                            </div>
+                            @endif
+                          </div>
+                          @endforeach
+                          <div class="list_empty">
+                            <div class="work_year"></div>
+                            <div class="work_month"></div>
+                            <div class="work_name"></div>
+                          </div>
+                          <div class="list_empty">
+                            <div class="work_year"></div>
+                            <div class="work_month"></div>
+                            <div class="work_name"></div>
+                          </div>
+                          <div class="list_empty list_empty_last">
+                              <div class="work_year"></div>
+                              <div class="work_month"></div>
+                              <div class="work_name"></div>
+                          </div>
                         </tbody>
                       </table>
                     </div>
@@ -245,11 +260,13 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr class="none">
-                            <th></th>
-                            <td></td>
-                            <td></td>
+                          @foreach($licenses as $license)
+                          <tr class="">
+                            <th>{{$license->getyear}}</th>
+                            <td>{{$license->getmonth}}</td>
+                            <td>{{$license->name}}</td>
                           </tr>
+                          @endforeach
                           <tr class="empty">
                             <th></th>
                             <td></td>
