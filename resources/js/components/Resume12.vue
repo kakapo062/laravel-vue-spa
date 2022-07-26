@@ -58,7 +58,9 @@ import { mapGetters } from 'vuex'
     computed: {
          ...mapGetters([
             //  'resume',
-            //  'license'
+             'licenses',
+             'workHistories',
+             'schoolHistories',
              ]),
     },
     methods: {
@@ -207,8 +209,16 @@ import { mapGetters } from 'vuex'
 
             var url = document.createElement('input');
             url.name = 'url';
-            url.type = 'file';
-            url.files = this.$store.getters.resume.image_file || "";
+
+            if(this.$store.getters.resume.image_file){
+                // 写真データがある場合
+                url.type = 'file';
+                url.files = this.$store.getters.resume.image_file;
+            } else {
+                //写真データがない場合
+                url.type = 'hidden';
+                url.value = "";
+            }
             form.appendChild(url);
 
             var year = document.createElement('input');
@@ -228,7 +238,7 @@ import { mapGetters } from 'vuex'
             day.type = 'hidden';
             day.value = this.$store.getters.resume.day || "";
             form.appendChild(day);
-                        
+
             var dependent = document.createElement('input');
             dependent.name = 'dependent';
             dependent.type = 'hidden';
@@ -259,11 +269,47 @@ import { mapGetters } from 'vuex'
             hope.value = this.$store.getters.resume.hope || "";
             form.appendChild(hope);
 
+            var date = document.createElement('input');
+            date.name = 'date';
+            date.type = 'hidden';
+            date.value = this.$store.getters.resume.date || "";
+            form.appendChild(date);
 
+            var year = document.createElement('input');
+            year.name = 'year';
+            year.type = 'hidden';
+            year.value = this.$store.getters.resume.year || "";
+            form.appendChild(year);
 
+            var month = document.createElement('input');
+            month.name = 'month';
+            month.type = 'hidden';
+            month.value = this.$store.getters.resume.month || "";
+            form.appendChild(month);
 
+            var day = document.createElement('input');
+            day.name = 'day';
+            day.type = 'hidden';
+            day.value = this.$store.getters.resume.day || "";
+            form.appendChild(day);
 
+            var licenses = document.createElement('input');
+            licenses.name = 'licenses';
+            licenses.type = 'hidden';
+            licenses.value = JSON.stringify(this.$store.getters.licenses || "");
+            form.appendChild(licenses);
 
+            var workHistories = document.createElement('input');
+            workHistories.name = 'workHistories';
+            workHistories.type = 'hidden';
+            workHistories.value = JSON.stringify(this.$store.getters.workHistories || "");
+            form.appendChild(workHistories);
+
+            var schoolHistories = document.createElement('input');
+            schoolHistories.name = 'schoolHistories';
+            schoolHistories.type = 'hidden';
+            schoolHistories.value = JSON.stringify(this.$store.getters.schoolHistories || "");
+            form.appendChild(schoolHistories);
 
             // body に追加
             document.body.appendChild(form);
