@@ -718,19 +718,6 @@ label,
 input[type='checkbox'] {
     cursor: pointer;
 }
-.mail_check_label {
-    font-size: 13px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-}
-.mail_desc {
-    font-size: 13px;
-    line-height: 1.6923;
-    margin-bottom: 16px;
-}
-    font-weight: bold;
-}
 .thanks_wrap {
     background: #FFF;
     padding: 24px 20px 37px;
@@ -1298,4 +1285,39 @@ input[type='checkbox'] {
     align-items: center;
     list-style: none;
 }
-
+.submit_btn {
+    width: 100%;
+    text-align: right;
+    font-weight: bold;
+    margin: 24px 0 24px auto;
+}
+.pdf_btn {
+    background: #416AD8;
+    width: 100%;
+    font-weight: bold;
+}
+.pdf_btn:hover {
+    transform: translateY(-2px);
+}
+.download_wrap {
+    border-top: 1px solid #e6e6e6;
+    padding: 24px 0 48px;
+}
+.download_text {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+.pdf_btn::after {
+    content: '';
+    display: inline-block;
+    background: url(/images/download.png) no-repeat center center;
+    background-size: contain;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 10px;
+}
+.last_back_inner {
+    flex-direction: row !important;
+}
