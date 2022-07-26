@@ -10,10 +10,10 @@
     </div>
     <!-- <p>苗字：{{ resume.family_name }}</p> -->
         <div class="preview-tabs">
-            <input id="user-viewer-tab" type="radio" name="preview-tab-active" value="previewFormat">
+            <!-- <input id="user-viewer-tab" type="radio" name="preview-tab-active" value="previewFormat">
             <label for="user-viewer-tab" class="tab-item">プレビュー</label>
             <input id="example-viewer-tab" type="radio" name="preview-tab-active" value="sampleFormat">
-            <label for="example-viewer-tab" class="tab-item">記入例</label>
+            <label for="example-viewer-tab" class="tab-item">記入例</label> -->
         <div id="preview-viewer" class="preview-viewer tab-content">
             <div class="is-preview">
             <div id="preview-page-01" class="doc-paper preview rirekisho">
