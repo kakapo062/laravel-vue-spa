@@ -1334,4 +1334,5 @@ input[type='checkbox'] {
 .disable {
     opacity: .5 !important;
     transform: none !important;
+    cursor: default !important;
 }
