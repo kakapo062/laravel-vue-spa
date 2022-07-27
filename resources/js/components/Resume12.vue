@@ -12,12 +12,13 @@
                     <p class="item_name">メールアドレス</p>
                     <div class="item_body">
                         <div class="input_wrap">
-                            <el-input v-model="resume.email" @input="setResume()" placeholder="例）abc@example.com" title="メールアドレス" name="email" class="input_inner ">
+                            <el-input v-model="resume.submit_email" @input="setResume()" placeholder="例）abc@example.com" title="メールアドレス" name="email" class="input_inner ">
                             </el-input>
                         </div>
                     </div>
+                     <p v-if="isInValidEmail && resume.submit_email !== ''" class="error">メールアドレスの形式で入力してください。</p>
                 </div>
-                <div @click="submit()" class="next_step_btn submit_btn">送信</div>
+                <div @click="submit()" :class="{disable: isInValidEmail}" class="next_step_btn submit_btn">送信</div>
             </div>
         </div>
         <div class="download_wrap">
@@ -47,6 +48,7 @@ import { mapGetters } from 'vuex'
         return {
             resume: {
                 ismail: '',
+                submit_email: ''
             },
              csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
         }
@@ -58,10 +60,20 @@ import { mapGetters } from 'vuex'
              'workHistories',
              'schoolHistories',
              ]),
+            isInValidEmail(){
+            //メールアドレスとして判定される文字列と記号の組み合わせを定数化
+            const reg = new RegExp(/^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/);
+            //指定した組み合わせになっていなかった場合判定を返す。
+            return !reg.test(this.resume.submit_email);
+        }
     },
     methods: {
         submit() {
             // form を動的に生成
+            if(this.isInValidEmail){
+                return false;
+            } else {
+
             var form = document.createElement('form');
             form.action = '/submit';
             form.method = 'POST';
@@ -289,6 +301,12 @@ import { mapGetters } from 'vuex'
             day.value = this.$store.getters.resume.day || "";
             form.appendChild(day);
 
+            var submit_email = document.createElement('input');
+            submit_email.name = 'submit_email';
+            submit_email.type = 'hidden';
+            submit_email.value = this.$store.getters.resume.submit_email || "";
+            form.appendChild(submit_email);
+
             var licenses = document.createElement('input');
             licenses.name = 'licenses';
             licenses.type = 'hidden';
@@ -311,6 +329,7 @@ import { mapGetters } from 'vuex'
             document.body.appendChild(form);
             // // submit
             form.submit();
+            }
         },
         download() {
             // form を動的に生成
