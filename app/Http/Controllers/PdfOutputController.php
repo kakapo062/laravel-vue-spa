@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;  // ファサードを読み込み
 
-
 class PdfOutputController extends Controller
 {
     public function submit(Request $request) {
@@ -19,7 +18,7 @@ class PdfOutputController extends Controller
         ->setOption('encoding', 'utf-8');
 
         Mail::send('emails.text', $attributes, function($attributes){
-            $attributes   ->to('koki062va@gmail.com')
+            $attributes   ->to('test@gmail.com')
             ->subject('履歴書データの送付');
         });
         $pdf->download('履歴書.pdf');  //returnがないとダウンロードされない

@@ -35,7 +35,8 @@ return [
     
     'pdf' => [
         'enabled' => true,
-        'binary'  => env('WKHTML_PDF_BINARY', '/usr/local/bin/wkhtmltopdf'),
+        'binary'  => env('WKHTML_PDF_BINARY', '/usr/local/bin/wkhtmltopdf'), //MAMP用
+        // 'binary'  => base_path('vendor/bin/wkhtmltopdf-amd64'),  //本番環境用
         'timeout' => false,
         'options' => array('enable-local-file-access' => true),
         'env'     => [],
@@ -43,7 +44,8 @@ return [
     
     'image' => [
         'enabled' => true,
-        'binary'  => env('WKHTML_IMG_BINARY', '/usr/local/bin/wkhtmltoimage'),
+        'binary'  => env('WKHTML_IMG_BINARY', '/usr/local/bin/wkhtmltoimage'), //MAMP用
+        // 'binary'  => base_path('vendor/bin/wkhtmltoimage-amd64'), //本番環境用
         'timeout' => false,
         'options' => [],
         'env'     => [],
