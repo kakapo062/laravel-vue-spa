@@ -7,7 +7,7 @@
         </div>
         <div class="pager_wrap">
             <div class="pager_inner">
-                <router-link v-bind:to="{name: 'index'}" class="back_step_btn top_back_btn"><span>トップページに戻る</span></router-link>
+                <router-link v-bind:to="{name: 'index'}" class="top_back_btn"><span>トップページに戻る</span></router-link>
             </div>
         </div>
     </div>

@@ -13,13 +13,15 @@ class PdfOutputController extends Controller
         $licenses = json_decode($attributes['licenses']);
         $workHistories = json_decode($attributes['workHistories']);
         $schoolHistories = json_decode($attributes['schoolHistories']);
+        $email = $attributes['submit_email'];
         $pdf = \PDF::loadView('pdf_output', compact('attributes','licenses', 'workHistories', 'schoolHistories'))
         ->setPaper('A4')
         ->setOption('encoding', 'utf-8');
 
-        Mail::send('emails.text', $attributes, function($attributes){
-            $attributes   ->to('test@gmail.com')
-            ->subject('履歴書データの送付');
+        Mail::send('emails.text',$attributes, function($attributes) use ($email) {
+            $attributes
+                ->to($email)
+                ->subject('履歴書データの送付');
         });
         $pdf->download('履歴書.pdf');  //returnがないとダウンロードされない
         // return $pdf->download('履歴書.pdf');  //ダウンロード
