@@ -175,6 +175,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 const jsonpAdapter = require('axios-jsonp')
     export default {
     data() {
@@ -192,9 +193,44 @@ const jsonpAdapter = require('axios-jsonp')
             },
         }
     },
+        computed: {
+    },
+    mounted() {
+        if (localStorage.post_code) {
+        this.resume.post_code = localStorage.post_code;
+        this.$store.dispatch('setResume',this.resume)
+        }
+        if (localStorage.address) {
+        this.resume.address = localStorage.address;
+        this.$store.dispatch('setResume',this.resume)
+        }
+        if (localStorage.address_option) {
+        this.resume.address_option = localStorage.address_option;
+        this.$store.dispatch('setResume',this.resume)
+        }
+        if (localStorage.address_ruby) {
+        this.resume.address_ruby = localStorage.address_ruby;
+        this.$store.dispatch('setResume',this.resume)
+        }
+        if (localStorage.post_code) {
+        this.resume.post_code = localStorage.post_code;
+        this.$store.dispatch('setResume',this.resume)
+        }
+        if (localStorage.post_code) {
+        this.resume.post_code = localStorage.post_code;
+        this.$store.dispatch('setResume',this.resume)
+        }
+        if (localStorage.post_code) {
+        this.resume.post_code = localStorage.post_code;
+        this.$store.dispatch('setResume',this.resume)
+        }
+    },
+        watch: {
+    },
     methods: {
         setResume(){
             this.$store.dispatch('setResume',this.resume)
+            localStorage.post_code = this.resume.post_code;
         },
         open(){
             if(this.openMenu ===false){
@@ -212,6 +248,10 @@ const jsonpAdapter = require('axios-jsonp')
                     const response = rs.data
                     this.resume.address = response.pref + response.city + response.town
                     this.$store.dispatch('setResume',this.resume)
+                    localStorage.post_code = this.resume.post_code;
+                    localStorage.address = this.resume.address;
+                    localStorage.address_option = this.resume.address_option;
+                    localStorage.post_code = this.resume.post_code;
                 })
             } else {
                 return false
@@ -226,6 +266,7 @@ const jsonpAdapter = require('axios-jsonp')
                     const response = rs.data
                     this.resume.address_add = response.pref + response.city + response.town
                     this.$store.dispatch('setResume',this.resume)
+                    localStorage.post_code = this.resume.post_code;
                 })
             } else {
                 return false

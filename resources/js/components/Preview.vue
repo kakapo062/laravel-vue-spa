@@ -335,7 +335,29 @@ import { mapGetters } from 'vuex'
         return {
         }
     },
+    created() {
+
+    },
     mounted() {
+            this.$store.dispatch('setResume',this.resume)
+            this.resume.family_name = localStorage.family_name;
+            this.resume.first_name = localStorage.first_name;
+            this.resume.family_ruby = localStorage.family_ruby;
+            this.resume.first_ruby = localStorage.first_ruby;
+            this.resume.birthyear = localStorage.birthyear;
+            this.resume.birthmonth = localStorage.birthmonth;
+            this.resume.birthday = localStorage.birthday;
+            this.$store.getters.resume.age = localStorage.age;
+            this.resume.radio1 = localStorage.radio1;
+            // resume2
+            this.resume.post_code = localStorage.post_code;
+            this.resume.address = localStorage.address;
+            this.resume.address_option = localStorage.address_option;
+            this.resume.address_ruby = localStorage.address_ruby;
+            this.resume.post_code = localStorage.post_code;
+            this.resume.post_code = localStorage.post_code;
+            this.resume.post_code = localStorage.post_code;
+            this.resume.post_code = localStorage.post_code;
         },
     computed: {
          ...mapGetters([
@@ -344,8 +366,9 @@ import { mapGetters } from 'vuex'
              'workHistories',
              'schoolHistories',
              ]),
+
     },
-        watch: {
+    watch: {
     },
     methods: {
         back(){
