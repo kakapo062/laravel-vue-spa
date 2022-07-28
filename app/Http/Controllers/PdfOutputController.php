@@ -18,7 +18,7 @@ class PdfOutputController extends Controller
         $pdf = \PDF::loadView('pdf_output', compact('attributes','licenses', 'workHistories', 'schoolHistories'))
         ->setPaper('A4')
         ->setOption('encoding', 'utf-8')
-        ->save(storage_path('app/pdf/履歴書.pdf'));
+        ->save(storage_path('app/pdf/rirekisho.pdf'));
 
         Mail::send('emails.text',$attributes, function($attributes) use ($email) {
             $attributes
@@ -41,7 +41,7 @@ class PdfOutputController extends Controller
         $pdf = \PDF::loadView('pdf_output', compact('attributes','licenses', 'workHistories', 'schoolHistories'))
         ->setPaper('A4')
         ->setOption('encoding', 'utf-8');
-        return $pdf->inline('rirekisho.pdf');  //returnがないとダウンロードされない
+        return $pdf->download('rirekisho.pdf');  //returnがないとダウンロードされない
         // return $pdf->download('rirekisho.pdf');  //ダウンロード
     }
 }
