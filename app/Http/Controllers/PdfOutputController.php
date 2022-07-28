@@ -23,13 +23,13 @@ class PdfOutputController extends Controller
         Mail::send('emails.text',$attributes, function($attributes) use ($email) {
             $attributes
                 ->to($email)
-                ->attach(storage_path('app/pdf/履歴書.pdf'))
+                ->attach(storage_path('app/pdf/rirekisho.pdf'))
                 ->subject('履歴書データの送付');
         });
-        Storage::delete('pdf/履歴書.pdf');
+        Storage::delete('pdf/rirekisho.pdf');
         return redirect('/start/resume/thanks'); //returnは送信処理完了後に表示するページや内容を指定する。
 
-        // return $pdf->download('履歴書.pdf');  //ダウンロード
+        // return $pdf->download('rirekisho.pdf');  //ダウンロード
     }
 
     public function download(Request $request) {
@@ -41,7 +41,7 @@ class PdfOutputController extends Controller
         $pdf = \PDF::loadView('pdf_output', compact('attributes','licenses', 'workHistories', 'schoolHistories'))
         ->setPaper('A4')
         ->setOption('encoding', 'utf-8');
-        return $pdf->inline('履歴書.pdf');  //returnがないとダウンロードされない
-        // return $pdf->download('履歴書.pdf');  //ダウンロード
+        return $pdf->inline('rirekisho.pdf');  //returnがないとダウンロードされない
+        // return $pdf->download('rirekisho.pdf');  //ダウンロード
     }
 }

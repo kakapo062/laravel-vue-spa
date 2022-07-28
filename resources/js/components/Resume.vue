@@ -639,34 +639,82 @@ import { mapGetters } from 'vuex'
             let targetdate = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate() * 10;
             this.resume.age = Math.floor((targetdate - birthdate) / 10000);
             this.$store.dispatch('setResume',this.resume)
+            localStorage.age = this.resume.age;
             return this.resume.age;
             }
         },
     },
-    watch: {
-        getBirthyear(val, old) {
-            this.resume.birthyear = val
-        },
-        getBirthmonth(val, old) {
-            this.resume.birthmonth = val
-        },
-        getBirthday(val, old) {
-            this.resume.birthday = val
-        },
-        getFamilyName(val, old) {
-            this.resume.family_name = val
-        },
-        getFirstName(val, old) {
-            this.resume.first_name = val
-        },
-        getRadio1(val, old) {
-            this.resume.radio1 = val
-        },
+    mounted() {
+        if (localStorage.family_name) {
+        this.resume.family_name = localStorage.family_name;
+        this.$store.dispatch('setResume',this.resume)
+        }
+        if (localStorage.first_name) {
+        this.resume.first_name = localStorage.first_name;
+        this.$store.dispatch('setResume',this.resume)
+        }
+        if (localStorage.family_ruby) {
+        this.resume.family_ruby = localStorage.family_ruby;
+        this.$store.dispatch('setResume',this.resume)
+        }
+        if (localStorage.first_ruby) {
+        this.resume.first_ruby = localStorage.first_ruby;
+        this.$store.dispatch('setResume',this.resume)
+        }
+        if (localStorage.birthyear) {
+        this.resume.birthyear = localStorage.birthyear;
+        this.$store.dispatch('setResume',this.resume)
+        }
+        if (localStorage.birthmonth) {
+        this.resume.birthmonth = localStorage.birthmonth;
+        this.$store.dispatch('setResume',this.resume)
+        }
+        if (localStorage.birthday) {
+        this.resume.birthday = localStorage.birthday;
+        this.$store.dispatch('setResume',this.resume)
+        }
+        if (localStorage.age) {
+        this.resume.age = localStorage.age;
+        this.$store.dispatch('setResume',this.resume)
+        }
+        if (localStorage.radio1) {
+        this.resume.radio1 = localStorage.radio1;
+        this.$store.dispatch('setResume',this.resume)
+        }
     },
     methods: {
             setResume() {
                 this.$store.dispatch('setResume',this.resume)
+                localStorage.family_name = this.resume.family_name;
+                localStorage.first_name = this.resume.first_name;
+                localStorage.family_ruby = this.resume.family_ruby;
+                localStorage.first_ruby = this.resume.first_ruby;
+                localStorage.birthyear = this.resume.birthyear;
+                localStorage.birthmonth = this.resume.birthmonth;
+                localStorage.birthday = this.resume.birthday;
+                localStorage.age = this.resume.age;
+                localStorage.radio1 = this.resume.radio1;
             },
         },
+    watch: {
+        // getBirthyear(val, old) {
+        //     this.resume.birthyear = val
+        // },
+        // getBirthmonth(val, old) {
+        //     this.resume.birthmonth = val
+        // },
+        // getBirthday(val, old) {
+        //     this.resume.birthday = val
+        // },
+        // getFamilyName(val, old) {
+        //     this.resume.family_name = val
+        // },
+        // getFirstName(val, old) {
+        //     this.resume.first_name = val
+        // },
+        // getRadio1(val, old) {
+        //     this.resume.radio1 = val
+        // },
+    },
     }
 </script>
