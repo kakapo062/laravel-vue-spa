@@ -161,6 +161,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
     export default {
     data() {
         return {
@@ -169,6 +170,19 @@
         }
     },
     computed: {
+        ...mapGetters([
+             'resume',
+             'licneses'
+             ]),
+        getHope() {
+            return this.$store.getters.resume.hope
+        },
+    },
+    mounted() {
+        if (localStorage.licenses) {
+            this.resume.licenses = localStorage.licenses;
+            this.$store.dispatch('setResume',this.resume)
+        }
     },
     watch: {
         activeIndex: function (val, oldVal) {
@@ -538,13 +552,16 @@
             license.id = nextId
             this.licenses.push(license)
             this.$store.dispatch('setLicense',this.licenses)
+            localStorage.licenses = this.resume.licenses;
         },
         del(index){
             this.licenses.splice(index, 1)
             this.$store.dispatch('setLicense',this.licenses)
+            localStorage.licenses = this.resume.licenses;
         },
         setLicense(){
             this.$store.dispatch('setLicense',this.licenses)
+            localStorage.licenses = this.resume.licenses;
         },
         up(index) {
             let end = [this.licenses.length - 1] //最後の要素
@@ -556,6 +573,7 @@
                 const newArray = [...upstart, this.licenses[index], this.licenses[index-1], ...uplast]; //新しい配列作成
                 this.licenses = newArray //新しい配列をdataに入れ替え
                 this.$store.dispatch('setLicense',this.licenses)
+                localStorage.licenses = this.resume.licenses;
             }
         },
         down(index) {
@@ -568,6 +586,7 @@
                 const newArray = [...downstart, this.licenses[index+1], this.licenses[index], ...downlast]; //新しい配列作成
                 this.licenses = newArray //新しい配列をdataに入れ替え
                 this.$store.dispatch('setLicense',this.licenses)
+                localStorage.licenses = this.resume.licenses;
             }
         },
         click(index) {
@@ -583,6 +602,7 @@
             if(this.activeIndex == index){
                 this.activeIndex = undefined;;
                 this.$store.dispatch('setLicense',this.licenses)
+                localStorage.licenses = this.resume.licenses;
             }
         },
     },

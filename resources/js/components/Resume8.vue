@@ -113,6 +113,12 @@
             }
         }
     },
+     mounted() {
+        if (localStorage.reason) {
+            this.resume.reason = localStorage.reason;
+            this.$store.dispatch('setResume',this.resume)
+        }
+    },
     computed: {
         getReason() {
             return this.$store.getters.resume.reason
@@ -136,6 +142,7 @@
         },
         setResume(){
             this.$store.dispatch('setResume',this.resume);
+            localStorage.reason = this.resume.reason;
         },
     }
 }

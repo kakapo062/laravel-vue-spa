@@ -169,6 +169,20 @@
             }
         }
     },
+    mounted() {
+        if (localStorage.dependent) {
+            this.resume.dependent = localStorage.dependent;
+            this.$store.dispatch('setResume',this.resume)
+        }
+        if (localStorage.spouse) {
+            this.resume.spouse = localStorage.spouse;
+            this.$store.dispatch('setResume',this.resume)
+        }
+        if (localStorage.duty) {
+            this.resume.duty = localStorage.duty;
+            this.$store.dispatch('setResume',this.resume)
+        }
+    },
     methods: {
         active(){
             this.isActive = !this.isActive;
@@ -176,6 +190,9 @@
         },
         setResume() {
         this.$store.dispatch('setResume',this.resume)
+        localStorage.dependent = this.resume.dependent;
+        localStorage.spouse = this.resume.spouse;
+        localStorage.duty = this.resume.duty;        
         },
     }
 }

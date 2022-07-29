@@ -145,6 +145,24 @@
             },
         }
     },
+    mounted() {
+        if (localStorage.phone) {
+            this.resume.phone = localStorage.phone;
+            this.$store.dispatch('setResume',this.resume)
+        }
+        if (localStorage.email) {
+            this.resume.email = localStorage.email;
+            this.$store.dispatch('setResume',this.resume)
+        }
+        if (localStorage.phone_add) {
+            this.resume.phone_add = localStorage.phone_add;
+            this.$store.dispatch('setResume',this.resume)
+        }
+        if (localStorage.email_add) {
+            this.resume.email_add = localStorage.email_add;
+            this.$store.dispatch('setResume',this.resume)
+        }
+    },
     methods: {
         open(){
             if(this.openMenu ===false){
@@ -159,6 +177,10 @@
         },
         setResume() {
             this.$store.dispatch('setResume',this.resume)
+             localStorage.phone = this.resume.phone;
+             localStorage.email = this.resume.email;
+             localStorage.phone_add = this.resume.phone_add;
+             localStorage.email_add = this.resume.email_add;
             },
         }
 }

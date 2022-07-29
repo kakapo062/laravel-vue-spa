@@ -335,9 +335,6 @@ import { mapGetters } from 'vuex'
         return {
         }
     },
-    created() {
-
-    },
     mounted() {
             this.$store.dispatch('setResume',this.resume)
             this.resume.family_name = localStorage.family_name;
@@ -354,10 +351,33 @@ import { mapGetters } from 'vuex'
             this.resume.address = localStorage.address;
             this.resume.address_option = localStorage.address_option;
             this.resume.address_ruby = localStorage.address_ruby;
-            this.resume.post_code = localStorage.post_code;
-            this.resume.post_code = localStorage.post_code;
-            this.resume.post_code = localStorage.post_code;
-            this.resume.post_code = localStorage.post_code;
+            this.resume.post_code_add = localStorage.post_code_add;
+            this.resume.address_add = localStorage.address_add;
+            this.resume.address_option_add = localStorage.address_option_add;
+            this.resume.address_ruby_add = localStorage.address_ruby_add;
+            // resume3
+            this.resume.phone = localStorage.phone;
+            this.resume.email = localStorage.email;
+            this.resume.phone_add = localStorage.phone_add;
+            this.resume.email_add = localStorage.email_add;
+            // resume4(保留)
+            this.resume.url = localStorage.url;
+            this.resume.image_file = localStorage.image_file;
+            // resume7
+            this.resume.license = localStorage.licenses;
+            // resume8
+            this.resume.reason = localStorage.reason;
+            // resume9
+            this.resume.dependent = localStorage.dependent;
+            this.resume.spouse = localStorage.spouse;
+            this.resume.duty = localStorage.duty;
+            // resume10
+            this.resume.hope = localStorage.hope;
+            // resume11
+            this.resume.date = localStorage.date;
+            this.resume.year = localStorage.year;
+            this.resume.month = localStorage.month;
+            this.resume.day = localStorage.day;
         },
     computed: {
          ...mapGetters([
