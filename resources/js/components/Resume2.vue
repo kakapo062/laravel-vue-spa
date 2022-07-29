@@ -175,7 +175,6 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 const jsonpAdapter = require('axios-jsonp')
     export default {
     data() {
@@ -192,8 +191,6 @@ const jsonpAdapter = require('axios-jsonp')
                 address_ruby_add: '',
             },
         }
-    },
-        computed: {
     },
     mounted() {
         if (localStorage.post_code) {
@@ -212,16 +209,20 @@ const jsonpAdapter = require('axios-jsonp')
         this.resume.address_ruby = localStorage.address_ruby;
         this.$store.dispatch('setResume',this.resume)
         }
-        if (localStorage.post_code) {
-        this.resume.post_code = localStorage.post_code;
+        if (localStorage.post_code_add) {
+        this.resume.post_code_add = localStorage.post_code_add;
         this.$store.dispatch('setResume',this.resume)
         }
-        if (localStorage.post_code) {
-        this.resume.post_code = localStorage.post_code;
+        if (localStorage.address_add) {
+        this.resume.address_add = localStorage.address_add;
         this.$store.dispatch('setResume',this.resume)
         }
-        if (localStorage.post_code) {
-        this.resume.post_code = localStorage.post_code;
+        if (localStorage.address_option_add) {
+        this.resume.address_option_add = localStorage.address_option_add;
+        this.$store.dispatch('setResume',this.resume)
+        }
+        if (localStorage.address_ruby_add) {
+        this.resume.address_ruby_add = localStorage.address_ruby_add;
         this.$store.dispatch('setResume',this.resume)
         }
     },
@@ -230,7 +231,14 @@ const jsonpAdapter = require('axios-jsonp')
     methods: {
         setResume(){
             this.$store.dispatch('setResume',this.resume)
-            localStorage.post_code = this.resume.post_code;
+                    localStorage.post_code = this.resume.post_code;
+                    localStorage.address = this.resume.address;
+                    localStorage.address_option = this.resume.address_option;
+                    localStorage.address_ruby = this.resume.address_ruby;
+                    localStorage.post_code_add = this.resume.post_code_add;
+                    localStorage.address_add = this.resume.address_add;
+                    localStorage.address_option_add = this.resume.address_option_add;
+                    localStorage.address_ruby_add = this.resume.address_ruby_add;
         },
         open(){
             if(this.openMenu ===false){
@@ -251,7 +259,11 @@ const jsonpAdapter = require('axios-jsonp')
                     localStorage.post_code = this.resume.post_code;
                     localStorage.address = this.resume.address;
                     localStorage.address_option = this.resume.address_option;
-                    localStorage.post_code = this.resume.post_code;
+                    localStorage.address_ruby = this.resume.address_ruby;
+                    localStorage.post_code_add = this.resume.post_code_add;
+                    localStorage.address_add = this.resume.address_add;
+                    localStorage.address_option_add = this.resume.address_option_add;
+                    localStorage.address_ruby_add = this.resume.address_ruby_add;
                 })
             } else {
                 return false
@@ -267,6 +279,13 @@ const jsonpAdapter = require('axios-jsonp')
                     this.resume.address_add = response.pref + response.city + response.town
                     this.$store.dispatch('setResume',this.resume)
                     localStorage.post_code = this.resume.post_code;
+                    localStorage.address = this.resume.address;
+                    localStorage.address_option = this.resume.address_option;
+                    localStorage.address_ruby = this.resume.address_ruby;
+                    localStorage.post_code_add = this.resume.post_code_add;
+                    localStorage.address_add = this.resume.address_add;
+                    localStorage.address_option_add = this.resume.address_option_add;
+                    localStorage.address_ruby_add = this.resume.address_ruby_add;
                 })
             } else {
                 return false

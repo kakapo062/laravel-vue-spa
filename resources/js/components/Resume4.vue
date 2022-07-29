@@ -143,6 +143,9 @@ const jsonpAdapter = require('axios-jsonp')
             },
         }
     },
+    mounted() {
+        this.$store.dispatch('setResume',this.resume);
+    },
     methods: {
         active() {
             this.isActive = !this.isActive;

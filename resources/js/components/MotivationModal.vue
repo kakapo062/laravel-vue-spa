@@ -31,6 +31,7 @@
   </modal>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
@@ -43,7 +44,18 @@ export default {
     }
   },
   computed: {
+      ...mapGetters([
+       'resume',
+        ]),
+        // getReason() {
+        //     return this.$store.getters.resume.reason
+        // },
   },
+    watch: {
+        getReason(val, old) {
+            this.resume.reason = val
+        }
+    },
   methods: {
         hide () {
           this.$modal.hide('motivation-modal');
@@ -52,6 +64,7 @@ export default {
           this.$store.dispatch('setResume',{
             reason: this.resumes[this.activeIndex],
           });
+          localStorage.reason = this.resume.reason;
           this.hide();
         },
   }

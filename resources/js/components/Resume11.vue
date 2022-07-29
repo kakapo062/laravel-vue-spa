@@ -39,8 +39,6 @@
     export default {
     data() {
         return {
-            isActive: false,
-            isDisplay: true,
             resume: {
                 date: '',
                 year: '',
@@ -49,8 +47,25 @@
             },
         }
     },
+    mounted() {
+        if (localStorage.date) {
+            this.resume.date = localStorage.date;
+            this.$store.dispatch('setResume',this.resume)
+        }
+        if (localStorage.year) {
+            this.resume.year = localStorage.year;
+            this.$store.dispatch('setResume',this.resume)
+        }
+        if (localStorage.month) {
+            this.resume.month = localStorage.month;
+            this.$store.dispatch('setResume',this.resume)
+        }
+        if (localStorage.day) {
+            this.resume.day = localStorage.day;
+            this.$store.dispatch('setResume',this.resume)
+        }
+    },
     methods: {
-
         setResume(){
             const dateValue = this.resume.date;
             if(dateValue !== "") {
@@ -59,6 +74,10 @@
                 this.resume.day = ('00' + dateValue.getDate()).slice(-2);
                 // return (this.resume.year + '年' + this.resume.month + '月' + this.resume.day + '日');
                 this.$store.dispatch('setResume',this.resume);
+                localStorage.date = this.resume.date;
+                localStorage.year = this.resume.year;
+                localStorage.month = this.resume.month;
+                localStorage.day = this.resume.day;
             }
         },
     },

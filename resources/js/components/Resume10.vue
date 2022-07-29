@@ -100,8 +100,6 @@ import { mapGetters } from 'vuex'
     export default {
     data() {
         return {
-            isActive: false,
-            isDisplay: true,
             resume: {
                 hope: '',
             },
@@ -115,19 +113,22 @@ import { mapGetters } from 'vuex'
             return this.$store.getters.resume.hope
         },
     },
+    mounted() {
+            if (localStorage.hope) {
+                this.resume.hope = localStorage.hope;
+                this.$store.dispatch('setResume',this.resume)
+            }
+    },
     watch: {
         getHope(val, old) {
             this.resume.hope = val
         },
     },
     methods: {
-        active(){
-            this.isActive = !this.isActive;
-            this.isDisplay = !this.isDisplay;
-        },
         setResume(){
             const dateValue = this.resume.date;
             this.$store.dispatch('setResume',this.resume);
+            localStorage.hope = this.resume.hope;
         },
     }
 }
